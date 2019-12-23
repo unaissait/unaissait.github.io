@@ -1,0 +1,1373 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 23 ], {
+    1184: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<svg version="1.1" id="scaleImageLarge_x5F_24_x5F_lt-ou"'), 
+                a.b("\n" + i), a.b('   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="24" height="24"'), 
+                a.b("\n" + i), a.b('   viewBox="0 0 24 24"'), a.b("\n" + i), a.b('     style="enable-background:new 0 0 24 24;" xml:space="preserve" class="icon upload-icon '), 
+                a.sub("classes", e, t, i), a.b('">'), a.b("\n" + i), a.b('  <path class="st0" d="M3,19l18-0.0509v-1.8566c-0.5625-0.4153-2.8125-3.7224-3.7303-3.6811'), 
+                a.b("\n" + i), a.b('    c-0.6961,0.0581-3.2098,2.7783-4.0665,2.7783c-0.7671,0-4.3314-5.0188-5.184-5.0188C7.1666,11.1709,3,15.909,3,16.6772V19z"/>'), 
+                a.b("\n" + i), a.b('  <circle class="st0" cx="16.0085" cy="8.0088" r="1.75"/>'), 
+                a.b("\n" + i), a.b('  <path class="st0" d="M1,3v18h22V3H1z M22,20H2V4h20V20z"/>'), 
+                a.b("\n" + i), a.b("</svg>"), a.b("\n"), a.fl();
+            },
+            partials: {},
+            subs: {
+                classes: function(e, t, i, a) {}
+            }
+        }, '<svg version="1.1" id="scaleImageLarge_x5F_24_x5F_lt-ou"\n   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="24" height="24"\n   viewBox="0 0 24 24"\n     style="enable-background:new 0 0 24 24;" xml:space="preserve" class="icon upload-icon {{$classes}}{{/classes}}">\n  <path class="st0" d="M3,19l18-0.0509v-1.8566c-0.5625-0.4153-2.8125-3.7224-3.7303-3.6811\n    c-0.6961,0.0581-3.2098,2.7783-4.0665,2.7783c-0.7671,0-4.3314-5.0188-5.184-5.0188C7.1666,11.1709,3,15.909,3,16.6772V19z"/>\n  <circle class="st0" cx="16.0085" cy="8.0088" r="1.75"/>\n  <path class="st0" d="M1,3v18h22V3H1z M22,20H2V4h20V20z"/>\n</svg>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1233: function(e, t, i) {
+        "use strict";
+        var a = i(242), s = i.n(a), n = i(660), r = i.n(n), o = i(247), l = i.n(o), c = i(793), h = i.n(c), d = i(1181), g = i.n(d), p = i(835), u = i.n(p), _ = i(1401), b = i.n(_), m = i(1184), v = i.n(m), f = {
+            lines: 40,
+            length: 1,
+            width: 2,
+            radius: 10,
+            scale: 1,
+            corners: 1,
+            color: "#fff",
+            opacity: .1,
+            rotate: 0,
+            direction: 1,
+            speed: 1,
+            trail: 46,
+            fps: 20,
+            zIndex: 1,
+            className: "helicropter-spinner",
+            top: "50%",
+            left: "50%",
+            shadow: !1,
+            hwaccel: !0,
+            position: "absolute"
+        }, w = l.a.extend({
+            _defaults: {
+                titleText: "Upload Image",
+                subtitleText: ""
+            },
+            mustache: b.a,
+            partials: {
+                uploadIcon: v.a.template
+            },
+            init: function() {
+                if (this._super.apply(this, arguments), this._model.uploaderOptions) {
+                    var e = Object.assign({
+                        drift: 0,
+                        cors: {
+                            expected: !0
+                        },
+                        validation: {
+                            sizeLimit: 8388608,
+                            allowedExtensions: [ "jpg", "jpeg", "png", "gif" ],
+                            image: {
+                                minHeight: 316,
+                                minWidth: 404
+                            },
+                            acceptFiles: "image/*"
+                        }
+                    }, this._model.uploaderOptions);
+                    this._uploader = new u.a(e), this._bind();
+                }
+            },
+            templateData: function() {
+                return this._model.titleText = null == this._model.titleText ? this._defaults.titleText : this._model.titleText, 
+                this._model.subtitleText = this._model.subtitleText || this._defaults.subtitleText, 
+                this._model;
+            },
+            rendered: function() {
+                if (this._$container = this.$view.parent(), this._$btnArea = this.$view.find(".js-image-upload-wrapper"), 
+                this._$btn = this.$view.find(".js-upload-button"), this._$progressBar = this.$view.find(".js-progress-bar"), 
+                this._$progress = this.$view.find(".js-progress"), this._$container.css({
+                    width: this._model.width,
+                    height: this._model.height
+                }), this._bindUploadButton(), this._bindLoaderStyle(this._model.loaderStyle)(), 
+                this._model.hasInitialImage) return this.trigger("show-loading-state");
+                this.trigger("show-upload-state");
+            },
+            hide: function() {
+                this._$container.addClass("hide");
+            },
+            show: function() {
+                this._$container.removeClass("hide");
+            },
+            uploadImage: function() {
+                return this._uploader.choose();
+            },
+            setDropElement: function(e) {
+                return this._uploader.setDropElement(e);
+            },
+            _URL: function() {
+                return window.URL || window.webkitURL;
+            },
+            _bindUploadButton: function() {
+                var e = this;
+                this._model.isUploadButtonHidden || (this._$btn.on("click", function() {
+                    return e._uploader.choose();
+                }), this.on("image-uploading show-loading-state", function() {
+                    return e._$btn.addClass("hide");
+                }), this.on("image-upload-complete upload-error show-upload-state", function() {
+                    return e._$btn.removeClass("hide");
+                })), this.on("upload-image", function() {
+                    return e.uploadImage();
+                }), this.on("image-uploaded", function() {
+                    return e.hide();
+                });
+            },
+            _bindLoaderStyle: function() {
+                var e = this, t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "spinner", i = {
+                    spinner: function() {
+                        return e._bindSpinner();
+                    },
+                    progressbar: function() {
+                        return e._bindProgressBar();
+                    }
+                };
+                if (!i[t]) throw new Error("loaderStyle must be 1 of " + Object.keys(i).toString());
+                return i[t];
+            },
+            _bindSpinner: function() {
+                var e = this;
+                this._$progressBar.hide(), this.spinner = new g.a(f);
+                var t = this.$view.find(".js-image-upload-wrapper");
+                this.on("image-uploading show-loading-state", function() {
+                    return e.spinner.spin(t[0]);
+                }), this.on("image-upload-complete upload-error show-upload-state", function() {
+                    return e.spinner.stop();
+                });
+            },
+            _bindProgressBar: function() {
+                var e = this;
+                if (this._$progressBar.show(), !this._$progressBar) throw new Error("There is no instance of progress bar");
+                this.on("image-progress", function(t) {
+                    var i = t.loaded, a = t.total;
+                    return e._updateProgressBar({
+                        loaded: i,
+                        total: a
+                    });
+                });
+            },
+            _updateProgressBar: function(e) {
+                var t = e.loaded / e.total * 100;
+                this._$progress.css("width", t + "%");
+            },
+            _bind: function() {
+                this.listenOnce(this, {
+                    "scale-view": function(e) {
+                        var t = e.scale, i = Number(this._$container.width()) * t, a = Number(this._$container.height()) * t;
+                        this._$container.css({
+                            width: i,
+                            height: a
+                        });
+                    }
+                }), this.listenTo(this._uploader, {
+                    submit: function(e) {
+                        var t = e.file;
+                        this._model.backgroundImage = this._URL().createObjectURL(t), this.trigger("image-uploading");
+                    },
+                    progress: function(e) {
+                        var t = e.loaded, i = e.total;
+                        this.trigger("image-progress", {
+                            loaded: t,
+                            total: i
+                        });
+                    },
+                    processing: function() {
+                        this.trigger("image-processing");
+                    },
+                    complete: function(e) {
+                        var t = e.file, i = e.uploadPath, a = e.uploadEndpoint, s = e.response;
+                        if (this.trigger("image-upload-complete"), s && s.success) {
+                            this._url = a + "/" + i;
+                            var n = this._URL().createObjectURL(t);
+                            this.trigger("image-uploaded", {
+                                src: n,
+                                url: this._url
+                            });
+                        }
+                    },
+                    error: function(e) {
+                        console.error(e), this.trigger("upload-error", e);
+                    },
+                    cancel: function() {
+                        this.trigger("image-upload-cancel");
+                    }
+                });
+            }
+        }), x = i(1185), A = i(1415), k = i.n(A), y = i(1416), C = i.n(y), j = Symbol("animation request"), S = l.a.extend({
+            mustache: C.a,
+            rendered: function() {
+                var e = this;
+                this._$canvas = this.$view.find(".js-cropper-canvas"), this.canvasCss = {
+                    width: this._model.canvasWidth,
+                    height: this._model.canvasHeight
+                }, this._$canvas.prop(this.canvasCss), this.canvasOrder = [ "background", "foreground" ];
+                this._canvas = new x.fabric.Canvas(this._$canvas[0], {
+                    selection: !1,
+                    containerClass: "js-canvas-container"
+                }), this.$canvasContainer = this.$view.find(".js-canvas-container"), this.$canvasContainer.css({
+                    transformOrigin: "left top",
+                    zIndex: this.canvasOrder.indexOf("foreground")
+                });
+                this._canvas.lowerCanvasEl.setAttribute("width", 2 * this._canvas.width), this._canvas.lowerCanvasEl.setAttribute("height", 2 * this._canvas.height), 
+                this._canvas.contextContainer.scale(2, 2), this._canvas.on("mouse:down", function() {
+                    return e._canvas.setActiveObject(e._cropArea);
+                }), this._canvas.on("mouse:move", function() {
+                    return e._canvas.setActiveObject(e._cropArea);
+                }), this._canvas.on("mouse:up", function() {
+                    return e._canvas.setActiveObject(e._cropArea);
+                }), this._model.cropRatio && this._setCropSizeByAspectRatio(this._model.cropRatio), 
+                "static" === this._model.viewportRatio ? this._createStaticCropArea() : "dynamic" === this._model.viewportRatio && this._createDynamicCropArea(), 
+                this._createImage(), this._createBlurryWarning(), this.on({
+                    scale: function(e) {
+                        this._image && (this._scaleImage(e), this._checkPotentialBlurriness(e));
+                    },
+                    "scale-view": function(e) {
+                        var t = e.scale;
+                        this.scale = t, this._scaleView({
+                            $el: this.$canvasContainer,
+                            scale: t
+                        }), this._scaleView({
+                            $el: this.$backgroundContainer,
+                            scale: t
+                        });
+                    },
+                    "set-image": function(e) {
+                        var t = this, i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                        this._model.image = e, "dynamic" === this._model.viewportRatio && (this._setCropSizeByAspectRatio({
+                            width: i.width || this._model.canvasWidth,
+                            height: i.height || this._model.canvasHeight
+                        }), this._createDynamicCropArea()), this._createImage(i).catch(function(e) {
+                            return console.error(e);
+                        }), this._createBackground().then(function() {
+                            return t.trigger("background-loaded");
+                        }), this.trigger("cropper-set-image");
+                    },
+                    "ratio-locked": function(e) {
+                        this._removeOverlay(), this._cropArea && this._canvas.remove(this._cropArea), e ? this._createStaticCropArea() : this._createDynamicCropArea();
+                    },
+                    "update-ratio": function(e) {
+                        this._setCropSizeByAspectRatio(e), this._removeOverlay(), this._cropArea && this._canvas.remove(this._cropArea), 
+                        this._createStaticCropArea(), this.trigger("set-crop-size", {
+                            minScale: this._calculateScaleBound()
+                        });
+                    }
+                });
+            },
+            hide: function() {
+                this.$view.addClass("hide");
+            },
+            show: function() {
+                this.$view.removeClass("hide");
+            },
+            reset: function() {
+                this._image && (this._canvas.remove(this._image), this._image = null);
+            },
+            disable: function() {
+                this._canvas.selection = !1, this._canvas.forEachObject(function(e) {
+                    e.selectable = !1;
+                }), this._canvas.hoverCursor = "default";
+            },
+            enable: function() {
+                this._canvas.selection = !0, this._canvas.forEachObject(function(e) {
+                    e.selectable = !0;
+                }), this._canvas.hoverCursor = "move";
+            },
+            getCropData: function() {
+                if (this._image) {
+                    var e = {
+                        x: -1 * this._getImageProp("left") + this._getCropAreaProp("left"),
+                        y: -1 * this._getImageProp("top") + this._getCropAreaProp("top"),
+                        width: Math.max(1, this._cropArea.width),
+                        height: Math.max(1, this._cropArea.height),
+                        scale: this._image.getScaleX()
+                    };
+                    return this._shouldClampBounds() && (e.x = Math.max(0, e.x), e.y = Math.max(0, e.y)), 
+                    "dynamic" === this._model.viewportRatio && Object.assign(e, {
+                        width: Math.max(1, this._cropArea.getWidth()),
+                        height: Math.max(1, this._cropArea.getHeight())
+                    }), e;
+                }
+            },
+            getDimensions: function() {
+                if (this._image) {
+                    var e = this.getCropData(), t = e.x, i = e.y, a = e.width, s = e.height, n = e.scale, r = {
+                        x: t / n,
+                        y: i / n,
+                        width: a / n,
+                        height: s / n
+                    }, o = this._getReductionRatio(r);
+                    return r.x = Math.floor(r.x * o), r.y = Math.floor(r.y * o), r.width = Math.floor(r.width * o), 
+                    r.height = Math.floor(r.height * o), r;
+                }
+            },
+            _shouldClampBounds: function() {
+                return !this._model.allowLetterboxing && !this._model.allowTransparency;
+            },
+            _getReductionRatio: function(e) {
+                var t = 1;
+                if (!this._shouldClampBounds()) return t;
+                var i = this._getImageProp("width"), a = this._getImageProp("height");
+                return e.width > i ? t = i / e.width : e.height > a && (t = a / e.height), t;
+            },
+            _createBackground: function() {
+                switch (this._backgroundLayer && (this._backgroundLayer.remove(), this._backgroundLayer = null), 
+                this._model.backgroundType) {
+                  case "solid":
+                    return this._createSolidBackground();
+
+                  case "image":
+                    return this._createBlurryImageBackground();
+
+                  default:
+                    return this._createTransparencyBackground();
+                }
+            },
+            _scaleView: function(e) {
+                var t = this, i = e.$el, a = e.scale;
+                i && i.length && (i.css({
+                    transform: "scale(" + a + ")"
+                }), requestAnimationFrame(function() {
+                    var e = t._$canvas[0].getBoundingClientRect(), s = e.width, n = e.height;
+                    e.width && e.height || (s = Number(t._$canvas.width()) * a, n = Number(t._$canvas.height()) * a), 
+                    i.css({
+                        width: s,
+                        height: n
+                    });
+                }));
+            },
+            _setCropSizeByAspectRatio: function(e) {
+                var t = Math.round(this._model.canvasWidth - 40), i = Math.round(this._model.canvasHeight - 40), a = Math.round(i / e.height * e.width), s = Math.round(t / e.width * e.height);
+                a < t ? (this._model.cropWidth = a, this._model.cropHeight = i) : (this._model.cropWidth = t, 
+                this._model.cropHeight = s);
+            },
+            _createBlurryImageBackground: function() {
+                var e = this;
+                if (this._model.image) {
+                    var t = this._canvas.containerClass;
+                    this.$view.find("." + t).after('<canvas class="js-background-canvas"></canvas>');
+                    var i = this.$view.find(".js-background-canvas");
+                    return i.prop(this.canvasCss), this._backgroundCanvas = new x.fabric.Canvas(i[0], {
+                        selection: !1,
+                        containerClass: "js-background-canvas-container"
+                    }), this.$backgroundContainer = this.$view.find(".js-background-canvas-container"), 
+                    this.$backgroundContainer.css({
+                        position: "absolute",
+                        zIndex: this.canvasOrder.indexOf("background"),
+                        left: 0,
+                        top: 0,
+                        transformOrigin: "left top"
+                    }), this._loadImage(this._model.image).then(function(t) {
+                        e._backgroundLayer = new x.fabric.Image(t, {
+                            left: 0,
+                            top: 0,
+                            originX: "left",
+                            originY: "top",
+                            selectable: !1,
+                            hasBorders: !1,
+                            hasControls: !1
+                        }), e._backgroundCanvas.add(e._backgroundLayer), e._backgroundLayer.canvas.contextContainer.filter = "blur(70px) brightness(.8)", 
+                        e._backgroundLayer.width > e._backgroundLayer.height ? e._backgroundLayer.scaleToHeight(e._canvas.height) : e._backgroundLayer.scaleToWidth(e._canvas.width), 
+                        e._backgroundLayer.sendToBack(), e._backgroundLayer.center(), e._scaleView({
+                            $el: e.$backgroundContainer,
+                            scale: e.scale
+                        });
+                    });
+                }
+            },
+            _createSolidBackground: function() {
+                var e = this;
+                return new Promise(function(t) {
+                    e._backgroundLayer = new x.fabric.Rect({
+                        left: 0,
+                        top: 0,
+                        width: e._model.canvasWidth,
+                        height: e._model.canvasHeight,
+                        fill: e._model.backgroundHex,
+                        selectable: !1,
+                        evented: !1,
+                        hasBorders: !1,
+                        hasControls: !1
+                    }), e._canvas.add(e._backgroundLayer), e._backgroundLayer.sendToBack(), t();
+                });
+            },
+            _createTransparencyBackground: function() {
+                var e = this;
+                return this._loadImage(k.a).then(function(t) {
+                    var i = new x.fabric.Pattern({
+                        source: t,
+                        repeat: "repeat"
+                    });
+                    e._backgroundLayer = new x.fabric.Rect({
+                        left: 0,
+                        top: 0,
+                        width: 2 * e._model.canvasWidth,
+                        height: 2 * e._model.canvasHeight,
+                        fill: i,
+                        selectable: !1,
+                        evented: !1,
+                        hasBorders: !1,
+                        hasControls: !1
+                    }), e._canvas.add(e._backgroundLayer), e._backgroundLayer.sendToBack(), e._backgroundLayer.scale(.5).setCoords(), 
+                    e._backgroundLayer.center().setCoords();
+                });
+            },
+            _createImage: function() {
+                var e = this, t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                return this._model.image ? this._loadImage(this._model.image).then(function(i) {
+                    e._image && e._image.remove(), e._image = new x.fabric.Image(i, {
+                        left: 0,
+                        top: 0,
+                        originX: "left",
+                        originY: "top",
+                        selectable: !e._model.previewMode,
+                        hasBorders: !1,
+                        hasControls: !1
+                    }), e._canvas.add(e._image), e._image.sendToBack(), e._image.bringForward();
+                    var a = e._normalizeCoordinates(t);
+                    e._scaleImage(a.scale), e._image.setCoords(), e._image.center(), null !== a.x && e._image.set("left", e._getCropAreaProp("left") - a.x), 
+                    null !== a.y && e._image.set("top", e._getCropAreaProp("top") - a.y), e._checkPotentialBlurriness(a.scale), 
+                    e._image.setCoords(), e._renderCanvas(), e._image.on("moving", function() {
+                        e._checkImageBounds(), e._canvas.setActiveObject(e._cropArea), e.trigger("moving", e._getImageInfo());
+                    }), e.trigger("image-loaded", Object.assign(e._getImageInfo(), {
+                        width: e._image.get("width"),
+                        height: e._image.get("height"),
+                        scale: a.scale,
+                        minScale: a.minScale,
+                        cropWidth: e._model.cropWidth,
+                        cropHeight: e._model.cropHeight,
+                        image: e._model.image
+                    }));
+                }, function(t) {
+                    e.trigger("upload-error", t);
+                }) : Promise.resolve();
+            },
+            _getImageInfo: function() {
+                return {
+                    left: this._image.get("left") - this._getCropAreaProp("left"),
+                    top: this._image.get("top") - this._getCropAreaProp("top"),
+                    scale: this._image.getScaleX()
+                };
+            },
+            _normalizeCoordinates: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, t = this._calculateScaleBound();
+                if (null === (e = Object.assign({
+                    x: null,
+                    y: null,
+                    width: null,
+                    height: null,
+                    scale: t,
+                    minScale: t
+                }, e)).width && null === e.height) return e;
+                var i = this._getCropAreaProp("width") / e.width, a = this._getCropAreaProp("height") / e.height;
+                return Math.abs(i - a) < .01 ? (e.scale = i, e.x = null !== e.x ? e.x * i : null, 
+                e.y = null !== e.y ? e.y * i : null) : (e.scale = t, e.x = null, e.y = null), e;
+            },
+            _calculateScaleBound: function() {
+                return this._image ? (this._model.allowTransparency ? Math.min : Math.max)(this._model.cropWidth / this._image.get("width"), this._model.cropHeight / this._image.get("height")) : this._model.maxScale || 1;
+            },
+            _lockVerticalPan: function(e) {
+                this._model.allowLetterboxing && (this._image.lockMovementY = e >= 0);
+            },
+            _lockHorizontalPan: function(e) {
+                this._model.allowLetterboxing && (this._image.lockMovementX = e >= 0);
+            },
+            _scaleImage: function(e) {
+                if (e) {
+                    var t = this._image.getWidth(), i = this._image.getHeight(), a = -1 * this._image.get("left") + this._cropArea.get("left") + this._cropArea.getWidth() / 2, s = -1 * this._image.get("top") + this._cropArea.get("top") + this._cropArea.getHeight() / 2;
+                    this._image.scale(e).setCoords();
+                    var n = a * (this._image.getWidth() / t), r = s * (this._image.getHeight() / i), o = this._image.get("top") + (s - r), l = this._image.get("left") + (a - n);
+                    this._image.set("left", l), this._image.set("top", o), this._image.setCoords(), 
+                    this._lockVerticalPan(o), this._lockHorizontalPan(l), this._checkImageBounds(), 
+                    this.trigger("scaling", this._getImageInfo()), this._renderCanvas();
+                }
+            },
+            _checkPotentialBlurriness: function(e) {
+                this._model.displayedWidth && e && (this._cropArea.getWidth() / e < this._model.displayedWidth ? this._showBlurryWarning() : this._hideBlurryWarning());
+            },
+            _checkImageBounds: function() {
+                var e = this._getImageProp("left"), t = this._getImageProp("top"), i = this._image.getWidth() < this._cropArea.getWidth(), a = this._image.getHeight() < this._cropArea.getHeight(), s = this._getCropAreaProp("left"), n = this._getCropAreaProp("top"), r = -this._image.getWidth() + (this._getCropAreaProp("left") + this._cropArea.getWidth()), o = -this._image.getHeight() + (this._getCropAreaProp("top") + this._cropArea.getHeight());
+                i ? (e < s && this._image.set("left", s), i && e > r && this._image.set("left", r)) : (e > s && this._image.set("left", s), 
+                e < r && this._image.set("left", r)), a ? (t < n && this._image.set("top", n), t > o && this._image.set("top", o)) : (t > n && this._image.set("top", n), 
+                t < o && this._image.set("top", o));
+            },
+            _checkCanvasBounds: function() {
+                var e = this._cropArea.get("left"), t = this._cropArea.get("top"), i = e + this._cropArea.getWidth(), a = t + this._cropArea.getHeight();
+                (e < 0 || i > this._model.canvasWidth) && this._cropArea.setScaleX(this._cropArea.lastScaleX || 1), 
+                (t < 0 || a > this._model.canvasHeight) && this._cropArea.setScaleY(this._cropArea.lastScaleY || 1), 
+                e < 0 && this._cropArea.set("left", 0), t < 0 && this._cropArea.set("top", 0), this._cropArea.lastScaleX = this._cropArea.getScaleX(), 
+                this._cropArea.lastScaleY = this._cropArea.getScaleY();
+            },
+            _createStaticCropArea: function() {
+                this._removeCropArea(), this._removeOverlay(), this._cropArea = new x.fabric.Rect({
+                    originX: "left",
+                    originY: "top",
+                    selectable: !1,
+                    evented: !1,
+                    width: this._model.cropWidth,
+                    height: this._model.cropHeight,
+                    fill: "transparent",
+                    stroke: "rgba(37, 38, 42, 1.0)",
+                    hasBorders: !1,
+                    hasControls: !1
+                }), this._canvas.add(this._cropArea), this._cropArea.center().setCoords(), this._createOverlay();
+            },
+            _createDynamicCropArea: function() {
+                var e = this;
+                this._removeCropArea(), this._removeOverlay(), this._cropArea = new x.fabric.Rect({
+                    width: this._model.cropWidth,
+                    height: this._model.cropHeight,
+                    fill: "transparent",
+                    borderColor: "transparent",
+                    strokeDashArray: [ 5, 5 ],
+                    stroke: "#25262a",
+                    lockRotation: !0,
+                    hasRotatingPoint: !1,
+                    cornerColor: "rgba(255, 255, 255, 1.0)",
+                    cornerSize: 5
+                }), this._canvas.add(this._cropArea), this._cropArea.center().setCoords(), this._createOverlay(), 
+                this._canvas.setActiveObject(this._cropArea), this._cropArea.bringToFront(), this._cropArea.on("mousedown", function(t) {
+                    var i = t.e;
+                    e._image && (e._startingTransform = {
+                        x: e._image.get("left"),
+                        y: e._image.get("top")
+                    }, e._startingCropPosition = {
+                        x: e._cropArea.get("left"),
+                        y: e._cropArea.get("top")
+                    }, e._startingPointer = e._canvas.getPointer(i));
+                }), this._cropArea.on("mouseup", function() {
+                    e._startingTransform = null, e._startingCropPosition = null, e._startingPointer = null;
+                }), this._cropArea.on("moving", function(t) {
+                    var i = t.e;
+                    if (e._image) {
+                        e._cropArea.set("left", e._startingCropPosition.x), e._cropArea.set("top", e._startingCropPosition.y);
+                        var a = e._canvas.getPointer(i);
+                        e._image.set("left", e._startingTransform.x + (a.x - e._startingPointer.x)), e._image.set("top", e._startingTransform.y + (a.y - e._startingPointer.y)), 
+                        e._checkImageBounds();
+                    }
+                }), this._cropArea.on("scaling", function() {
+                    e._checkCanvasBounds(), e._removeOverlay(), e._createOverlay(), e._cropArea.bringToFront(), 
+                    e._canvas.setActiveObject(e._cropArea);
+                });
+            },
+            _removeCropArea: function() {
+                this._cropArea && (this._canvas.remove(this._cropArea), this._cropArea = null);
+            },
+            _getCropAreaProp: function(e) {
+                return Math.round(this._cropArea.get(e));
+            },
+            _getCropAreaWidth: function() {
+                return Math.round(this._getCropAreaProp("width") * this._cropArea.getScaleX());
+            },
+            _getCropAreaHeight: function() {
+                return Math.round(this._getCropAreaProp("height") * this._cropArea.getScaleY());
+            },
+            _getImageProp: function(e) {
+                return Math.round(this._image.get(e));
+            },
+            _createOverlay: function() {
+                var e = this._getCropAreaHeight(), t = this._getCropAreaWidth(), i = this._getCropAreaProp("top"), a = this._getCropAreaProp("left"), s = Math.max(0, Math.round(this._model.canvasWidth - (a + t))), n = Math.max(0, Math.round(this._model.canvasHeight - (i + e))), r = [ {
+                    left: 0,
+                    top: 0,
+                    height: i,
+                    width: this._model.canvasWidth
+                }, {
+                    left: 0,
+                    top: i,
+                    height: e,
+                    width: a
+                }, {
+                    left: this._model.canvasWidth - s,
+                    top: i,
+                    height: e,
+                    width: s
+                }, {
+                    left: 0,
+                    top: this._model.canvasHeight - n,
+                    height: n,
+                    width: this._model.canvasWidth
+                } ].map(function(e) {
+                    var t = Object.assign(e, {
+                        fill: "rgba(37, 38, 42, 0.6)",
+                        selectable: !1,
+                        evented: !1
+                    });
+                    return new x.fabric.Rect(t);
+                });
+                this._cropOverlay = new x.fabric.Group(r, {
+                    originX: "left",
+                    originY: "top",
+                    selectable: !1,
+                    evented: !1
+                }), this._canvas.add(this._cropOverlay);
+            },
+            _removeOverlay: function() {
+                this._cropOverlay && (this._canvas.remove(this._cropOverlay), this._cropOverlay = null);
+            },
+            _createBlurryWarning: function() {
+                if (this._model.displayedWidth) {
+                    var e = this._model.blurryImageWarningText || "This zoom level will blur your cover image", t = new x.fabric.Rect({
+                        height: 40,
+                        width: this._model.canvasWidth,
+                        fill: "rgba(37, 38, 42, 0.9)",
+                        originX: "center",
+                        originY: "center",
+                        selectable: !1,
+                        evented: !1
+                    }), i = new x.fabric.Text(e, {
+                        height: 40,
+                        width: this._model.canvasWidth,
+                        fill: "rgba(255, 255, 255, 1.0)",
+                        fontFamily: "Helvetica Neue",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        originX: "center",
+                        originY: "center",
+                        textAlign: "center"
+                    });
+                    this._warningBox = new x.fabric.Group([ t, i ], {
+                        top: this._model.canvasHeight,
+                        left: 0,
+                        height: 40,
+                        width: this._model.canvasWidth,
+                        originX: "left",
+                        originY: "top",
+                        selectable: !1,
+                        evented: !1
+                    }), this._canvas.add(this._warningBox);
+                }
+            },
+            _showBlurryWarning: function() {
+                var e = this;
+                this._warningBox && (this._warningBox.bringToFront(), this._warningBox.animate("top", this._model.canvasHeight - 40, {
+                    onChange: function() {
+                        return e._renderCanvas();
+                    },
+                    duration: 250,
+                    easing: x.fabric.util.ease.easeOutQuad
+                }));
+            },
+            _hideBlurryWarning: function() {
+                var e = this;
+                this._warningBox && this._warningBox.animate("top", this._model.canvasHeight, {
+                    onChange: function() {
+                        return e._renderCanvas();
+                    },
+                    duration: 250,
+                    easing: x.fabric.util.ease.easeInQuad
+                });
+            },
+            _loadImage: function(e) {
+                return new Promise(function(t, i) {
+                    var a = new Image();
+                    a.onerror = function() {
+                        return i();
+                    }, a.onload = function() {
+                        return t(a);
+                    }, a.src = e;
+                });
+            },
+            _renderCanvas: function() {
+                var e = this;
+                this._canvas && !this[j] && (this[j] = !0, window.requestAnimationFrame(function() {
+                    e._canvas.renderAll(), e[j] = !1;
+                }));
+            }
+        }), I = i(1417), z = i.n(I), T = l.a.extend({
+            mustache: z.a,
+            rendered: function() {
+                var e = this;
+                this._isEdge = this._detectEdge(), this._$slider = this.$view.find(".js-scale-slider"), 
+                this._$slider.on("input", function() {
+                    e.trigger("scale", e._currentScale()), e._colorSlider();
+                }), this._$slider.toggleClass("helicropter--edge-slider", this._isEdge), this._sliderTrackBackgroudColor = this._model.sliderTrackBackgroundColor || "#cccccc", 
+                this._sliderTrackActiveColor = this._model.sliderTrackActiveColor || "#0057ff", 
+                this._maxScale = this._model.maxScale || 1, this.on({
+                    "image-loaded": function(e) {
+                        var t = e.scale, i = e.minScale;
+                        this._scaleMin = i, this._calculateScaleStep(t), this._evaluateScalability(), this._colorSlider();
+                    },
+                    "set-crop-size": function(e) {
+                        var t = e.minScale, i = this._currentScale();
+                        this._scaleMin = t, this._calculateScaleStep(i), this.trigger("scale", this._currentScale()), 
+                        this._evaluateScalability();
+                    }
+                }), this._colorSlider();
+            },
+            reset: function() {
+                this._$slider.val(0).trigger("change");
+            },
+            disable: function() {
+                this.$view.addClass("disabled"), this._$slider.prop("disabled", !0);
+            },
+            enable: function() {
+                this.$view.removeClass("disabled"), this._$slider.prop("disabled", !1);
+            },
+            _detectEdge: function() {
+                return window.navigator.userAgent.indexOf("Edge") > -1;
+            },
+            _colorSlider: function() {
+                if (!this._isEdge) {
+                    var e = this._$slider[0].value;
+                    this._$slider.css("background", "linear-gradient(to right, " + this._sliderTrackActiveColor + " " + e + "%, " + this._sliderTrackBackgroudColor + " " + e + "%)");
+                }
+            },
+            _evaluateScalability: function() {
+                this._maxScale !== this._scaleMin ? this.trigger("image-scalable") : this.trigger("image-non-scalable");
+            },
+            _calculateScaleStep: function() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0, t = Math.max(e - this._scaleMin, 0);
+                this._scaleStep = (this._maxScale - this._scaleMin) / 100, this._$slider.val(Math.round(t / this._scaleStep)).trigger("change");
+            },
+            _currentScale: function() {
+                if (this._scaleStep) {
+                    var e = this._$slider.val();
+                    return 100 === e ? this._maxScale : this._scaleMin + e * this._scaleStep;
+                }
+            }
+        }), $ = i(1418), B = i.n($), M = l.a.extend({
+            mustache: B.a,
+            events: {
+                change: {
+                    ".js-ratio-lock": "_toggleRatioLock"
+                }
+            },
+            rendered: function() {
+                this._$ratioCheckbox = this.$view.find(".js-ratio-lock");
+            },
+            templateData: function() {
+                return s()({
+                    checked: !0,
+                    labelText: "Enable aspect ratio for cover image resize"
+                }, this._model);
+            },
+            disable: function() {
+                this.$view.addClass("disabled"), this._$ratioCheckbox.prop("disabled", !0);
+            },
+            enable: function() {
+                this.$view.removeClass("disabled"), this._$ratioCheckbox.prop("disabled", !1);
+            },
+            _toggleRatioLock: function() {
+                this.trigger("ratio-locked", this._$ratioCheckbox.prop("checked"));
+            }
+        }), R = i(141), L = i.n(R), W = i(1419), P = i.n(W);
+        var O = l.a.extend({
+            mustache: P.a,
+            init: function(e) {
+                var t, i, a;
+                this._maxSuggestions = e.maxSuggestions || 7, this._$activeElement = null, this._super(this._padOrTruncateSuggestions(e)), 
+                this.on((a = function(e) {
+                    var t = {
+                        src: e.src,
+                        url: e.url,
+                        cover: !0,
+                        active: !0
+                    };
+                    this._model.suggestions = [ t ].concat(this._model.suggestions), this._model = this._padOrTruncateSuggestions(this._model), 
+                    this.render();
+                }, (i = "image-uploaded") in (t = {}) ? Object.defineProperty(t, i, {
+                    value: a,
+                    enumerable: !0,
+                    configurable: !0,
+                    writable: !0
+                }) : t[i] = a, t));
+            },
+            templateData: function() {
+                var e = this._model;
+                return Object.assign({}, {
+                    emptySuggestions: !e.suggestions || e.suggestions[0].empty
+                }, e);
+            },
+            events: {
+                click: {
+                    ".js-upload-btn": ":upload-image",
+                    ".js-suggestion-item": "_setImage"
+                }
+            },
+            reset: function() {
+                this._$activeElement && (this._$activeElement.removeClass("active"), this._$activeElement = null);
+            },
+            _padOrTruncateSuggestions: function(e) {
+                if (e.suggestions = e.suggestions || [], e.suggestions.length < this._maxSuggestions) for (;e.suggestions.length < this._maxSuggestions; ) e.suggestions.push({
+                    src: "",
+                    empty: !0
+                }); else e.suggestions = e.suggestions.slice(0, this._maxSuggestions);
+                return e;
+            },
+            _setImage: function(e) {
+                var t = e.currentTarget;
+                t.dataset.src && (this._$activeElement && this.reset(), this._$activeElement = L()(t), 
+                this._$activeElement.addClass("active"), this.trigger("set-image", {
+                    src: t.dataset.src,
+                    url: t.dataset.url
+                }));
+            }
+        }), H = i(1420), E = i.n(H), V = l.a.extend({
+            mustache: E.a,
+            partials: {
+                uploadIcon: v.a.template
+            },
+            rendered: function() {
+                var e = this;
+                this.on("moving", this._adjustImagePosition), this.on("image-loaded", this.renderImage), 
+                this.on("remove-image", this.removeImage), this._$upload = this.$view.find(".js-preview-upload-container"), 
+                this._$canvas = this.$view.find(".js-preview-crop-canvas"), this._$canvas.css({
+                    position: "relative",
+                    overflow: "hidden"
+                }), this._$upload.add(this._$canvas).css({
+                    width: .5 * this._model.cropWidth,
+                    height: .5 * this._model.cropHeight
+                }), this._$upload.find(".js-upload-button").on("click", function() {
+                    return e.trigger("upload-image");
+                });
+            },
+            removeImage: function() {
+                this._$upload.removeClass("hide"), this._$canvas.addClass("hide");
+            },
+            renderImage: function(e) {
+                var t = this, i = e.image, a = e.scale, s = e.top, n = e.left, r = e.cropWidth, o = e.cropHeight;
+                return this._$upload.addClass("hide"), this._prepareCanvas(r, o), this._loadImage(i).then(function() {
+                    t.on("scaling", function(e) {
+                        var i = e.scale, a = e.left, s = e.top;
+                        t._scale(i), t._adjustImagePosition({
+                            left: a,
+                            top: s
+                        });
+                    }), t._scale(a), t._adjustImagePosition({
+                        top: s,
+                        left: n
+                    });
+                });
+            },
+            _prepareCanvas: function(e, t) {
+                this._$canvas.css({
+                    width: .5 * e,
+                    height: .5 * t
+                }).removeClass("hide").empty();
+            },
+            _adjustImagePosition: function(e) {
+                var t = e.left, i = e.top;
+                this._$image.css("left", .5 * t), this._$image.css("top", .5 * i);
+            },
+            _loadImage: function(e) {
+                var t = this;
+                return new Promise(function(i, a) {
+                    var s = new Image();
+                    s.onerror = function() {
+                        return a();
+                    }, s.onload = function() {
+                        return i(s);
+                    }, s.src = e, t._$image = L()(s), t._$image.css("position", "absolute").appendTo(t._$canvas);
+                });
+            },
+            _scale: function(e) {
+                var t = .5 * e;
+                this._$image.css("width", this._$image[0].naturalWidth * t), this._$image.css("height", this._$image[0].naturalHeight * t);
+            }
+        }), D = i(1421), N = i.n(D), U = l.a.extend({
+            mustache: N.a,
+            init: function() {
+                this._super.apply(this, arguments), this._uploadArea = new w({
+                    uploaderOptions: this._model.get("uploaderOptions"),
+                    backgroundImage: this._model.get("uploadBackgroundImage"),
+                    width: this._model.get("canvasSize").width,
+                    height: this._model.get("canvasSize").height,
+                    titleText: this._model.get("uploadTitle"),
+                    subtitleText: this._model.get("uploadSubtitle"),
+                    hasInitialImage: this._model.get("initialImage"),
+                    loaderStyle: this._model.get("loaderStyle")
+                }), this._croppingArea = new S({
+                    canvasWidth: this._model.get("canvasSize").width,
+                    canvasHeight: this._model.get("canvasSize").height,
+                    cropWidth: this._model.get("cropSize").width,
+                    cropHeight: this._model.get("cropSize").height,
+                    displayedWidth: this._model.get("displayedWidth"),
+                    viewportRatio: this._model.get("viewportRatio"),
+                    cropRatio: this._model.get("cropRatio"),
+                    allowTransparency: this._model.get("allowTransparency"),
+                    allowLetterboxing: this._model.get("allowLetterboxing"),
+                    previewMode: this._model.get("previewMode"),
+                    blurryImageWarningText: this._model.get("blurryImageWarningText"),
+                    backgroundHex: this._model.get("backgroundHex"),
+                    backgroundType: this._model.get("backgroundType"),
+                    maxScale: this._model.get("maxScale")
+                }), this._zoomSlider = new T({
+                    sliderTrackBackgroundColor: this._model.get("sliderTrackBackgroundColor"),
+                    sliderTrackActiveColor: this._model.get("sliderTrackActiveColor"),
+                    maxScale: this._model.get("maxScale")
+                }), this._model.get("showRatioLock") && (this._ratioLock = new M({
+                    labelText: this._model.get("ratioLockText"),
+                    checked: "static" === this._model.get("viewportRatio")
+                })), this._model.get("showSuggestions") && (this._suggestionArea = new O({
+                    suggestions: this._model.get("suggestions"),
+                    maxSuggestions: this._model.get("maxSuggestions")
+                }));
+                var e = this._model.get("previewCrop");
+                if (e) {
+                    if (!e.element) throw new Error("previewCrop.element must be supplied in the configuration");
+                    this._previewCrop = new V({
+                        cropWidth: this._model.get("cropSize").width,
+                        cropHeight: this._model.get("cropSize").height
+                    });
+                }
+                this._scale = 1, this._bindSubsections();
+            },
+            rendered: function() {
+                this._renderCroppingArea(), this._model.get("previewMode") ? this._model.get("initialImage") && this._croppingArea.trigger("set-image", this._model.get("initialImage").src, this._model.get("initialImage").coordinates) : (this._renderUploadArea(), 
+                this._renderSuggestionArea(), this._renderZoomSlider(), this._renderRatioLock(), 
+                this._renderPreviewCrop(), this._setInitialState());
+            },
+            getCropData: function() {
+                if (this._url) {
+                    var e = this._croppingArea.getCropData();
+                    if (e) return {
+                        src: this._src,
+                        url: this._url,
+                        dimensions: this._croppingArea.getDimensions(),
+                        coordinates: e
+                    };
+                }
+            },
+            setCropperAspectRatio: function(e) {
+                this._croppingArea && this._croppingArea.trigger("update-ratio", e);
+            },
+            _renderUploadArea: function() {
+                this._uploadArea.render(this.$view.find(".js-upload-container"));
+            },
+            _renderCroppingArea: function() {
+                this._croppingArea.render(this.$view.find(".js-crop-container"));
+            },
+            _renderZoomSlider: function() {
+                this._zoomSlider.render(this.$view.find(".js-crop-controls"));
+            },
+            _renderRatioLock: function() {
+                this._model.get("showRatioLock") && this._ratioLock.render(this.$view.find(".js-crop-controls"));
+            },
+            _renderSuggestionArea: function() {
+                this._model.get("showSuggestions") && this._suggestionArea.render(this.$view.find(".js-suggestions"));
+            },
+            _renderPreviewCrop: function() {
+                this._previewCrop && this._previewCrop.render(this._model.get("previewCrop").element);
+            },
+            _setInitialState: function() {
+                var e = this._model.get("initialImage");
+                this._disableImageManipulation(), e ? (this._src = e.src, this._url = e.url, this._croppingArea.trigger("set-image", e.src, e.coordinates)) : this._model.get("showRatioLock") && this._ratioLock.disable();
+            },
+            _hideError: function() {
+                this.$view.find(".js-croploader-errors").text("").addClass("hide");
+            },
+            _showError: function(e) {
+                var t = e.message, i = void 0 === t ? "There was a problem uploading your image. Please try again." : t;
+                this._model.get("displayErrors") && this.$view.find(".js-croploader-errors").text(i).removeClass("hide");
+            },
+            _handleUploadError: function(e) {
+                this.trigger("remove-image"), this._showError(e), this.trigger("error:upload", e);
+            },
+            _initScaleView: function() {
+                var e = this;
+                if (this._model.get("resize")) {
+                    this._resize = Object.assign({
+                        boundEl: document,
+                        minHeight: 0,
+                        offset: 30
+                    }, this._model.get("resize"));
+                    var t = L()(this._resize.boundEl).outerHeight(!0);
+                    this.bar = t + this._resize.offset, window.addEventListener("resize", function() {
+                        return e._calculateViewScale();
+                    }), this._calculateViewScale();
+                }
+            },
+            _calculateViewScale: function() {
+                window.innerHeight > this.bar || window.innerHeight < this._resize.minHeight ? this.trigger("scale-out-of-bound") : (this._scale = Number(parseFloat(window.innerHeight / this.bar).toFixed(2)), 
+                this.trigger("scale-view", {
+                    scale: this._scale
+                }));
+            },
+            _bindSubsections: function() {
+                var e = this;
+                this._croppingArea.relay(this._zoomSlider, "scale"), this._croppingArea.relay(this, "scale-view"), 
+                this._uploadArea.relay(this, "scale-view"), this._zoomSlider.relay(this._croppingArea, "image-loaded set-crop-size"), 
+                this.listenTo(this._croppingArea, {
+                    "image-loaded": function() {
+                        this.trigger("image:loaded"), this._enableImageManipulation();
+                    },
+                    "upload-error": function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                        this._handleUploadError(e);
+                    }
+                }), this.listenTo(this._uploadArea, {
+                    "image-uploading": function() {
+                        this._disableImageManipulation(), this.trigger("image:uploading"), this._hideError(), 
+                        this._initScaleView();
+                    },
+                    "image-processing": function() {
+                        this.trigger("image:processing");
+                    },
+                    "image-upload-cancel": function() {
+                        this.trigger("image:cancelled");
+                    },
+                    "image-uploaded": function(e) {
+                        var t = e.src, i = e.url;
+                        this._enableImageManipulation(), this._url = i, this._src = t, this._croppingArea.trigger("set-image", t), 
+                        this.trigger("image:uploaded", i);
+                    },
+                    "upload-error": function(e) {
+                        this._handleUploadError(e);
+                    }
+                }), this.listenTo(this._zoomSlider, {
+                    "image-non-scalable": function() {
+                        this._pauseControls();
+                    },
+                    "image-scalable": function() {
+                        this._resumeControls();
+                    },
+                    scale: function() {
+                        this.trigger("slider:changed");
+                    }
+                }), this.on("remove-image", function() {
+                    e._uploadArea.trigger("image-upload-complete"), e._disableImageManipulation();
+                }), this._model.get("showRatioLock") && (this._croppingArea.relay(this._ratioLock, "ratio-locked"), 
+                this._uploadArea.on("set-image", function() {
+                    return e._ratioLock.enable();
+                }), this.on("controls:enabled", function() {
+                    return e._ratioLock.enable();
+                }), this.on("remove-image controls:disabled", function() {
+                    return e._ratioLock.disable();
+                }), this._model.get("showSuggestions") && this._suggestionArea.on("set-image", function() {
+                    return e._ratioLock.enable();
+                })), this._model.get("showSuggestions") && (this._uploadArea.relay(this._suggestionArea, "upload-image"), 
+                this._suggestionArea.relay(this._uploadArea, "image-uploaded"), this.on("remove-image", function() {
+                    return e._suggestionArea.reset();
+                }), this._suggestionArea.on("set-image", function(t) {
+                    var i = t.url, a = t.src;
+                    e._url = i, e._src = a, e._enableImageManipulation(), e._hideError(), e._croppingArea.trigger("set-image", a);
+                })), this._model.get("previewCrop") && (this._uploadArea.relay(this._previewCrop, "upload-image"), 
+                this._previewCrop.relay(this._croppingArea, "moving image-loaded scaling"), this._previewCrop.relay(this, "remove-image"));
+            },
+            _enableImageManipulation: function() {
+                this._model.get("previewMode") || (this._uploadArea.hide(), this._zoomSlider.enable()), 
+                this._croppingArea.show(), this.trigger("controls:enabled");
+            },
+            _disableImageManipulation: function() {
+                delete this._src, delete this._url, this._uploadArea.show(), this._croppingArea.reset(), 
+                this._croppingArea.hide(), this._zoomSlider.disable(), this.trigger("controls:disabled");
+            },
+            _pauseControls: function() {
+                this._zoomSlider.disable(), this.$view.find(".js-crop-controls").hide(), this._croppingArea.disable(), 
+                this.trigger("controls:paused"), this.isControlPaused = !0;
+            },
+            _resumeControls: function() {
+                this.isControlPaused && (this._zoomSlider.enable(), this.$view.find(".js-crop-controls").show(), 
+                this._croppingArea.enable(), this.trigger("controls:resumed"), this.isControlPaused = !1);
+            },
+            destroy: function() {
+                var e = this;
+                window.removeEventListener("resize", function() {
+                    return e._calculateViewScale();
+                }), this._super();
+            }
+        }), Y = r.a.extend({
+            _defaults: {
+                canvasSize: {
+                    width: 432,
+                    height: 300
+                },
+                cropSize: {
+                    width: 320,
+                    height: 250
+                },
+                previewMode: !1,
+                viewportRatio: "static",
+                ratioLockText: "Enable aspect ratio for cover image resize",
+                allowTransparency: !0,
+                showRatioLock: !1,
+                showSuggestions: !1,
+                suggestions: []
+            },
+            init: function(e) {
+                this._super(s()({}, this._defaults, e)), this.relay(this._view, "slider:changed controls:enabled controls:disabled controls:paused controls:resumed image:uploading image:processing image:uploaded image:loaded error:upload image:cancelled");
+            },
+            crop: function() {
+                return this._view.getCropData();
+            },
+            getCroppedImage: function(e) {
+                var t = e.width, i = e.height, a = this.crop(), s = a.dimensions, n = a.src, r = this._view._scale;
+                return h.a.load(n).then(function(e) {
+                    var a = document.createElement("canvas"), n = a.getContext("2d");
+                    return a.width = t * r, a.height = i * r, n.drawImage(e.image, s.x, s.y, s.width, s.height, 0, 0, t * r, i * r), 
+                    a.toDataURL("image/png");
+                });
+            },
+            replaceEvents: function(e) {
+                this._view._uploadArea._model.isUploadButtonHidden = !0, this._view.stopListening(this._view._uploadArea, "image-uploading"), 
+                this._view.stopListening(this._view._uploadArea, "upload-error"), this._view.listenOnce(this._view._uploadArea, {
+                    "image-uploading": function() {
+                        this.trigger("image:uploading"), this.render(e), this._initScaleView();
+                    }
+                }), this._view.listenTo(this._view._uploadArea, {
+                    "upload-error": function(e) {
+                        this.trigger("error:upload", e);
+                    }
+                });
+            },
+            uploadThenRender: function(e) {
+                if (!this._view.$view) return this.replaceEvents(e), this.uploadImage();
+            },
+            dropFileThenRender: function(e, t) {
+                if (!this._view.$view) return this.replaceEvents(t), this._view._uploadArea.setDropElement(e);
+            },
+            changeAspectRatio: function(e) {
+                this._view.setCropperAspectRatio(e);
+            },
+            uploadImage: function() {
+                return this._view._uploadArea.uploadImage();
+            },
+            removeImage: function() {
+                this._view.trigger("remove-image");
+            }
+        }, {
+            VIEW_CLASS: U
+        });
+        t.a = Y;
+    },
+    1401: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<div class="js-upload-container upload-container-wrapper">'), 
+                a.b("\n" + i), a.b('  <div class="js-progress-bar progress-bar">'), a.b("\n" + i), 
+                a.b('    <div class="js-progress progress"></div>'), a.b("\n" + i), a.b("  </div>"), 
+                a.b("\n" + i), a.s(a.f("backgroundImage", e, t, 1), e, t, 0, 180, 250, "{{ }}") && (a.rs(e, t, function(e, t, a) {
+                    a.b('  <img class="upload-background-image" src="'), a.b(a.v(a.f("backgroundImage", e, t, 0))), 
+                    a.b('"/>'), a.b("\n" + i);
+                }), e.pop()), a.b('  <div class="js-image-upload-wrapper image-upload-wrapper">'), 
+                a.b("\n" + i), a.s(a.f("isUploadButtonHidden", e, t, 1), e, t, 1, 0, 0, "") || (a.b('    <div class="js-upload-button image-upload">'), 
+                a.b("\n" + i), a.b(a.rp("<uploadIcon0", e, t, "")), a.s(a.f("titleText", e, t, 1), e, t, 0, 525, 610, "{{ }}") && (a.rs(e, t, function(e, t, a) {
+                    a.b('      <div class="image-upload-text js-image-upload-text">'), a.b(a.v(a.f("titleText", e, t, 0))), 
+                    a.b("</div>"), a.b("\n" + i);
+                }), e.pop()), a.s(a.f("subtitleText", e, t, 1), e, t, 0, 648, 742, "{{ }}") && (a.rs(e, t, function(e, t, a) {
+                    a.b('      <div class="image-upload-subtext js-image-upload-subtext">'), a.b(a.v(a.f("subtitleText", e, t, 0))), 
+                    a.b("</div>"), a.b("\n" + i);
+                }), e.pop()), a.b("    </div>"), a.b("\n" + i)), a.b("  </div>"), a.b("\n" + i), 
+                a.b("</div>"), a.b("\n"), a.fl();
+            },
+            partials: {
+                "<uploadIcon0": {
+                    name: "uploadIcon",
+                    partials: {},
+                    subs: {
+                        classes: function(e, t, i, a) {
+                            i.b("upload-icon--large");
+                        }
+                    }
+                }
+            },
+            subs: {}
+        }, '<div class="js-upload-container upload-container-wrapper">\n  <div class="js-progress-bar progress-bar">\n    <div class="js-progress progress"></div>\n  </div>\n  {{#backgroundImage}}\n  <img class="upload-background-image" src="{{backgroundImage}}"/>\n  {{/backgroundImage}}\n  <div class="js-image-upload-wrapper image-upload-wrapper">\n    {{^isUploadButtonHidden}}\n    <div class="js-upload-button image-upload">\n      {{<uploadIcon}}\n        {{$classes}}upload-icon--large{{/classes}}\n      {{/uploadIcon}}\n      {{#titleText}}\n      <div class="image-upload-text js-image-upload-text">{{titleText}}</div>\n      {{/titleText}}\n      {{#subtitleText}}\n      <div class="image-upload-subtext js-image-upload-subtext">{{subtitleText}}</div>\n      {{/subtitleText}}\n    </div>\n    {{/isUploadButtonHidden}}\n  </div>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1415: function(e, t) {
+        e.exports = "data:image/gif;base64,R0lGODlhIAAgAIAAAP///8zMzCH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMwNjcgNzkuMTU3NzQ3LCAyMDE1LzAzLzMwLTIzOjQwOjQyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RTAyNjU3MzQ5QjgxMUU1QjY2OEQ2RjIxRTY5QzdCNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RTAyNjU3NDQ5QjgxMUU1QjY2OEQ2RjIxRTY5QzdCNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFMDI2NTcxNDlCODExRTVCNjY4RDZGMjFFNjlDN0I3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFMDI2NTcyNDlCODExRTVCNjY4RDZGMjFFNjlDN0I3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAACAAIAAAAkeEjwnB7R+UPLC2Oa3FUleueBCYiA+JmA5KqQxruC8sR7QML/jt5rW/Y9V+PBWwVzQdjUnRUtn0PJ1RzVRa3WQ/21H39F3BCgA7";
+    },
+    1416: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b("<div>"), a.b("\n" + i), a.b('  <canvas class="js-cropper-canvas"></canvas>'), 
+                a.b("\n" + i), a.b("</div>"), a.b("\n"), a.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div>\n  <canvas class="js-cropper-canvas"></canvas>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1417: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b("<style>"), a.b("\n" + i), a.b(".helicropter--scale-slider {"), 
+                a.b("\n" + i), a.b("  -webkit-appearance: none;"), a.b("\n" + i), a.b("  margin: 10px 0;"), 
+                a.b("\n" + i), a.b("  height: 3px;"), a.b("\n" + i), a.b("  width: 100%;"), a.b("\n" + i), 
+                a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--edge-slider {"), a.b("\n" + i), 
+                a.b("  margin: 0;"), a.b("\n" + i), a.b("  height: 20px;"), a.b("\n" + i), a.b("}"), 
+                a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-moz-focus-outer {"), 
+                a.b("\n" + i), a.b("  border: 0;"), a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), 
+                a.b(".helicropter--scale-slider:focus {"), a.b("\n" + i), a.b("  outline: none;"), 
+                a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-moz-range-track {"), 
+                a.b("\n" + i), a.b("  -moz-appearance: none;"), a.b("\n" + i), a.b("  background: transparent;"), 
+                a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-moz-range-thumb {"), 
+                a.b("\n" + i), a.b("  border: 1px solid #ccc;"), a.b("\n" + i), a.b("  height: 14px;"), 
+                a.b("\n" + i), a.b("  width: 14px;"), a.b("\n" + i), a.b("  border-radius: 50%;"), 
+                a.b("\n" + i), a.b("  background: #fff;"), a.b("\n" + i), a.b("  cursor: pointer;"), 
+                a.b("\n" + i), a.b("  -moz-appearance: none;"), a.b("\n" + i), a.b("  box-shadow: 0px 1px 1px rgba(0,0,0,.2);"), 
+                a.b("\n" + i), a.b("  margin-top: 1px;"), a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), 
+                a.b(".helicropter--scale-slider::-webkit-slider-runnable-track {"), a.b("\n" + i), 
+                a.b("  width: 100%;"), a.b("\n" + i), a.b("  height: 3px;"), a.b("\n" + i), a.b("  cursor: pointer;"), 
+                a.b("\n" + i), a.b("  border-radius: 3px;"), a.b("\n" + i), a.b("  -moz-appearance: none;"), 
+                a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-webkit-slider-thumb {"), 
+                a.b("\n" + i), a.b("  border: 1px solid #ccc;"), a.b("\n" + i), a.b("  height: 14px;"), 
+                a.b("\n" + i), a.b("  width: 14px;"), a.b("\n" + i), a.b("  border-radius: 50%;"), 
+                a.b("\n" + i), a.b("  background: #fff;"), a.b("\n" + i), a.b("  cursor: pointer;"), 
+                a.b("\n" + i), a.b("  -webkit-appearance: none;"), a.b("\n" + i), a.b("  top: 50%;"), 
+                a.b("\n" + i), a.b("  transform: translateY(-50%);"), a.b("\n" + i), a.b("  box-shadow: 0px 1px 1px rgba(0,0,0,.2);"), 
+                a.b("\n" + i), a.b("  margin-top: 1px;"), a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), 
+                a.b(".helicropter--scale-slider::-ms-tooltip {"), a.b("\n" + i), a.b("  display: none;"), 
+                a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-ms-track {"), 
+                a.b("\n" + i), a.b("  border: inherit;"), a.b("\n" + i), a.b("  color: transparent;"), 
+                a.b("\n" + i), a.b("  background: #ccc;"), a.b("\n" + i), a.b("  margin: 0;"), a.b("\n" + i), 
+                a.b("  height: 3px;"), a.b("\n" + i), a.b("}"), a.b("\n"), a.b("\n" + i), a.b(".helicropter--scale-slider::-ms-fill-lower {"), 
+                a.b("\n" + i), a.b("  background: #0057ff;"), a.b("\n" + i), a.b("}"), a.b("\n"), 
+                a.b("\n" + i), a.b(".helicropter--scale-slider::-ms-thumb {"), a.b("\n" + i), a.b("  border: 1px solid #ccc;"), 
+                a.b("\n" + i), a.b("  height: 14px;"), a.b("\n" + i), a.b("  width: 14px;"), a.b("\n" + i), 
+                a.b("  border-radius: 50%;"), a.b("\n" + i), a.b("  background: #fff;"), a.b("\n" + i), 
+                a.b("  cursor: pointer;"), a.b("\n" + i), a.b("  box-shadow: 0px 1px 1px rgba(0,0,0,.2);"), 
+                a.b("\n" + i), a.b("  top: 0;"), a.b("\n" + i), a.b("  transform: none;"), a.b("\n" + i), 
+                a.b("}"), a.b("\n" + i), a.b("</style>"), a.b("\n" + i), a.b('<div class="slider-container">'), 
+                a.b("\n" + i), a.b('  <svg version="1.1"'), a.b("\n" + i), a.b('     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="16" height="16"'), 
+                a.b("\n" + i), a.b('     viewBox="0 0 16 16"'), a.b("\n" + i), a.b('     style="enable-background:new 0 0 16 16;" xml:space="preserve" class="icon icon-image-resize-small">'), 
+                a.b("\n" + i), a.b('  <path d="M3,12h10v-0.7287c-0.303-0.1903-1.8182-1.7054-2.3126-1.6865c-0.375,0.0266-1.7292,1.2729-2.1907,1.2729'), 
+                a.b("\n" + i), a.b('    c-0.4133,0-2.3334-2.2994-2.7927-2.2994C5.2446,8.5584,3,10.7291,3,11.0811V12z"/>'), 
+                a.b("\n" + i), a.b('  <circle cx="11.6425" cy="5.8247" r="1.1251"/>'), a.b("\n" + i), 
+                a.b('  <path d="M1,2v12h14V2H1z M14,13H2V3h12V13z"/>'), a.b("\n" + i), a.b("  </svg>"), 
+                a.b("\n"), a.b("\n" + i), a.b('  <input class="js-scale-slider helicropter--scale-slider" type="range" min=0 max=100 value=0 />'), 
+                a.b("\n"), a.b("\n" + i), a.b('  <svg version="1.1"'), a.b("\n" + i), a.b('     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="24" height="24"'), 
+                a.b("\n" + i), a.b('     viewBox="0 0 24 24"'), a.b("\n" + i), a.b('     style="enable-background:new 0 0 24 24;" xml:space="preserve" class="icon icon-image-resize-large">'), 
+                a.b("\n" + i), a.b('  <path d="M3,19l18-0.0509v-1.8566c-0.5625-0.4153-2.8125-3.7224-3.7303-3.6811'), 
+                a.b("\n" + i), a.b('    c-0.6961,0.0581-3.2098,2.7783-4.0665,2.7783c-0.7671,0-4.3314-5.0188-5.184-5.0188C7.1666,11.1709,3,15.909,3,16.6772V19z"/>'), 
+                a.b("\n" + i), a.b('  <circle cx="16.0085" cy="8.0088" r="1.75"/>'), a.b("\n" + i), 
+                a.b('  <path d="M1,3v18h22V3H1z M22,20H2V4h20V20z"/>'), a.b("\n" + i), a.b("  </svg>"), 
+                a.b("\n" + i), a.b("</div>"), a.b("\n"), a.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<style>\n.helicropter--scale-slider {\n  -webkit-appearance: none;\n  margin: 10px 0;\n  height: 3px;\n  width: 100%;\n}\n\n.helicropter--edge-slider {\n  margin: 0;\n  height: 20px;\n}\n\n.helicropter--scale-slider::-moz-focus-outer {\n  border: 0;\n}\n\n.helicropter--scale-slider:focus {\n  outline: none;\n}\n\n.helicropter--scale-slider::-moz-range-track {\n  -moz-appearance: none;\n  background: transparent;\n}\n\n.helicropter--scale-slider::-moz-range-thumb {\n  border: 1px solid #ccc;\n  height: 14px;\n  width: 14px;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n  -moz-appearance: none;\n  box-shadow: 0px 1px 1px rgba(0,0,0,.2);\n  margin-top: 1px;\n}\n\n.helicropter--scale-slider::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 3px;\n  cursor: pointer;\n  border-radius: 3px;\n  -moz-appearance: none;\n}\n\n.helicropter--scale-slider::-webkit-slider-thumb {\n  border: 1px solid #ccc;\n  height: 14px;\n  width: 14px;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n  -webkit-appearance: none;\n  top: 50%;\n  transform: translateY(-50%);\n  box-shadow: 0px 1px 1px rgba(0,0,0,.2);\n  margin-top: 1px;\n}\n\n.helicropter--scale-slider::-ms-tooltip {\n  display: none;\n}\n\n.helicropter--scale-slider::-ms-track {\n  border: inherit;\n  color: transparent;\n  background: #ccc;\n  margin: 0;\n  height: 3px;\n}\n\n.helicropter--scale-slider::-ms-fill-lower {\n  background: #0057ff;\n}\n\n.helicropter--scale-slider::-ms-thumb {\n  border: 1px solid #ccc;\n  height: 14px;\n  width: 14px;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n  box-shadow: 0px 1px 1px rgba(0,0,0,.2);\n  top: 0;\n  transform: none;\n}\n</style>\n<div class="slider-container">\n  <svg version="1.1"\n     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="16" height="16"\n     viewBox="0 0 16 16"\n     style="enable-background:new 0 0 16 16;" xml:space="preserve" class="icon icon-image-resize-small">\n  <path d="M3,12h10v-0.7287c-0.303-0.1903-1.8182-1.7054-2.3126-1.6865c-0.375,0.0266-1.7292,1.2729-2.1907,1.2729\n    c-0.4133,0-2.3334-2.2994-2.7927-2.2994C5.2446,8.5584,3,10.7291,3,11.0811V12z"/>\n  <circle cx="11.6425" cy="5.8247" r="1.1251"/>\n  <path d="M1,2v12h14V2H1z M14,13H2V3h12V13z"/>\n  </svg>\n\n  <input class="js-scale-slider helicropter--scale-slider" type="range" min=0 max=100 value=0 />\n\n  <svg version="1.1"\n     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="24" height="24"\n     viewBox="0 0 24 24"\n     style="enable-background:new 0 0 24 24;" xml:space="preserve" class="icon icon-image-resize-large">\n  <path d="M3,19l18-0.0509v-1.8566c-0.5625-0.4153-2.8125-3.7224-3.7303-3.6811\n    c-0.6961,0.0581-3.2098,2.7783-4.0665,2.7783c-0.7671,0-4.3314-5.0188-5.184-5.0188C7.1666,11.1709,3,15.909,3,16.6772V19z"/>\n  <circle cx="16.0085" cy="8.0088" r="1.75"/>\n  <path d="M1,3v18h22V3H1z M22,20H2V4h20V20z"/>\n  </svg>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1418: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<div class="ratio-contols js-ratio-controls">'), a.b("\n" + i), 
+                a.b('  <input type="checkbox" class="js-ratio-lock"'), a.s(a.f("checked", e, t, 1), e, t, 0, 104, 112, "{{ }}") && (a.rs(e, t, function(e, t, i) {
+                    i.b(" checked");
+                }), e.pop()), a.b(">"), a.b("\n" + i), a.b('  <span class="js-ratio-lock-label">'), 
+                a.b(a.v(a.f("labelText", e, t, 0))), a.b("</span>"), a.b("\n" + i), a.b("</div>"), 
+                a.b("\n"), a.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div class="ratio-contols js-ratio-controls">\n  <input type="checkbox" class="js-ratio-lock"{{#checked}} checked{{/checked}}>\n  <span class="js-ratio-lock-label">{{labelText}}</span>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1419: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<div class="suggestion-list js-suggestion-list">'), 
+                a.b("\n" + i), a.s(a.f("emptySuggestions", e, t, 1), e, t, 1, 0, 0, "") || (a.b("    <ul>"), 
+                a.b("\n" + i), a.s(a.f("suggestions", e, t, 1), e, t, 0, 104, 402, "{{ }}") && (a.rs(e, t, function(e, t, a) {
+                    a.b('      <li class="js-suggestion-item suggestion-item'), a.s(a.f("active", e, t, 1), e, t, 0, 167, 174, "{{ }}") && (a.rs(e, t, function(e, t, i) {
+                        i.b(" active");
+                    }), e.pop()), a.s(a.f("empty", e, t, 1), e, t, 0, 195, 201, "{{ }}") && (a.rs(e, t, function(e, t, i) {
+                        i.b(" empty");
+                    }), e.pop()), a.b('" data-src="'), a.b(a.v(a.f("src", e, t, 0))), a.b('" data-url="'), 
+                    a.b(a.v(a.f("url", e, t, 0))), a.b('">'), a.b("\n" + i), a.b('          <div class="suggestion-item-img">'), 
+                    a.b("\n" + i), a.b('            <img src="'), a.b(a.v(a.f("src", e, t, 0))), a.b('" style="height:100%;overflow:hidden"/>'), 
+                    a.b("\n" + i), a.b("          </div>"), a.b("\n" + i), a.b("        </li>"), a.b("\n" + i);
+                }), e.pop()), a.b('      <li class="upload-btn suggestion-item js-upload-btn">'), 
+                a.b("\n" + i), a.b('        <div class="suggestion-item-img">'), a.b("\n" + i), 
+                a.b('          <svg class="icon-plus" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"'), 
+                a.b("\n" + i), a.b('            viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">'), 
+                a.b("\n" + i), a.b('            <polygon class="st0" points="19,8 11,8 11,0 8,0 8,8 0,8 0,11 8,11 8,19 11,19 11,11 19,11 "/>'), 
+                a.b("\n" + i), a.b("          </svg>"), a.b("\n" + i), a.b("        </div>"), a.b("\n" + i), 
+                a.b("      </li>"), a.b("\n" + i), a.b("    </ul>"), a.b("\n" + i)), a.b("</div>"), 
+                a.b("\n"), a.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div class="suggestion-list js-suggestion-list">\n  {{^emptySuggestions}}\n    <ul>\n      {{#suggestions}}\n      <li class="js-suggestion-item suggestion-item{{#active}} active{{/active}}{{#empty}} empty{{/empty}}" data-src="{{src}}" data-url="{{url}}">\n          <div class="suggestion-item-img">\n            <img src="{{src}}" style="height:100%;overflow:hidden"/>\n          </div>\n        </li>\n      {{/suggestions}}\n      <li class="upload-btn suggestion-item js-upload-btn">\n        <div class="suggestion-item-img">\n          <svg class="icon-plus" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n            viewBox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve">\n            <polygon class="st0" points="19,8 11,8 11,0 8,0 8,8 0,8 0,11 8,11 8,19 11,19 11,11 19,11 "/>\n          </svg>\n        </div>\n      </li>\n    </ul>\n  {{/emptySuggestions}}\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1420: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<div class="upload-image-content">'), a.b("\n" + i), 
+                a.b('  <div class="upload-container-wrapper">'), a.b("\n" + i), a.b('    <div class="js-preview-upload-container preview-upload-container image-upload-container">'), 
+                a.b("\n" + i), a.b('      <div class="js-image-upload-wrapper image-upload-wrapper">'), 
+                a.b("\n" + i), a.b('        <div class="js-upload-button image-upload">'), a.b("\n" + i), 
+                a.b(a.rp("<uploadIcon0", e, t, "          ")), a.b('          <div class="image-upload-text image-upload-text-small">Upload Image</div>'), 
+                a.b("\n" + i), a.b("        </div>"), a.b("\n" + i), a.b("      </div>"), a.b("\n" + i), 
+                a.b("    </div>"), a.b("\n" + i), a.b("  </div>"), a.b("\n"), a.b("\n" + i), a.b('  <div class="js-preview-crop-canvas hide"></div>'), 
+                a.b("\n" + i), a.b("</div>"), a.b("\n"), a.fl();
+            },
+            partials: {
+                "<uploadIcon0": {
+                    name: "uploadIcon",
+                    partials: {},
+                    subs: {}
+                }
+            },
+            subs: {}
+        }, '<div class="upload-image-content">\n  <div class="upload-container-wrapper">\n    <div class="js-preview-upload-container preview-upload-container image-upload-container">\n      <div class="js-image-upload-wrapper image-upload-wrapper">\n        <div class="js-upload-button image-upload">\n          {{>uploadIcon}}\n          <div class="image-upload-text image-upload-text-small">Upload Image</div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class="js-preview-crop-canvas hide"></div>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    },
+    1421: function(e, t, i) {
+        var a = i(149), s = {}, n = new a.Template({
+            code: function(e, t, i) {
+                var a = this;
+                return a.b(i = i || ""), a.b('<div class="js-croploader image-upload-content">'), 
+                a.b("\n" + i), a.b('  <div class="js-upload-container image-upload-container"></div>'), 
+                a.b("\n" + i), a.b('  <div class="js-crop-container image-crop-area"></div>'), a.b("\n"), 
+                a.b("\n" + i), a.b('  <div class="js-croploader-errors error hide"></div>'), a.b("\n" + i), 
+                a.b('  <div class="js-crop-controls image-crop-controls"></div>'), a.b("\n" + i), 
+                a.b('  <div class="js-suggestions"></div>'), a.b("\n" + i), a.b("</div>"), a.b("\n"), 
+                a.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '<div class="js-croploader image-upload-content">\n  <div class="js-upload-container image-upload-container"></div>\n  <div class="js-crop-container image-crop-area"></div>\n\n  <div class="js-croploader-errors error hide"></div>\n  <div class="js-crop-controls image-crop-controls"></div>\n  <div class="js-suggestions"></div>\n</div>\n', a);
+        n.ri = function(e, t, i) {
+            return a.helpers && e.unshift(a.helpers), this.r(e, (n = s, r = t, Object.keys(r).reduce(function(e, t) {
+                return e[t] = r[t], e;
+            }, n)), i);
+            var n, r;
+        }, e.exports = n.render.bind(n), e.exports.template = n;
+    }
+} ]);

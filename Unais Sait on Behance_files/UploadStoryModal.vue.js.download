@@ -1,0 +1,737 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 30 ], {
+    1001: function(e, t) {},
+    1002: function(e, t) {},
+    1004: function(e, t) {},
+    1005: function(e, t) {},
+    1148: function(e, t, o) {
+        var i = o(1872);
+        "string" == typeof i && (i = [ [ e.i, i, "" ] ]), i.locals && (e.exports = i.locals);
+        (0, o(26).default)("333021e6", i, !0, {});
+    },
+    1149: function(e, t, o) {
+        var i = o(1874);
+        "string" == typeof i && (i = [ [ e.i, i, "" ] ]), i.locals && (e.exports = i.locals);
+        (0, o(26).default)("5d7d5288", i, !0, {});
+    },
+    1150: function(e, t, o) {
+        var i = o(1876);
+        "string" == typeof i && (i = [ [ e.i, i, "" ] ]), i.locals && (e.exports = i.locals);
+        (0, o(26).default)("14f588d8", i, !0, {});
+    },
+    1151: function(e, t, o) {
+        var i = o(1878);
+        "string" == typeof i && (i = [ [ e.i, i, "" ] ]), i.locals && (e.exports = i.locals);
+        (0, o(26).default)("b242d746", i, !0, {});
+    },
+    1871: function(e, t, o) {
+        "use strict";
+        var i = o(1148), a = o.n(i);
+        t.default = a.a;
+    },
+    1872: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".TextAppLink-wrap-JAf{min-width:400px;padding:24px 40px 10px}.TextAppLink-text-14Z{color:#696969;font-size:14px;text-align:center}.TextAppLink-text-14Z .link{color:#191919;font-weight:400}.TextAppLink-text-14Z .link:hover{text-decoration:underline}", "" ]), 
+        t.locals = {
+            wrap: "TextAppLink-wrap-JAf",
+            text: "TextAppLink-text-14Z"
+        };
+    },
+    1873: function(e, t, o) {
+        "use strict";
+        var i = o(1149), a = o.n(i);
+        t.default = a.a;
+    },
+    1874: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, '.Uploader-wrapper-1J_{width:415px}.Uploader-uploadIcon-2mI{fill:#e8e8e8;height:67px;-webkit-transition:fill .2s linear;transition:fill .2s linear;width:67px}.Uploader-dropping-1IY .Uploader-uploadIcon-2mI{fill:#0057ff}.Uploader-chooseWrap-279,.Uploader-textApp-3lS{background:#fff;border-radius:3px}.Uploader-chooseWrap-279{padding:20px;position:relative}.Uploader-chooseWrap-279:before{border:7px dashed #ccc;content:"";height:calc(100% - 52px);left:19px;position:absolute;top:19px;-webkit-transition:border .3s linear;transition:border .3s linear;width:calc(100% - 52px)}.Uploader-chooseWrap-279.Uploader-dropping-1IY:before{border-color:#0057ff}.Uploader-choose-bpZ{-webkit-box-align:center;align-items:center;background:#fff;display:-webkit-box;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-webkit-box-pack:center;justify-content:center;min-height:500px;position:relative;-webkit-transition:background .3s linear;transition:background .3s linear;z-index:1}.Uploader-dropping-1IY .Uploader-choose-bpZ{background:#f5f8ff}.Uploader-header-2N0{color:#191919;font-size:24px;font-weight:400;margin:24px 0 12px;text-align:center;-webkit-transition:color .3s linear;transition:color .3s linear;width:100%}.Uploader-dropping-1IY .Uploader-header-2N0{color:#0057ff}.Uploader-textApp-3lS{margin-top:11px;position:relative}.Uploader-text-3RW{color:#696969;font-size:16px;margin-bottom:40px;-webkit-transition:color .3s linear;transition:color .3s linear}.Uploader-dropping-1IY .Uploader-text-3RW{color:#0057ff}.Uploader-info-VaH{fill:#fff;margin-right:5px;width:12px}', "" ]), 
+        t.locals = {
+            wrapper: "Uploader-wrapper-1J_",
+            uploadIcon: "Uploader-uploadIcon-2mI",
+            dropping: "Uploader-dropping-1IY",
+            chooseWrap: "Uploader-chooseWrap-279",
+            textApp: "Uploader-textApp-3lS",
+            choose: "Uploader-choose-bpZ",
+            header: "Uploader-header-2N0",
+            text: "Uploader-text-3RW",
+            info: "Uploader-info-VaH"
+        };
+    },
+    1875: function(e, t, o) {
+        "use strict";
+        var i = o(1150), a = o.n(i);
+        t.default = a.a;
+    },
+    1876: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, '.Cropper-previewCropContainer-14J{display:none}.Cropper-actionButtons-1HV{-webkit-box-align:center;align-items:center;display:-webkit-box;display:flex;-webkit-box-pack:end;justify-content:flex-end;margin-top:25px}.Cropper-cropper-2RS{position:relative}.Cropper-cropper-2RS .helicropter--scale-slider{max-width:200px}.Cropper-mediaOverlay-1SD{left:0;position:absolute;top:0;width:100%;z-index:2}.Cropper-mediaOverlay-1SD:before{content:"";display:block;height:55px;opacity:.5;position:absolute;width:100%;background:-webkit-gradient(linear,left top,left bottom,from(#191919),to(transparent));background:linear-gradient(#191919,transparent);top:0}.Cropper-avatar-X0U{margin-right:10px}.Cropper-user-3B4{-webkit-box-align:center;align-items:center;color:#fff;display:-webkit-box;display:flex;font-size:15px;left:15px;position:absolute;top:15px;z-index:3}.Cropper-user-3B4 .Cropper-avatarUsername-2Wv{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:270px}.Cropper-postBtn-3Bx .Cropper-postingSpinner-28Y{height:16px;position:relative;width:16px}.Cropper-postBtn-3Bx .Cropper-postingSpinner-28Y .rf-spinner__spinner{height:100%;left:0;min-height:0!important;min-width:0!important;top:0;width:100%}.Cropper-addMoreWrap-3JD{bottom:-70px;position:absolute;text-align:center;width:100%}@media screen and (max-height:920px){.Cropper-addMoreWrap-3JD{bottom:-59px}}.Cropper-addMore-34O{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-webkit-box-align:center;align-items:center;color:#fff;cursor:pointer;display:block;font-weight:700;-webkit-box-pack:center;justify-content:center}.Cropper-addMoreWrap-3JD:hover .Cropper-addMore-34O{text-decoration:underline}.Cropper-info-1hq{fill:#fff;margin-right:5px;position:relative;top:1px;width:12px}.Cropper-tags-3Bk{color:#fff;font-weight:700;left:calc(100% + 25px + 15px);position:absolute;text-align:left;top:-12.5px}.Cropper-tagsTitle-2T3{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;font-size:13px;margin-bottom:10px;max-width:200px}.Cropper-tagsLabel-3lC{display:block}.Cropper-tagsName-2Uw{background:#fff;border-radius:3px;color:#191919;cursor:pointer;display:inline-block;font-size:11px;margin:5px 0;padding:5px 9px;text-transform:uppercase}.Cropper-tagsLabel-3lC:hover .Cropper-tagsName-2Uw{background:#f2f2f2}.Cropper-tagInput-6vD{position:absolute;top:-100vh}.Cropper-tagInput-6vD:checked+.Cropper-tagsName-2Uw{background:#191919;color:#fff}', "" ]), 
+        t.locals = {
+            previewCropContainer: "Cropper-previewCropContainer-14J",
+            actionButtons: "Cropper-actionButtons-1HV",
+            cropper: "Cropper-cropper-2RS",
+            mediaOverlay: "Cropper-mediaOverlay-1SD",
+            avatar: "Cropper-avatar-X0U",
+            user: "Cropper-user-3B4",
+            avatarUsername: "Cropper-avatarUsername-2Wv",
+            postBtn: "Cropper-postBtn-3Bx",
+            postingSpinner: "Cropper-postingSpinner-28Y",
+            addMoreWrap: "Cropper-addMoreWrap-3JD",
+            addMore: "Cropper-addMore-34O",
+            info: "Cropper-info-1hq",
+            tags: "Cropper-tags-3Bk",
+            tagsTitle: "Cropper-tagsTitle-2T3",
+            tagsLabel: "Cropper-tagsLabel-3lC",
+            tagsName: "Cropper-tagsName-2Uw",
+            tagInput: "Cropper-tagInput-6vD"
+        };
+    },
+    1877: function(e, t, o) {
+        "use strict";
+        var i = o(1151), a = o.n(i);
+        t.default = a.a;
+    },
+    1878: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".UploadStoryModal-uploadModal-3Rf .slider-container{-webkit-box-align:center;align-items:center;display:-webkit-box;display:flex;-webkit-box-pack:center;justify-content:center}.UploadStoryModal-uploadModal-3Rf .image-crop-controls{background:#f9f9f9;border:1px solid #e8e8e8;padding:19px}.UploadStoryModal-uploadModal-3Rf .icon{fill:#696969;margin:0 10px;opacity:.4}.UploadStoryModal-uploadModal-3Rf .upload-container-wrapper{background:#191919;height:100%;overflow:hidden;position:relative}.UploadStoryModal-uploadModal-3Rf .upload-background-image{bottom:0;display:block;left:0;opacity:.3;position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);width:100%}.UploadStoryModal-uploadModal-3Rf .progress-bar{background:#a4a4a4;border-radius:2px;height:2px;left:50%;max-width:318px;position:absolute;top:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:80%;z-index:9}.UploadStoryModal-uploadModal-3Rf .progress{background:#fff;height:100%;width:0}.UploadStoryModal-uploadModal-3Rf input[type=range]:hover{cursor:pointer}.UploadStoryModal-uploadModal-3Rf input[type=range]:active{cursor:-webkit-grabbing;cursor:grabbing}", "" ]), 
+        t.locals = {
+            uploadModal: "UploadStoryModal-uploadModal-3Rf"
+        };
+    },
+    2019: function(e, t, o) {
+        "use strict";
+        o.r(t);
+        var i = o(63), a = o(662), r = o.n(a), s = o(65), n = o(236), l = o(1233), p = o(8), d = Object(p.default)({}, function() {
+            var e = this.$createElement, t = this._self._c || e;
+            return t("svg", {
+                staticClass: "icon--file icon--upload",
+                attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 12.85 12.85"
+                }
+            }, [ t("path", {
+                attrs: {
+                    d: "M16.5,10.075A6.425,6.425,0,1,0,22.925,16.5,6.425,6.425,0,0,0,16.5,10.075Zm3.073,7.352-2.9,2.9a.25.25,0,0,1-.354,0l-2.9-2.9A.25.25,0,0,1,13.6,17h1.9V12.75a.25.25,0,0,1,.25-.25h1.5a.25.25,0,0,1,.25.25V17h1.9a.25.25,0,0,1,.173.427Z",
+                    transform: "translate(-10.075 -10.075)"
+                }
+            }) ]);
+        }, [], !1, null, null, null).exports, c = o(109), u = o(14), f = {
+            name: "TextAppLink",
+            components: {
+                SMSAppLink: c.a
+            },
+            data: function() {
+                return {
+                    downloadGoogleAppUrl: u.URL_APPS_DOWNLOAD_NETWORK_GOOGLE,
+                    downloadIosAppUrl: u.URL_APPS_DOWNLOAD_NETWORK
+                };
+            },
+            props: {
+                sendSMSStatusCode: {
+                    type: Number
+                }
+            }
+        }, g = o(1871);
+        var h = Object(p.default)(f, function() {
+            var e = this, t = e.$createElement, o = e._self._c || t;
+            return o("div", {
+                class: e.$style.wrap
+            }, [ o("div", {
+                ref: "links",
+                class: e.$style.text,
+                domProps: {
+                    innerHTML: e._s(e.$translate("stories_upload_add_work_in_progress", "For videos, text, custom tags and more, download our app: now available for <a href='{downloadIosAppUrl}' target='_blank' class='link'>iPhone</a> and <a href='{downloadGoogleAppUrl}' target='_blank' class='link'>Android</a>", {
+                        downloadIosAppUrl: this.downloadIosAppUrl,
+                        downloadGoogleAppUrl: this.downloadGoogleAppUrl
+                    }))
+                }
+            }), o("SMSAppLink", {
+                ref: "phoneInput",
+                attrs: {
+                    sendSMSStatusCode: e.sendSMSStatusCode
+                },
+                on: {
+                    appLinkRequested: function(t) {
+                        return e.$emit("appLinkRequested", t);
+                    },
+                    smsSuccessMessageRead: function(t) {
+                        return e.$emit("smsSuccessMessageRead");
+                    }
+                }
+            }) ], 1);
+        }, [], !1, function(e) {
+            this.$style = g.default.locals || g.default;
+        }, null, null).exports, m = {
+            name: "Uploader",
+            components: {
+                Btn: i.a,
+                FileUploadIcon: d,
+                TextAppLink: h
+            },
+            props: {
+                canInitiateUpload: {
+                    type: Boolean
+                },
+                isDroppable: {
+                    type: Boolean
+                }
+            },
+            data: function() {
+                return {
+                    isDropping: !1
+                };
+            },
+            methods: {
+                initiateUpload: function() {
+                    this.canInitiateUpload && this.$emit("upload");
+                },
+                requestAppLink: function(e) {
+                    this.$emit("appLinkRequested", {
+                        phoneNumber: e,
+                        source: "Uploader"
+                    });
+                }
+            }
+        }, x = o(1873);
+        var b = Object(p.default)(m, function() {
+            var e, t = this, o = t.$createElement, i = t._self._c || o;
+            return i("div", {
+                ref: "root",
+                class: [ t.$style.wrapper, (e = {}, e[t.$style.dropping] = t.isDropping && t.isDroppable, 
+                e) ]
+            }, [ i("div", {
+                ref: "uploader",
+                class: t.$style.chooseWrap,
+                on: {
+                    dragenter: function(e) {
+                        t.isDropping = !0;
+                    },
+                    dragleave: function(e) {
+                        t.isDropping = !1;
+                    }
+                }
+            }, [ i("div", {
+                ref: "fileUpload",
+                class: [ t.$style.choose, "qa-story-choose-file" ],
+                on: {
+                    click: t.initiateUpload
+                }
+            }, [ i("FileUploadIcon", {
+                class: t.$style.uploadIcon
+            }), i("h5", {
+                class: t.$style.header
+            }, [ t._v(t._s(t.$translate("stories_add_image_here", "Add image here"))) ]), i("p", {
+                class: t.$style.text
+            }, [ t._v(" " + t._s(t.$translate("stories_share_your_work", "Quickly share what you're working on."))), i("br"), t._v(" " + t._s(t.$translate("stories_share_your_work_expiracy", "Work in Progress segments expire in 24 hours.")) + " ") ]), i("Btn", {
+                ref: "uploadBtn",
+                attrs: {
+                    type: "primary",
+                    disabled: !t.canInitiateUpload
+                }
+            }, [ t._v(t._s(t.$translate("stories_upload_image", "Upload Image"))) ]) ], 1) ]), i("TextAppLink", t._b({
+                ref: "textAppLink",
+                class: t.$style.textApp,
+                on: {
+                    appLinkRequested: t.requestAppLink,
+                    smsSuccessMessageRead: function(e) {
+                        return t.$emit("smsSuccessMessageRead");
+                    }
+                }
+            }, "TextAppLink", t.$attrs, !1)) ], 1);
+        }, [], !1, function(e) {
+            this.$style = x.default.locals || x.default;
+        }, null, null).exports, y = o(152), _ = Object(p.default)({}, function() {
+            var e = this.$createElement, t = this._self._c || e;
+            return t("svg", {
+                attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "3218 -1711 14 14"
+                }
+            }, [ t("path", {
+                attrs: {
+                    d: "M8,1a7,7,0,1,0,7,7A7,7,0,0,0,8,1ZM9,13H7V11H9Zm1.92-5.7a4.809,4.809,0,0,1-.95.9l-.449.35a1.242,1.242,0,0,0-.445.6A2.634,2.634,0,0,0,9,9.871V10H7.014l.006-.135a5.028,5.028,0,0,1,.211-1.526,2.691,2.691,0,0,1,.888-1l.462-.361a1.5,1.5,0,0,0,.343-.346,1.163,1.163,0,0,0,.229-.7,1.369,1.369,0,0,0-.258-.8,1.073,1.073,0,0,0-.924-.34,1.006,1.006,0,0,0-.932.427,1.745,1.745,0,0,0-.287.947V6.3h-2.1l.007-.135a3.1,3.1,0,0,1,1.324-2.67,3.475,3.475,0,0,1,1.911-.5,4.121,4.121,0,0,1,2.461.71,2.479,2.479,0,0,1,1,2.138A2.449,2.449,0,0,1,10.92,7.3Z",
+                    transform: "translate(3217 -1712)"
+                }
+            }) ]);
+        }, [], !1, null, null, null).exports, w = o(64), v = o(150), k = o(5), $ = {
+            name: "Cropper",
+            props: {
+                user: {
+                    type: Object
+                },
+                sendSMSStatusCode: {
+                    type: Number
+                },
+                isPostFailed: {
+                    type: Boolean
+                },
+                canPost: {
+                    type: Boolean
+                },
+                suggestedTags: {
+                    type: Object
+                }
+            },
+            watch: {
+                isPostFailed: function(e) {
+                    this.isPosting = !e;
+                },
+                sendSMSStatusCode: function(e) {
+                    this.persistToolTip = e === k.j.FAIL;
+                }
+            },
+            data: function() {
+                return {
+                    isPosting: !1,
+                    persistToolTip: !1,
+                    annotations: []
+                };
+            },
+            components: {
+                Avatar: y.a,
+                Btn: i.a,
+                InfoIcon: _,
+                TextAppLink: h,
+                Spinner: w.a,
+                Tooltip: v.a
+            },
+            methods: {
+                postStory: function() {
+                    this.$emit("postStory", {
+                        annotations: this.annotations
+                    }), this.isPosting = !0;
+                },
+                appLinkRequested: function(e) {
+                    this.$emit("appLinkRequested", {
+                        phoneNumber: e,
+                        source: "Cropper"
+                    }), this.persistToolTip = !0;
+                }
+            }
+        }, C = o(1875);
+        var U = Object(p.default)($, function() {
+            var e = this, t = e.$createElement, o = e._self._c || t;
+            return o("div", {
+                ref: "cropper",
+                class: e.$style.cropper,
+                on: {
+                    mousedown: function(t) {
+                        return e.$emit("dragstarted");
+                    },
+                    mouseup: function(t) {
+                        return e.$emit("dragended");
+                    }
+                }
+            }, [ o("div", {
+                ref: "helicropter"
+            }), o("div", {
+                ref: "previewCrop",
+                class: e.$style.previewCropContainer
+            }), e.canPost && e.suggestedTags ? o("div", {
+                ref: "tags",
+                class: [ e.$style.tags, "qa-story-tags" ]
+            }, [ o("span", {
+                class: e.$style.tagsTitle
+            }, [ e._v(e._s(e.$translate("stories_upload_add_a_tag", "Add a Tag:"))) ]), e._l(e.suggestedTags, function(t, i) {
+                return o("label", {
+                    key: i,
+                    class: [ e.$style.tagsLabel, "qa-story-tag" ]
+                }, [ o("input", {
+                    directives: [ {
+                        name: "model",
+                        rawName: "v-model",
+                        value: e.annotations,
+                        expression: "annotations"
+                    } ],
+                    ref: "tag",
+                    refInFor: !0,
+                    class: e.$style.tagInput,
+                    attrs: {
+                        type: "checkbox",
+                        disabled: e.isPosting
+                    },
+                    domProps: {
+                        value: t,
+                        checked: Array.isArray(e.annotations) ? e._i(e.annotations, t) > -1 : e.annotations
+                    },
+                    on: {
+                        change: function(o) {
+                            var i = e.annotations, a = o.target, r = !!a.checked;
+                            if (Array.isArray(i)) {
+                                var s = t, n = e._i(i, s);
+                                a.checked ? n < 0 && (e.annotations = i.concat([ s ])) : n > -1 && (e.annotations = i.slice(0, n).concat(i.slice(n + 1)));
+                            } else e.annotations = r;
+                        }
+                    }
+                }), o("span", {
+                    class: e.$style.tagsName
+                }, [ e._v(e._s(t)) ]) ]);
+            }) ], 2) : e._e(), o("div", {
+                ref: "mediaOverlay",
+                class: e.$style.mediaOverlay
+            }, [ e.user ? o("div", {
+                ref: "userDisplayName",
+                class: e.$style.user
+            }, [ o("Avatar", {
+                ref: "avatar",
+                class: e.$style.avatar,
+                attrs: {
+                    src: e.user.images[50],
+                    src2x: e.user.images[100],
+                    size: 30,
+                    isDisabled: !0
+                }
+            }), o("span", {
+                class: e.$style.avatarUsername
+            }, [ e._v(" " + e._s(e.user.display_name)) ]) ], 1) : e._e() ]), o("div", {
+                class: e.$style.actionButtons
+            }, [ o("Btn", {
+                ref: "cancelBtn",
+                attrs: {
+                    type: "ghost",
+                    disabled: e.isPosting
+                },
+                on: {
+                    click: function(t) {
+                        return e.$emit("cancelPost");
+                    }
+                }
+            }, [ e._v(" " + e._s(e.$translate("stories_upload_cancel", "Cancel")) + " ") ]), o("Btn", {
+                ref: "postBtn",
+                class: [ e.$style.postBtn, "qa-story-post" ],
+                attrs: {
+                    type: "primary",
+                    disabled: e.isPosting || !e.canPost
+                },
+                on: {
+                    click: e.postStory
+                }
+            }, [ e.isPosting ? o("Spinner", {
+                ref: "postingSpinner",
+                class: e.$style.postingSpinner,
+                attrs: {
+                    slot: "leadingIcon",
+                    color: "white"
+                },
+                slot: "leadingIcon"
+            }) : e._e(), e.isPosting ? e._e() : o("span", {
+                ref: "isNotPostingLabel"
+            }, [ e._v(e._s(e.$translate("stories_upload_post", "Post"))) ]), e.isPosting ? o("span", {
+                ref: "isPostingLabel"
+            }, [ e._v(e._s(e.$translate("stories_upload_posting", "Posting"))) ]) : e._e() ], 1) ], 1), o("div", {
+                class: e.$style.addMoreWrap
+            }, [ o("Tooltip", {
+                ref: "smsTooltip",
+                attrs: {
+                    alignment: "center",
+                    horizontalPadding: 5,
+                    verticalPadding: 5,
+                    position: "top",
+                    toggleMethod: "click",
+                    isOpen: e.persistToolTip
+                }
+            }, [ o("div", {
+                attrs: {
+                    slot: "tooltipContent"
+                },
+                slot: "tooltipContent"
+            }, [ o("TextAppLink", e._b({
+                attrs: {
+                    sendSMSStatusCode: e.sendSMSStatusCode
+                },
+                on: {
+                    appLinkRequested: e.appLinkRequested,
+                    smsSuccessMessageRead: function(t) {
+                        return e.$emit("smsSuccessMessageRead");
+                    }
+                }
+            }, "TextAppLink", e.$attrs, !1)) ], 1), o("span", {
+                ref: "more",
+                class: e.$style.addMore
+            }, [ o("InfoIcon", {
+                class: e.$style.info
+            }), e._v(" " + e._s(e.$translate("stories_upload_looking_to_add_more", "Add texts, use brushes, custom tags & more?")) + " ") ], 1) ]) ], 1) ]);
+        }, [], !1, function(e) {
+            this.$style = C.default.locals || C.default;
+        }, null, null).exports, S = o(73), M = o.n(S);
+        function A() {
+            return (A = Object.assign || function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var o = arguments[t];
+                    for (var i in o) Object.prototype.hasOwnProperty.call(o, i) && (e[i] = o[i]);
+                }
+                return e;
+            }).apply(this, arguments);
+        }
+        var L = {
+            name: "UploadStoryModal",
+            props: {
+                postStoryStatusCode: {
+                    type: Number
+                },
+                uploaderConfig: {
+                    type: Object
+                }
+            },
+            watch: {
+                postStoryStatusCode: function(e) {
+                    this.isPostFailed = e === k.j.FAILED;
+                }
+            },
+            data: function() {
+                return {
+                    helicropter: null,
+                    isEditing: !1,
+                    isPostFailed: !1,
+                    isConfirmModalVisible: !1,
+                    isProcessing: !1,
+                    isUploading: !1,
+                    isUploaded: !1,
+                    isDragging: !1,
+                    imageWidth: 420,
+                    imageHeight: 750,
+                    didUseSlider: !1,
+                    analyticsUploadCancelBtn: k.b,
+                    analyticsUploadDiscardModal: k.c,
+                    analyticsUploadStep: k.d
+                };
+            },
+            components: {
+                Btn: i.a,
+                Modal: s.a,
+                ConfirmationModal: n.a,
+                Uploader: b,
+                Cropper: U
+            },
+            computed: {
+                contentStyle: function() {
+                    var e = {
+                        minWidth: "0px",
+                        overflow: "visible",
+                        padding: "25px",
+                        marginTop: "-30px",
+                        maxHeight: "none"
+                    };
+                    return this.isEditing ? e : A({}, e, {
+                        background: "transparent",
+                        marginTop: "0px"
+                    });
+                }
+            },
+            methods: {
+                close: function() {
+                    this.isEditing = !1, this.isConfirmModalVisible = !1, this.$emit("wipUploadCancelled", {
+                        source: this.analyticsUploadDiscardModal
+                    }), this.$emit("closeModal");
+                },
+                displayDiscardModal: function() {
+                    this.isEditing || this.$emit("wipUploadCancelled", {
+                        source: this.analyticsUploadStep
+                    }), this.isConfirmModalVisible = this.isEditing && !this.isDragging, this.isDragging = !1;
+                },
+                initHelicropter: function() {
+                    var e = this.imageWidth, t = this.imageHeight;
+                    this.helicropter = new l.a({
+                        uploaderOptions: M()(this.uploaderConfig, {
+                            cors: {
+                                expected: !1
+                            },
+                            signature: {
+                                customHeaders: {
+                                    "X-BCP": r.a.get()
+                                }
+                            },
+                            validation: {
+                                sizeLimit: 8388608,
+                                allowedExtensions: [ "jpg", "jpeg", "png" ],
+                                acceptFiles: "image/*",
+                                itemLimit: 1,
+                                image: {
+                                    minWidth: this.imageWidth
+                                }
+                            },
+                            messages: {
+                                tooManyItemsError: this.$translate("stories_upload_too_many_items", "Please only upload one file at a time."),
+                                typeError: this.$translate("stories_upload_invalid_extension", "{file} has an invalid extension. Valid extension(s): {extensions}"),
+                                sizeError: this.$translate("stories_upload_file_too_large", "{file} is too large, maximum file size is {sizeLimit}."),
+                                minSizeError: this.$translate("stories_upload_file_min_size", "{file} is too small, minimum file size is {minSizeLimit}."),
+                                emptyError: this.$translate("stories_upload_file_empty", "{file} is empty, please select files again without it."),
+                                noFilesError: this.$translate("stories_upload_file_non_existent", "No files to upload."),
+                                maxHeightImageError: this.$translate("stories_upload_file_too_tall", "Image is too tall."),
+                                maxWidthImageError: this.$translate("stories_upload_file_too_wide", "Image is too wide."),
+                                minHeightImageError: this.$translate("stories_upload_file_too_short", "Image is not tall enough."),
+                                minWidthImageError: this.$translate("stories_upload_file_too_narrow", "Please choose an image that is at least {minWidth} pixels wide.", {
+                                    minWidth: this.imageWidth
+                                }),
+                                retryFailTooManyItems: this.$translate("stories_upload_retry_failed", "Retry failed - you have reached your file limit."),
+                                onLeave: this.$translate("stories_upload_file_being_uploaded", "The files are being uploaded, if you leave now the upload will be canceled."),
+                                unsupportedBrowserIos8Safari: this.$translate("stories_upload_unsupported", "Unrecoverable error - this browser does not permit file uploading of any kind due to serious bugs in iOS8 Safari.  Please use iOS8 Chrome until Apple fixes these issues.")
+                            }
+                        }),
+                        blurryImageWarningText: this.$translate("stories_upload_blurry_image", "This zoom level will blur your image"),
+                        loaderStyle: "progressbar",
+                        canvasSize: {
+                            width: e,
+                            height: t
+                        },
+                        cropSize: {
+                            width: e,
+                            height: t
+                        },
+                        displayedWidth: e,
+                        previewCrop: {
+                            element: this.$refs.cropper.$refs.previewCrop
+                        },
+                        viewportRatio: "static",
+                        allowTransparency: !0,
+                        allowLetterboxing: !0,
+                        backgroundType: "solid",
+                        backgroundHex: "#000000",
+                        previewMode: !1,
+                        showRatioLock: !1,
+                        showSuggestions: !1,
+                        resize: {
+                            boundEl: this.$refs.cropper.$el,
+                            offset: 240,
+                            minHeight: 640
+                        }
+                    }), this.bindCropper(), this.helicropter.dropFileThenRender(this.$refs.uploader.$refs.uploader, this.$refs.cropper.$refs.helicropter);
+                },
+                postStory: function(e) {
+                    var t = e.annotations, o = this.helicropter.crop();
+                    this.$emit("postStory", {
+                        cropData: o,
+                        annotations: t
+                    });
+                },
+                upload: function() {
+                    this.helicropter && (this.$emit("uploadStarted"), this.helicropter.uploadThenRender(this.$refs.cropper.$refs.helicropter));
+                },
+                bindCropper: function() {
+                    var e = this;
+                    this.helicropter.on("image:processing", function() {
+                        return e.isProcessing = !0;
+                    }), this.helicropter.on("image:uploading", function() {
+                        e.isProcessing = !1, e.isUploading = !0, e.isEditing = !0, e.$emit("isUploading");
+                    }), this.helicropter.on("image:uploaded", function() {
+                        return e.isUploaded = !0;
+                    }), this.helicropter.on("error:upload", function(t) {
+                        return e.$emit("uploadError", {
+                            err: t.message
+                        });
+                    }), this.helicropter.on("slider:changed", function() {
+                        e.didUseSlider || (e.$emit("wipUploadSliderChanged"), e.didUseSlider = !0);
+                    });
+                },
+                unbindCropper: function() {
+                    this.helicropter.off();
+                }
+            },
+            mounted: function() {
+                this.initHelicropter(), this.$emit("mounted");
+            },
+            destroyed: function() {
+                this.helicropter && (this.unbindCropper(), this.helicropter.destroy(), this.helicropter = null);
+            }
+        }, I = o(1877);
+        var T = Object(p.default)(L, function() {
+            var e = this, t = e.$createElement, o = e._self._c || t;
+            return o("Modal", e._g(e._b({
+                ref: "modal",
+                class: [ e.$style.uploadModal, "qa-story-upload-modal" ],
+                attrs: {
+                    contentStyle: e.contentStyle,
+                    hasCloseButtonDesktop: !1,
+                    clickToClose: !e.isEditing,
+                    showModal: !0
+                },
+                on: {
+                    backgroundClick: e.displayDiscardModal
+                }
+            }, "Modal", e.$attrs, !1), e.$listeners), [ o("ConfirmationModal", {
+                ref: "confirmDiscardModal",
+                attrs: {
+                    clickToClose: !1,
+                    isShown: e.isConfirmModalVisible,
+                    header: e.$translate("stories_upload_discard_title", "Discard Work in Progress"),
+                    buttonText: e.$translate("stories_upload_discard", "Discard")
+                },
+                on: {
+                    confirm: e.close,
+                    close: function(t) {
+                        e.isConfirmModalVisible = !1;
+                    }
+                }
+            }, [ o("span", [ e._v(e._s(e.$translate("stories_upload_discard_text", "Are you sure you want to discard this Work in Progress? This cannot be undone."))) ]) ]), o("Uploader", e._b({
+                directives: [ {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !e.isUploading,
+                    expression: "!isUploading"
+                } ],
+                ref: "uploader",
+                attrs: {
+                    canInitiateUpload: !e.isProcessing,
+                    isDroppable: !e.isProcessing
+                },
+                on: {
+                    upload: e.upload,
+                    appLinkRequested: function(t) {
+                        return e.$emit("appLinkRequested", t);
+                    },
+                    smsSuccessMessageRead: function(t) {
+                        return e.$emit("smsSuccessMessageRead");
+                    }
+                }
+            }, "Uploader", e.$attrs, !1)), o("Cropper", e._b({
+                directives: [ {
+                    name: "show",
+                    rawName: "v-show",
+                    value: e.isUploading,
+                    expression: "isUploading"
+                } ],
+                ref: "cropper",
+                attrs: {
+                    isPostFailed: e.isPostFailed,
+                    canPost: e.isUploaded
+                },
+                on: {
+                    dragstarted: function(t) {
+                        e.isDragging = !0;
+                    },
+                    dragended: function(t) {
+                        e.isDragging = !1;
+                    },
+                    postStory: e.postStory,
+                    cancelPost: function(t) {
+                        e.$emit("closeModal"), e.$emit("wipUploadCancelled", {
+                            source: e.analyticsUploadCancelBtn
+                        });
+                    },
+                    appLinkRequested: function(t) {
+                        return e.$emit("appLinkRequested", t);
+                    },
+                    smsSuccessMessageRead: function(t) {
+                        return e.$emit("smsSuccessMessageRead");
+                    }
+                }
+            }, "Cropper", e.$attrs, !1)) ], 1);
+        }, [], !1, function(e) {
+            this.$style = I.default.locals || I.default;
+        }, null, null);
+        t.default = T.exports;
+    },
+    532: function(e, t, o) {
+        e.exports = o(10)(180);
+    },
+    617: function(e, t, o) {
+        e.exports = o(10)(439);
+    },
+    662: function(e, t, o) {
+        e.exports = o(10)(79);
+    },
+    791: function(e, t, o) {
+        e.exports = o(10)(99);
+    },
+    792: function(e, t, o) {
+        e.exports = o(10)(247);
+    },
+    794: function(e, t) {},
+    838: function(e, t, o) {
+        e.exports = o(10)(449);
+    }
+} ]);

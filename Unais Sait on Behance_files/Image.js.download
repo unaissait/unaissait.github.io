@@ -1,0 +1,1066 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 109 ], {
+    1888: function(e, t, n) {
+        var i, r, o;
+        r = [ n(141), n(534), n(396) ], void 0 === (o = "function" == typeof (i = function(e) {
+            return e.widget("ui.progressbar", {
+                version: "1.11.4",
+                options: {
+                    max: 100,
+                    value: 0,
+                    change: null,
+                    complete: null
+                },
+                min: 0,
+                _create: function() {
+                    this.oldValue = this.options.value = this._constrainedValue(), this.element.addClass("ui-progressbar ui-widget ui-widget-content ui-corner-all").attr({
+                        role: "progressbar",
+                        "aria-valuemin": this.min
+                    }), this.valueDiv = e("<div class='ui-progressbar-value ui-widget-header ui-corner-left'></div>").appendTo(this.element), 
+                    this._refreshValue();
+                },
+                _destroy: function() {
+                    this.element.removeClass("ui-progressbar ui-widget ui-widget-content ui-corner-all").removeAttr("role").removeAttr("aria-valuemin").removeAttr("aria-valuemax").removeAttr("aria-valuenow"), 
+                    this.valueDiv.remove();
+                },
+                value: function(e) {
+                    if (void 0 === e) return this.options.value;
+                    this.options.value = this._constrainedValue(e), this._refreshValue();
+                },
+                _constrainedValue: function(e) {
+                    return void 0 === e && (e = this.options.value), this.indeterminate = !1 === e, 
+                    "number" != typeof e && (e = 0), !this.indeterminate && Math.min(this.options.max, Math.max(this.min, e));
+                },
+                _setOptions: function(e) {
+                    var t = e.value;
+                    delete e.value, this._super(e), this.options.value = this._constrainedValue(t), 
+                    this._refreshValue();
+                },
+                _setOption: function(e, t) {
+                    "max" === e && (t = Math.max(this.min, t)), "disabled" === e && this.element.toggleClass("ui-state-disabled", !!t).attr("aria-disabled", t), 
+                    this._super(e, t);
+                },
+                _percentage: function() {
+                    return this.indeterminate ? 100 : 100 * (this.options.value - this.min) / (this.options.max - this.min);
+                },
+                _refreshValue: function() {
+                    var t = this.options.value, n = this._percentage();
+                    this.valueDiv.toggle(this.indeterminate || t > this.min).toggleClass("ui-corner-right", t === this.options.max).width(n.toFixed(0) + "%"), 
+                    this.element.toggleClass("ui-progressbar-indeterminate", this.indeterminate), this.indeterminate ? (this.element.removeAttr("aria-valuenow"), 
+                    this.overlayDiv || (this.overlayDiv = e("<div class='ui-progressbar-overlay'></div>").appendTo(this.valueDiv))) : (this.element.attr({
+                        "aria-valuemax": this.options.max,
+                        "aria-valuenow": t
+                    }), this.overlayDiv && (this.overlayDiv.remove(), this.overlayDiv = null)), this.oldValue !== t && (this.oldValue = t, 
+                    this._trigger("change")), t === this.options.max && this._trigger("complete");
+                }
+            });
+        }) ? i.apply(t, r) : i) || (e.exports = o);
+    },
+    1889: function(e, t) {
+        var n;
+        (n = jQuery).Jcrop = function(e, t) {
+            var i, r = n.extend({}, n.Jcrop.defaults), o = navigator.userAgent.match(/msie/i);
+            function a(e) {
+                return e + "px";
+            }
+            function s(e) {
+                return r.baseClass + "-" + e;
+            }
+            function c(e) {
+                var t = n(e).offset();
+                return [ t.left, t.top ];
+            }
+            function u(e) {
+                return [ e.pageX - i[0], e.pageY - i[1] ];
+            }
+            function l(e) {
+                "object" != typeof e && (e = {}), r = n.extend(r, e), n.each([ "onChange", "onSelect", "onRelease", "onDblClick" ], function(e, t) {
+                    "function" != typeof r[t] && (r[t] = function() {});
+                });
+            }
+            function d(e, t) {
+                if (i = c(D), G.setCursor("move" === e ? e : e + "-resize"), "move" === e) return G.activateHandlers(function(e) {
+                    var t = e;
+                    return $.watchKeys(), function(e) {
+                        X.moveOffset([ e[0] - t[0], e[1] - t[1] ]), t = e, K.update();
+                    };
+                }(t), v);
+                var n = X.getFixed(), o = h(e), a = X.getCorner(h(o));
+                X.setPressed(X.getCorner(o)), X.setCurrent(a), G.activateHandlers(function(e, t) {
+                    return function(n) {
+                        if (r.aspectRatio) switch (e) {
+                          case "e":
+                          case "w":
+                            n[1] = t.y + 1;
+                            break;
+
+                          case "n":
+                          case "s":
+                            n[0] = t.x + 1;
+                        } else switch (e) {
+                          case "e":
+                          case "w":
+                            n[1] = t.y2;
+                            break;
+
+                          case "n":
+                          case "s":
+                            n[0] = t.x2;
+                        }
+                        X.setCurrent(n), K.update();
+                    };
+                }(e, n), v);
+            }
+            function h(e) {
+                switch (e) {
+                  case "n":
+                    return "sw";
+
+                  case "s":
+                  case "e":
+                    return "nw";
+
+                  case "w":
+                    return "ne";
+
+                  case "ne":
+                    return "sw";
+
+                  case "nw":
+                    return "se";
+
+                  case "se":
+                    return "nw";
+
+                  case "sw":
+                    return "ne";
+                }
+            }
+            function f(e) {
+                return function(t) {
+                    return !(r.disabled || "move" === e && !r.allowMove || (i = c(D), N = !0, d(e, u(t)), 
+                    t.stopPropagation(), t.preventDefault(), 1));
+                };
+            }
+            function p(e, t, n) {
+                var i = e.width(), r = e.height();
+                i > t && t > 0 && (i = t, r = t / e.width() * e.height()), r > n && n > 0 && (r = n, 
+                i = n / e.height() * e.width()), P = e.width() / i, L = e.height() / r, e.width(i).height(r);
+            }
+            function g(e) {
+                return {
+                    x: e.x * P,
+                    y: e.y * L,
+                    x2: e.x2 * P,
+                    y2: e.y2 * L,
+                    w: e.w * P,
+                    h: e.h * L
+                };
+            }
+            function v(e) {
+                var t = X.getFixed();
+                t.w > r.minSelect[0] && t.h > r.minSelect[1] ? (K.enableHandles(), K.done()) : K.release(), 
+                G.setCursor(r.allowSelect ? "crosshair" : "default");
+            }
+            function b(e) {
+                if (r.disabled) return !1;
+                if (!r.allowSelect) return !1;
+                N = !0, i = c(D), K.disableHandles(), G.setCursor("crosshair");
+                var t = u(e);
+                return X.setPressed(t), K.update(), G.activateHandlers(m, v), $.watchKeys(), e.stopPropagation(), 
+                e.preventDefault(), !1;
+            }
+            function m(e) {
+                X.setCurrent(e), K.update();
+            }
+            function w() {
+                var e = n("<div></div>").addClass(s("tracker"));
+                return o && e.css({
+                    opacity: 0,
+                    backgroundColor: "white"
+                }), e;
+            }
+            "object" != typeof e && (e = n(e)[0]), "object" != typeof t && (t = {}), l(t);
+            var C = {
+                border: "none",
+                visibility: "visible",
+                margin: 0,
+                padding: 0,
+                position: "absolute",
+                top: 0,
+                left: 0
+            }, S = n(e), O = !0;
+            if ("IMG" == e.tagName) {
+                if (0 != S[0].width && 0 != S[0].height) S.width(S[0].width), S.height(S[0].height); else {
+                    var k = new Image();
+                    k.src = S[0].src, S.width(k.width), S.height(k.height);
+                }
+                var D = S.clone().removeAttr("id").css(C).show();
+                D.width(S.width()), D.height(S.height()), S.after(D).hide();
+            } else D = S.css(C).show(), O = !1, null === r.shade && (r.shade = !0);
+            p(D, r.boxWidth, r.boxHeight);
+            var A = D.width(), E = D.height(), T = n("<div />").width(A).height(E).addClass(s("holder")).css({
+                position: "relative",
+                backgroundColor: r.bgColor
+            }).insertAfter(S).append(D);
+            r.addClass && T.addClass(r.addClass);
+            var j = n("<div />"), z = n("<div />").width("100%").height("100%").css({
+                zIndex: 310,
+                position: "absolute",
+                overflow: "hidden"
+            }), I = n("<div />").width("100%").height("100%").css("zIndex", 320), M = n("<div />").css({
+                position: "absolute",
+                zIndex: 600
+            }).dblclick(function() {
+                var e = X.getFixed();
+                r.onDblClick.call(re, e);
+            }).insertBefore(D).append(z, I);
+            O && (j = n("<img />").attr("src", D.attr("src")).css(C).width(A).height(E), z.append(j));
+            var B, H, F, R, P, L, N, U, _ = r.boundary, J = w().width(A + 2 * _).height(E + 2 * _).css({
+                position: "absolute",
+                top: a(-_),
+                left: a(-_),
+                zIndex: 290
+            }).mousedown(b), W = r.bgColor, V = r.bgOpacity;
+            i = c(D);
+            var q = function() {
+                function e() {
+                    var e, t = {}, n = [ "touchstart", "touchmove", "touchend" ], i = document.createElement("div");
+                    try {
+                        for (e = 0; e < n.length; e++) {
+                            var r = n[e], o = (r = "on" + r) in i;
+                            o || (i.setAttribute(r, "return;"), o = "function" == typeof i[r]), t[n[e]] = o;
+                        }
+                        return t.touchstart && t.touchend && t.touchmove;
+                    } catch (e) {
+                        return !1;
+                    }
+                }
+                return {
+                    createDragger: function(e) {
+                        return function(t) {
+                            return t.pageX = t.originalEvent.changedTouches[0].pageX, t.pageY = t.originalEvent.changedTouches[0].pageY, 
+                            !(r.disabled || "move" === e && !r.allowMove || (N = !0, d(e, u(t)), t.stopPropagation(), 
+                            t.preventDefault(), 1));
+                        };
+                    },
+                    newSelection: function(e) {
+                        return e.pageX = e.originalEvent.changedTouches[0].pageX, e.pageY = e.originalEvent.changedTouches[0].pageY, 
+                        b(e);
+                    },
+                    isSupported: e,
+                    support: !0 === r.touchSupport || !1 === r.touchSupport ? r.touchSupport : e()
+                };
+            }(), X = function() {
+                var e, t, n = 0, i = 0, o = 0, a = 0;
+                function s() {
+                    if (!r.aspectRatio) return t = o - n, s = a - i, B && Math.abs(t) > B && (o = t > 0 ? n + B : n - B), 
+                    H && Math.abs(s) > H && (a = s > 0 ? i + H : i - H), R / L && Math.abs(s) < R / L && (a = s > 0 ? i + R / L : i - R / L), 
+                    F / P && Math.abs(t) < F / P && (o = t > 0 ? n + F / P : n - F / P), n < 0 && (o -= n, 
+                    n -= n), i < 0 && (a -= i, i -= i), o < 0 && (n -= o, o -= o), a < 0 && (i -= a, 
+                    a -= a), o > A && (n -= e = o - A, o -= e), a > E && (i -= e = a - E, a -= e), n > A && (a -= e = n - E, 
+                    i -= e), i > E && (a -= e = i - E, i -= e), l(u(n, i, o, a));
+                    var e, t, s, c, d, h, f, p = r.aspectRatio, g = r.minSize[0] / P, v = r.minSize[1] / L, b = r.maxSize[0] / P, m = r.maxSize[1] / L, w = o - n, y = a - i, x = Math.abs(w), C = Math.abs(y);
+                    return 0 === b && (b = 10 * A), 0 === m && (m = 10 * E), x / C < p ? (d = a, h = C * p, 
+                    (c = w < 0 ? n - h : h + n) < 0 ? (c = 0, f = Math.abs((c - n) / p), d = y < 0 ? i - f : f + i) : c > A && (c = A, 
+                    f = Math.abs((c - n) / p), d = y < 0 ? i - f : f + i)) : (c = o, f = x / p, (d = y < 0 ? i - f : i + f) < 0 ? (d = 0, 
+                    h = Math.abs((d - i) * p), c = w < 0 ? n - h : h + n) : d > E && (d = E, h = Math.abs(d - i) * p, 
+                    c = w < 0 ? n - h : h + n)), c > n ? (c - n < g ? c = n + g : c - n > b && (c = n + b), 
+                    d = d > i ? i + (c - n) / p : i - (c - n) / p) : c < n && (n - c < g ? c = n - g : n - c > b && (c = n - b), 
+                    d = d > i ? i + (n - c) / p : i - (n - c) / p), c < 0 ? (n -= c, c = 0) : c > A && (n -= c - A, 
+                    c = A), d < 0 ? (i -= d, d = 0) : d > E && (i -= d - E, d = E), n == c && i == d && (0 == n ? c = g : n = c - g, 
+                    0 == i ? d = v : i = d - v), l(u(n, i, c, d));
+                }
+                function c(e) {
+                    return e[0] < 0 && (e[0] = 0), e[1] < 0 && (e[1] = 0), e[0] > A && (e[0] = A), e[1] > E && (e[1] = E), 
+                    [ e[0], e[1] ];
+                }
+                function u(e, t, n, i) {
+                    var r = e, o = n, a = t, s = i;
+                    return n < e && (r = n, o = e), i < t && (a = i, s = t), [ r, a, o, s ];
+                }
+                function l(e) {
+                    return {
+                        x: e[0],
+                        y: e[1],
+                        x2: e[2],
+                        y2: e[3],
+                        w: e[2] - e[0],
+                        h: e[3] - e[1]
+                    };
+                }
+                return {
+                    flipCoords: u,
+                    setPressed: function(e) {
+                        e = c(e), o = n = e[0], a = i = e[1];
+                    },
+                    setCurrent: function(n) {
+                        n = c(n), e = n[0] - o, t = n[1] - a, o = n[0], a = n[1];
+                    },
+                    getOffset: function() {
+                        return [ e, t ];
+                    },
+                    moveOffset: function(e) {
+                        var t = e[0], r = e[1];
+                        0 > n + t && (t -= t + n), 0 > i + r && (r -= r + i), E < a + r && (r += E - (a + r)), 
+                        A < o + t && (t += A - (o + t)), n += t, o += t, i += r, a += r;
+                    },
+                    getCorner: function(e) {
+                        var t = s();
+                        switch (e) {
+                          case "ne":
+                            return [ t.x2, t.y ];
+
+                          case "nw":
+                            return [ t.x, t.y ];
+
+                          case "se":
+                            return [ t.x2, t.y2 ];
+
+                          case "sw":
+                            return [ t.x, t.y2 ];
+                        }
+                    },
+                    getFixed: s
+                };
+            }(), Y = function() {
+                var e = !1, t = n("<div />").css({
+                    position: "absolute",
+                    zIndex: 240,
+                    opacity: 0
+                }), i = {
+                    top: c(),
+                    left: c().height(E),
+                    right: c().height(E),
+                    bottom: c()
+                };
+                function o() {
+                    return s(X.getFixed());
+                }
+                function s(e) {
+                    i.top.css({
+                        left: a(e.x),
+                        width: a(e.w),
+                        height: a(e.y)
+                    }), i.bottom.css({
+                        top: a(e.y2),
+                        left: a(e.x),
+                        width: a(e.w),
+                        height: a(E - e.y2)
+                    }), i.right.css({
+                        left: a(e.x2),
+                        width: a(A - e.x2)
+                    }), i.left.css({
+                        width: a(e.x)
+                    });
+                }
+                function c() {
+                    return n("<div />").css({
+                        position: "absolute",
+                        backgroundColor: r.shadeColor || r.bgColor
+                    }).appendTo(t);
+                }
+                function u() {
+                    e || (e = !0, t.insertBefore(D), o(), K.setBgOpacity(1, 0, 1), j.hide(), l(r.shadeColor || r.bgColor, 1), 
+                    K.isAwake() ? h(r.bgOpacity, 1) : h(1, 1));
+                }
+                function l(e, t) {
+                    ne(f(), e, t);
+                }
+                function d() {
+                    e && (t.remove(), j.show(), e = !1, K.isAwake() ? K.setBgOpacity(r.bgOpacity, 1, 1) : (K.setBgOpacity(1, 1, 1), 
+                    K.disableHandles()), ne(T, 0, 1));
+                }
+                function h(n, i) {
+                    e && (r.bgFade && !i ? t.animate({
+                        opacity: 1 - n
+                    }, {
+                        queue: !1,
+                        duration: r.fadeTime
+                    }) : t.css({
+                        opacity: 1 - n
+                    }));
+                }
+                function f() {
+                    return t.children();
+                }
+                return {
+                    update: o,
+                    updateRaw: s,
+                    getShades: f,
+                    setBgColor: l,
+                    enable: u,
+                    disable: d,
+                    resize: function(e, t) {
+                        i.left.css({
+                            height: a(t)
+                        }), i.right.css({
+                            height: a(t)
+                        });
+                    },
+                    refresh: function() {
+                        r.shade ? u() : d(), K.isAwake() && h(r.bgOpacity);
+                    },
+                    opacity: h
+                };
+            }(), K = function() {
+                var e, t = 370, i = {}, o = {}, c = {}, u = !1;
+                function l(e, t) {
+                    var i = n("<div />").mousedown(f(e)).css({
+                        cursor: e + "-resize",
+                        position: "absolute",
+                        zIndex: t
+                    }).addClass("ord-" + e);
+                    return q.support && i.bind("touchstart.jcrop", q.createDragger(e)), I.append(i), 
+                    i;
+                }
+                function d() {
+                    var e = X.getFixed();
+                    X.setPressed([ e.x, e.y ]), X.setCurrent([ e.x2, e.y2 ]), h();
+                }
+                function h(t) {
+                    if (e) return p(t);
+                }
+                function p(t) {
+                    var n, i, o, s, c = X.getFixed();
+                    n = c.w, i = c.h, M.width(n).height(i), o = c.x, s = c.y, r.shade || j.css({
+                        top: a(-s),
+                        left: a(-o)
+                    }), M.css({
+                        top: a(s),
+                        left: a(o)
+                    }), r.shade && Y.updateRaw(c), e || (M.show(), r.shade ? Y.opacity(V) : v(V, !0), 
+                    e = !0), t ? r.onSelect.call(re, g(c)) : r.onChange.call(re, g(c));
+                }
+                function v(t, n, i) {
+                    (e || n) && (r.bgFade && !i ? D.animate({
+                        opacity: t
+                    }, {
+                        queue: !1,
+                        duration: r.fadeTime
+                    }) : D.css("opacity", t));
+                }
+                function b() {
+                    if (u = !0, r.allowResize) return I.show(), !0;
+                }
+                function m() {
+                    u = !1, I.hide();
+                }
+                function y(e) {
+                    U === e ? m() : b();
+                }
+                r.dragEdges && n.isArray(r.createDragbars) && function(e) {
+                    var n;
+                    for (n = 0; n < e.length; n++) c[e[n]] = l(e[n], t++).addClass("jcrop-dragbar");
+                }(r.createDragbars), n.isArray(r.createHandles) && function(e) {
+                    var n, i, a;
+                    for (n = 0; n < e.length; n++) o[e[n]] = (i = e[n], a = r.handleSize, l(i, t++).css({
+                        opacity: r.handleOpacity
+                    }).width(a).height(a).addClass(s("handle")));
+                }(r.createHandles), r.drawBorders && n.isArray(r.createBorders) && function(e) {
+                    var t, o, a, c;
+                    for (o = 0; o < e.length; o++) {
+                        switch (e[o]) {
+                          case "n":
+                            t = "hline";
+                            break;
+
+                          case "s":
+                            t = "hline bottom";
+                            break;
+
+                          case "e":
+                            t = "vline right";
+                            break;
+
+                          case "w":
+                            t = "vline";
+                        }
+                        i[e[o]] = (a = t, c = n("<div />").css({
+                            position: "absolute",
+                            opacity: r.borderOpacity
+                        }).addClass(s(a)), z.append(c), c);
+                    }
+                }(r.createBorders), n(document).bind("touchstart.jcrop-ios", function(e) {
+                    n(e.currentTarget).hasClass("jcrop-tracker") && e.stopPropagation();
+                });
+                var x = w().mousedown(f("move")).css({
+                    cursor: "move",
+                    position: "absolute",
+                    zIndex: 360
+                });
+                return q.support && x.bind("touchstart.jcrop", q.createDragger("move")), z.append(x), 
+                m(), {
+                    updateVisible: h,
+                    update: p,
+                    release: function() {
+                        m(), M.hide(), r.shade ? Y.opacity(1) : v(1), e = !1, r.onRelease.call(re);
+                    },
+                    refresh: d,
+                    isAwake: function() {
+                        return e;
+                    },
+                    setCursor: function(e) {
+                        x.css("cursor", e);
+                    },
+                    enableHandles: b,
+                    enableOnly: function() {
+                        u = !0;
+                    },
+                    showHandles: function() {
+                        u && I.show();
+                    },
+                    disableHandles: m,
+                    animMode: y,
+                    setBgOpacity: v,
+                    done: function() {
+                        y(!1), d();
+                    }
+                };
+            }(), G = function() {
+                var e = function() {}, t = function() {}, i = r.trackDocument;
+                function o(t) {
+                    return e(u(t)), !1;
+                }
+                function a(i) {
+                    return i.preventDefault(), i.stopPropagation(), N && (N = !1, t(u(i)), K.isAwake() && r.onSelect.call(re, g(X.getFixed())), 
+                    J.css({
+                        zIndex: 290
+                    }), n(document).unbind(".jcrop"), e = function() {}, t = function() {}), !1;
+                }
+                function s(e) {
+                    return e.pageX = e.originalEvent.changedTouches[0].pageX, e.pageY = e.originalEvent.changedTouches[0].pageY, 
+                    o(e);
+                }
+                function c(e) {
+                    return e.pageX = e.originalEvent.changedTouches[0].pageX, e.pageY = e.originalEvent.changedTouches[0].pageY, 
+                    a(e);
+                }
+                return i || J.mousemove(o).mouseup(a).mouseout(a), D.before(J), {
+                    activateHandlers: function(r, u) {
+                        return N = !0, e = r, t = u, J.css({
+                            zIndex: 450
+                        }), q.support && n(document).bind("touchmove.jcrop", s).bind("touchend.jcrop", c), 
+                        i && n(document).bind("mousemove.jcrop", o).bind("mouseup.jcrop", a), !1;
+                    },
+                    setCursor: function(e) {
+                        J.css("cursor", e);
+                    }
+                };
+            }(), $ = function() {
+                var e = n('<input type="radio" />').css({
+                    position: "fixed",
+                    left: "-120px",
+                    width: "12px"
+                }), t = n("<div />").css({
+                    position: "absolute",
+                    overflow: "hidden"
+                }).append(e);
+                function i(e, t, n) {
+                    r.allowMove && (X.moveOffset([ t, n ]), K.updateVisible(!0)), e.preventDefault(), 
+                    e.stopPropagation();
+                }
+                return r.keySupport && (e.keydown(function(e) {
+                    if (e.ctrlKey || e.metaKey) return !0;
+                    var t = e.shiftKey ? 10 : 1;
+                    switch (e.keyCode) {
+                      case 37:
+                        i(e, -t, 0);
+                        break;
+
+                      case 39:
+                        i(e, t, 0);
+                        break;
+
+                      case 38:
+                        i(e, 0, -t);
+                        break;
+
+                      case 40:
+                        i(e, 0, t);
+                        break;
+
+                      case 27:
+                        r.allowSelect && K.release();
+                        break;
+
+                      case 9:
+                        return !0;
+                    }
+                    return !1;
+                }).blur(function(t) {
+                    e.hide();
+                }), r.fixedSupport ? e.insertBefore(D) : (e.css({
+                    position: "absolute",
+                    left: "-20px"
+                }), t.append(e).insertBefore(D))), {
+                    watchKeys: function() {
+                        r.keySupport && (e.show(), e.focus());
+                    }
+                };
+            }();
+            function Q(e) {
+                Z([ e[0] / P, e[1] / L, e[2] / P, e[3] / L ]), r.onSelect.call(re, g(X.getFixed())), 
+                K.enableHandles();
+            }
+            function Z(e) {
+                X.setPressed([ e[0], e[1] ]), X.setCurrent([ e[2], e[3] ]), K.update();
+            }
+            function ee() {
+                r.disabled = !0, K.disableHandles(), K.setCursor("default"), G.setCursor("default");
+            }
+            function te() {
+                r.disabled = !1, ie();
+            }
+            function ne(e, t, i) {
+                var o = t || r.bgColor;
+                r.bgFade && n.fx.step.hasOwnProperty("backgroundColor") && r.fadeTime && !i ? e.animate({
+                    backgroundColor: o
+                }, {
+                    queue: !1,
+                    duration: r.fadeTime
+                }) : e.css("backgroundColor", o);
+            }
+            function ie(e) {
+                r.allowResize ? e ? K.enableOnly() : K.enableHandles() : K.disableHandles(), G.setCursor(r.allowSelect ? "crosshair" : "default"), 
+                K.setCursor(r.allowMove ? "move" : "default"), r.hasOwnProperty("trueSize") && (P = r.trueSize[0] / A, 
+                L = r.trueSize[1] / E), r.hasOwnProperty("setSelect") && (Q(r.setSelect), K.done(), 
+                delete r.setSelect), Y.refresh(), r.bgColor != W && (ne(r.shade ? Y.getShades() : T, r.shade && r.shadeColor || r.bgColor), 
+                W = r.bgColor), V != r.bgOpacity && (V = r.bgOpacity, r.shade ? Y.refresh() : K.setBgOpacity(V)), 
+                B = r.maxSize[0] || 0, H = r.maxSize[1] || 0, F = r.minSize[0] || 0, R = r.minSize[1] || 0, 
+                r.hasOwnProperty("outerImage") && (D.attr("src", r.outerImage), delete r.outerImage), 
+                K.refresh();
+            }
+            q.support && J.bind("touchstart.jcrop", q.newSelection), I.hide(), ie(!0);
+            var re = {
+                setImage: function(e, t) {
+                    K.release(), ee();
+                    var n = new Image();
+                    n.onload = function() {
+                        var i = n.width, o = n.height, a = r.boxWidth, s = r.boxHeight;
+                        D.width(i).height(o), D.attr("src", e), j.attr("src", e), p(D, a, s), A = D.width(), 
+                        E = D.height(), j.width(A).height(E), J.width(A + 2 * _).height(E + 2 * _), T.width(A).height(E), 
+                        Y.resize(A, E), te(), "function" == typeof t && t.call(re);
+                    }, n.src = e;
+                },
+                animateTo: function(e, t) {
+                    var n = e[0] / P, i = e[1] / L, o = e[2] / P, a = e[3] / L;
+                    if (!U) {
+                        var s = X.flipCoords(n, i, o, a), c = X.getFixed(), u = [ c.x, c.y, c.x2, c.y2 ], l = u, d = r.animationDelay, h = s[0] - u[0], f = s[1] - u[1], p = s[2] - u[2], g = s[3] - u[3], v = 0, b = r.swingSpeed;
+                        x = l[0], y = l[1], o = l[2], a = l[3], K.animMode(!0);
+                        var m = function() {
+                            v += (100 - v) / b, l[0] = x + v / 100 * h, l[1] = y + v / 100 * f, l[2] = o + v / 100 * p, 
+                            l[3] = a + v / 100 * g, v >= 99.8 && (v = 100), v < 100 ? (Z(l), w()) : (K.done(), 
+                            "function" == typeof t && t.call(re));
+                        };
+                        w();
+                    }
+                    function w() {
+                        window.setTimeout(m, d);
+                    }
+                },
+                setSelect: Q,
+                setOptions: function(e) {
+                    l(e), ie();
+                },
+                tellSelect: function() {
+                    return g(X.getFixed());
+                },
+                tellScaled: function() {
+                    return X.getFixed();
+                },
+                setClass: function(e) {
+                    T.removeClass().addClass(s("holder")).addClass(e);
+                },
+                disable: ee,
+                enable: te,
+                cancel: function() {
+                    K.done(), G.activateHandlers(null, null);
+                },
+                release: K.release,
+                destroy: function() {
+                    T.remove(), S.show(), n(e).removeData("Jcrop");
+                },
+                focus: $.watchKeys,
+                getBounds: function() {
+                    return [ A * P, E * L ];
+                },
+                getWidgetSize: function() {
+                    return [ A, E ];
+                },
+                getScaleFactor: function() {
+                    return [ P, L ];
+                },
+                getOptions: function() {
+                    return r;
+                },
+                ui: {
+                    holder: T,
+                    selection: M
+                }
+            };
+            return o && T.bind("selectstart", function() {
+                return !1;
+            }), S.data("Jcrop", re), re;
+        }, n.fn.Jcrop = function(e, t) {
+            var i;
+            return this.each(function() {
+                if (n(this).data("Jcrop")) {
+                    if ("api" === e) return n(this).data("Jcrop");
+                    n(this).data("Jcrop").setOptions(e);
+                } else "IMG" == this.tagName ? n.Jcrop.Loader(this, function() {
+                    n(this).css({
+                        display: "block",
+                        visibility: "hidden"
+                    }), i = n.Jcrop(this, e), n.isFunction(t) && t.call(i);
+                }) : (n(this).css({
+                    display: "block",
+                    visibility: "hidden"
+                }), i = n.Jcrop(this, e), n.isFunction(t) && t.call(i));
+            }), this;
+        }, n.Jcrop.Loader = function(e, t, i) {
+            var r = n(e), o = r[0];
+            r.bind("load.jcloader", function e() {
+                o.complete ? (r.unbind(".jcloader"), n.isFunction(t) && t.call(o)) : window.setTimeout(e, 50);
+            }).bind("error.jcloader", function(e) {
+                r.unbind(".jcloader"), n.isFunction(i) && i.call(o);
+            }), o.complete && n.isFunction(t) && (r.unbind(".jcloader"), t.call(o));
+        }, n.Jcrop.defaults = {
+            allowSelect: !0,
+            allowMove: !0,
+            allowResize: !0,
+            trackDocument: !0,
+            baseClass: "jcrop",
+            addClass: null,
+            bgColor: "black",
+            bgOpacity: .6,
+            bgFade: !1,
+            borderOpacity: .4,
+            handleOpacity: .5,
+            handleSize: 7,
+            aspectRatio: 0,
+            keySupport: !0,
+            createHandles: [ "n", "s", "e", "w", "nw", "ne", "se", "sw" ],
+            createDragbars: [ "n", "s", "e", "w" ],
+            createBorders: [ "n", "s", "e", "w" ],
+            drawBorders: !0,
+            dragEdges: !0,
+            fixedSupport: !0,
+            touchSupport: null,
+            shade: null,
+            boxWidth: 0,
+            boxHeight: 0,
+            boundary: 2,
+            fadeTime: 400,
+            animationDelay: 20,
+            swingSpeed: 3,
+            minSelect: [ 0, 0 ],
+            maxSize: [ 0, 0 ],
+            minSize: [ 0, 0 ],
+            onChange: function() {},
+            onSelect: function() {},
+            onDblClick: function() {},
+            onRelease: function() {}
+        };
+    },
+    531: function(e, t, n) {
+        var i, r, o = {}, a = (i = function() {
+            return window && document && document.all && !window.atob;
+        }, function() {
+            return void 0 === r && (r = i.apply(this, arguments)), r;
+        }), s = function(e) {
+            var t = {};
+            return function(e) {
+                if ("function" == typeof e) return e();
+                if (void 0 === t[e]) {
+                    var n = function(e) {
+                        return document.querySelector(e);
+                    }.call(this, e);
+                    if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement) try {
+                        n = n.contentDocument.head;
+                    } catch (e) {
+                        n = null;
+                    }
+                    t[e] = n;
+                }
+                return t[e];
+            };
+        }(), c = null, u = 0, l = [], d = n(767);
+        function h(e, t) {
+            for (var n = 0; n < e.length; n++) {
+                var i = e[n], r = o[i.id];
+                if (r) {
+                    r.refs++;
+                    for (var a = 0; a < r.parts.length; a++) r.parts[a](i.parts[a]);
+                    for (;a < i.parts.length; a++) r.parts.push(m(i.parts[a], t));
+                } else {
+                    var s = [];
+                    for (a = 0; a < i.parts.length; a++) s.push(m(i.parts[a], t));
+                    o[i.id] = {
+                        id: i.id,
+                        refs: 1,
+                        parts: s
+                    };
+                }
+            }
+        }
+        function f(e, t) {
+            for (var n = [], i = {}, r = 0; r < e.length; r++) {
+                var o = e[r], a = t.base ? o[0] + t.base : o[0], s = {
+                    css: o[1],
+                    media: o[2],
+                    sourceMap: o[3]
+                };
+                i[a] ? i[a].parts.push(s) : n.push(i[a] = {
+                    id: a,
+                    parts: [ s ]
+                });
+            }
+            return n;
+        }
+        function p(e, t) {
+            var n = s(e.insertInto);
+            if (!n) throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+            var i = l[l.length - 1];
+            if ("top" === e.insertAt) i ? i.nextSibling ? n.insertBefore(t, i.nextSibling) : n.appendChild(t) : n.insertBefore(t, n.firstChild), 
+            l.push(t); else if ("bottom" === e.insertAt) n.appendChild(t); else {
+                if ("object" != typeof e.insertAt || !e.insertAt.before) throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+                var r = s(e.insertInto + " " + e.insertAt.before);
+                n.insertBefore(t, r);
+            }
+        }
+        function g(e) {
+            if (null === e.parentNode) return !1;
+            e.parentNode.removeChild(e);
+            var t = l.indexOf(e);
+            t >= 0 && l.splice(t, 1);
+        }
+        function v(e) {
+            var t = document.createElement("style");
+            return e.attrs.type = "text/css", b(t, e.attrs), p(e, t), t;
+        }
+        function b(e, t) {
+            Object.keys(t).forEach(function(n) {
+                e.setAttribute(n, t[n]);
+            });
+        }
+        function m(e, t) {
+            var n, i, r, o;
+            if (t.transform && e.css) {
+                if (!(o = t.transform(e.css))) return function() {};
+                e.css = o;
+            }
+            if (t.singleton) {
+                var a = u++;
+                n = c || (c = v(t)), i = x.bind(null, n, a, !1), r = x.bind(null, n, a, !0);
+            } else e.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (n = function(e) {
+                var t = document.createElement("link");
+                return e.attrs.type = "text/css", e.attrs.rel = "stylesheet", b(t, e.attrs), p(e, t), 
+                t;
+            }(t), i = function(e, t, n) {
+                var i = n.css, r = n.sourceMap, o = void 0 === t.convertToAbsoluteUrls && r;
+                (t.convertToAbsoluteUrls || o) && (i = d(i));
+                r && (i += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(r)))) + " */");
+                var a = new Blob([ i ], {
+                    type: "text/css"
+                }), s = e.href;
+                e.href = URL.createObjectURL(a), s && URL.revokeObjectURL(s);
+            }.bind(null, n, t), r = function() {
+                g(n), n.href && URL.revokeObjectURL(n.href);
+            }) : (n = v(t), i = function(e, t) {
+                var n = t.css, i = t.media;
+                i && e.setAttribute("media", i);
+                if (e.styleSheet) e.styleSheet.cssText = n; else {
+                    for (;e.firstChild; ) e.removeChild(e.firstChild);
+                    e.appendChild(document.createTextNode(n));
+                }
+            }.bind(null, n), r = function() {
+                g(n);
+            });
+            return i(e), function(t) {
+                if (t) {
+                    if (t.css === e.css && t.media === e.media && t.sourceMap === e.sourceMap) return;
+                    i(e = t);
+                } else r();
+            };
+        }
+        e.exports = function(e, t) {
+            if ("undefined" != typeof DEBUG && DEBUG && "object" != typeof document) throw new Error("The style-loader cannot be used in a non-browser environment");
+            (t = t || {}).attrs = "object" == typeof t.attrs ? t.attrs : {}, t.singleton || "boolean" == typeof t.singleton || (t.singleton = a()), 
+            t.insertInto || (t.insertInto = "head"), t.insertAt || (t.insertAt = "bottom");
+            var n = f(e, t);
+            return h(n, t), function(e) {
+                for (var i = [], r = 0; r < n.length; r++) {
+                    var a = n[r];
+                    (s = o[a.id]).refs--, i.push(s);
+                }
+                e && h(f(e, t), t);
+                for (r = 0; r < i.length; r++) {
+                    var s;
+                    if (0 === (s = i[r]).refs) {
+                        for (var c = 0; c < s.parts.length; c++) s.parts[c]();
+                        delete o[s.id];
+                    }
+                }
+            };
+        };
+        var w, y = (w = [], function(e, t) {
+            return w[e] = t, w.filter(Boolean).join("\n");
+        });
+        function x(e, t, n, i) {
+            var r = n ? "" : i.css;
+            if (e.styleSheet) e.styleSheet.cssText = y(t, r); else {
+                var o = document.createTextNode(r), a = e.childNodes;
+                a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(o, a[t]) : e.appendChild(o);
+            }
+        }
+    },
+    534: function(e, t, n) {
+        var i, r, o;
+        r = [ n(141) ], void 0 === (o = "function" == typeof (i = function(e) {
+            function t(t, i) {
+                var r, o, a, s = t.nodeName.toLowerCase();
+                return "area" === s ? (r = t.parentNode, o = r.name, !(!t.href || !o || "map" !== r.nodeName.toLowerCase()) && !!(a = e("img[usemap='#" + o + "']")[0]) && n(a)) : (/^(input|select|textarea|button|object)$/.test(s) ? !t.disabled : "a" === s && t.href || i) && n(t);
+            }
+            function n(t) {
+                return e.expr.filters.visible(t) && !e(t).parents().addBack().filter(function() {
+                    return "hidden" === e.css(this, "visibility");
+                }).length;
+            }
+            var i, r, o, a;
+            e.ui = e.ui || {}, e.extend(e.ui, {
+                version: "1.11.4",
+                keyCode: {
+                    BACKSPACE: 8,
+                    COMMA: 188,
+                    DELETE: 46,
+                    DOWN: 40,
+                    END: 35,
+                    ENTER: 13,
+                    ESCAPE: 27,
+                    HOME: 36,
+                    LEFT: 37,
+                    PAGE_DOWN: 34,
+                    PAGE_UP: 33,
+                    PERIOD: 190,
+                    RIGHT: 39,
+                    SPACE: 32,
+                    TAB: 9,
+                    UP: 38
+                }
+            }), e.fn.extend({
+                scrollParent: function(t) {
+                    var n = this.css("position"), i = "absolute" === n, r = t ? /(auto|scroll|hidden)/ : /(auto|scroll)/, o = this.parents().filter(function() {
+                        var t = e(this);
+                        return (!i || "static" !== t.css("position")) && r.test(t.css("overflow") + t.css("overflow-y") + t.css("overflow-x"));
+                    }).eq(0);
+                    return "fixed" !== n && o.length ? o : e(this[0].ownerDocument || document);
+                },
+                uniqueId: (i = 0, function() {
+                    return this.each(function() {
+                        this.id || (this.id = "ui-id-" + ++i);
+                    });
+                }),
+                removeUniqueId: function() {
+                    return this.each(function() {
+                        /^ui-id-\d+$/.test(this.id) && e(this).removeAttr("id");
+                    });
+                }
+            }), e.extend(e.expr[":"], {
+                data: e.expr.createPseudo ? e.expr.createPseudo(function(t) {
+                    return function(n) {
+                        return !!e.data(n, t);
+                    };
+                }) : function(t, n, i) {
+                    return !!e.data(t, i[3]);
+                },
+                focusable: function(n) {
+                    return t(n, !isNaN(e.attr(n, "tabindex")));
+                },
+                tabbable: function(n) {
+                    var i = e.attr(n, "tabindex"), r = isNaN(i);
+                    return (r || i >= 0) && t(n, !r);
+                }
+            }), e("<a>").outerWidth(1).jquery || e.each([ "Width", "Height" ], function(t, n) {
+                var i = "Width" === n ? [ "Left", "Right" ] : [ "Top", "Bottom" ], r = n.toLowerCase(), o = {
+                    innerWidth: e.fn.innerWidth,
+                    innerHeight: e.fn.innerHeight,
+                    outerWidth: e.fn.outerWidth,
+                    outerHeight: e.fn.outerHeight
+                };
+                function a(t, n, r, o) {
+                    return e.each(i, function() {
+                        n -= parseFloat(e.css(t, "padding" + this)) || 0, r && (n -= parseFloat(e.css(t, "border" + this + "Width")) || 0), 
+                        o && (n -= parseFloat(e.css(t, "margin" + this)) || 0);
+                    }), n;
+                }
+                e.fn["inner" + n] = function(t) {
+                    return void 0 === t ? o["inner" + n].call(this) : this.each(function() {
+                        e(this).css(r, a(this, t) + "px");
+                    });
+                }, e.fn["outer" + n] = function(t, i) {
+                    return "number" != typeof t ? o["outer" + n].call(this, t) : this.each(function() {
+                        e(this).css(r, a(this, t, !0, i) + "px");
+                    });
+                };
+            }), e.fn.addBack || (e.fn.addBack = function(e) {
+                return this.add(null == e ? this.prevObject : this.prevObject.filter(e));
+            }), e("<a>").data("a-b", "a").removeData("a-b").data("a-b") && (e.fn.removeData = (r = e.fn.removeData, 
+            function(t) {
+                return arguments.length ? r.call(this, e.camelCase(t)) : r.call(this);
+            })), e.ui.ie = !!/msie [\w.]+/.exec(navigator.userAgent.toLowerCase()), e.fn.extend({
+                focus: (a = e.fn.focus, function(t, n) {
+                    return "number" == typeof t ? this.each(function() {
+                        var i = this;
+                        setTimeout(function() {
+                            e(i).focus(), n && n.call(i);
+                        }, t);
+                    }) : a.apply(this, arguments);
+                }),
+                disableSelection: (o = "onselectstart" in document.createElement("div") ? "selectstart" : "mousedown", 
+                function() {
+                    return this.bind(o + ".ui-disableSelection", function(e) {
+                        e.preventDefault();
+                    });
+                }),
+                enableSelection: function() {
+                    return this.unbind(".ui-disableSelection");
+                },
+                zIndex: function(t) {
+                    if (void 0 !== t) return this.css("zIndex", t);
+                    if (this.length) for (var n, i, r = e(this[0]); r.length && r[0] !== document; ) {
+                        if (("absolute" === (n = r.css("position")) || "relative" === n || "fixed" === n) && (i = parseInt(r.css("zIndex"), 10), 
+                        !isNaN(i) && 0 !== i)) return i;
+                        r = r.parent();
+                    }
+                    return 0;
+                }
+            }), e.ui.plugin = {
+                add: function(t, n, i) {
+                    var r, o = e.ui[t].prototype;
+                    for (r in i) o.plugins[r] = o.plugins[r] || [], o.plugins[r].push([ n, i[r] ]);
+                },
+                call: function(e, t, n, i) {
+                    var r, o = e.plugins[t];
+                    if (o && (i || e.element[0].parentNode && 11 !== e.element[0].parentNode.nodeType)) for (r = 0; r < o.length; r++) e.options[o[r][0]] && o[r][1].apply(e.element, n);
+                }
+            };
+        }) ? i.apply(t, r) : i) || (e.exports = o);
+    },
+    767: function(e, t) {
+        e.exports = function(e) {
+            var t = "undefined" != typeof window && window.location;
+            if (!t) throw new Error("fixUrls requires window.location");
+            if (!e || "string" != typeof e) return e;
+            var n = t.protocol + "//" + t.host, i = n + t.pathname.replace(/\/[^\/]*$/, "/");
+            return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(e, t) {
+                var r, o = t.trim().replace(/^"(.*)"$/, function(e, t) {
+                    return t;
+                }).replace(/^'(.*)'$/, function(e, t) {
+                    return t;
+                });
+                return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(o) ? e : (r = 0 === o.indexOf("//") ? o : 0 === o.indexOf("/") ? n + o : i + o.replace(/^\.\//, ""), 
+                "url(" + JSON.stringify(r) + ")");
+            });
+        };
+    }
+} ]);

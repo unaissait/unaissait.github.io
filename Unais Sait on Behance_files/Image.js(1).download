@@ -1,0 +1,507 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 34 ], {
+    1887: function(t, i, e) {
+        var o = e(149), r = {
+            "lib/_buttons/_default": e(839).template
+        }, s = new o.Template({
+            code: function(t, i, e) {
+                var o = this;
+                return o.b(e = e || ""), o.b('<div id="profile-cover-wrap" class="faux-edit-cover cfix">'), 
+                o.b("\n" + e), o.b('  <div class="fancyform left" id="profile-cover-container">'), 
+                o.b("\n" + e), o.b('    <p class="small-text grey hide show-on-crop">IMAGE PREVIEW</p>'), 
+                o.b("\n"), o.b("\n" + e), o.b('    <div class="left cover-cropper hide show-on-crop">'), 
+                o.b("\n" + e), o.b('      <div id="profile-cover" class="profile-cover cfix">'), 
+                o.b("\n" + e), o.b('        <div id="cover-preview-img" class="cover-img relative dirty-form-html no-image-yet">'), 
+                o.b("\n" + e), o.b(o.rp("<lib/_buttons/_default0", t, i, "")), o.b("        </div>"), 
+                o.b("\n" + e), o.b("      </div>"), o.b("\n" + e), o.b("    </div>"), o.b("\n" + e), 
+                o.b("  </div>"), o.b("\n"), o.b("\n" + e), o.b('  <div class="cover-image-column image-column right hide">'), 
+                o.b("\n" + e), o.b('    <div class="cover-image-cropper"></div>'), o.b("\n" + e), 
+                o.b("  </div>"), o.b("\n" + e), o.b("</div>"), o.b("\n"), o.b("\n" + e), o.b('<div id="profile-cover-uploading" class="hide fancy-uploader">'), 
+                o.b("\n" + e), o.b('  <div id="profile-cover-image-progress" class="upload-progressbar-wrap js-upload-form">'), 
+                o.b("\n" + e), o.b('    <div class="upload-progressbar uploader_uploading_bar"></div>'), 
+                o.b("\n" + e), o.b("  </div>"), o.b("\n" + e), o.b("</div>"), o.b("\n"), o.fl();
+            },
+            partials: {
+                "<lib/_buttons/_default0": {
+                    name: "lib/_buttons/_default",
+                    partials: {},
+                    subs: {
+                        classes: function(t, i, e, o) {
+                            e.b("form-button-default");
+                        },
+                        label: function(t, i, e, o) {
+                            e.b("Upload Image");
+                        }
+                    }
+                }
+            },
+            subs: {}
+        }, '<div id="profile-cover-wrap" class="faux-edit-cover cfix">\n  <div class="fancyform left" id="profile-cover-container">\n    <p class="small-text grey hide show-on-crop">IMAGE PREVIEW</p>\n\n    <div class="left cover-cropper hide show-on-crop">\n      <div id="profile-cover" class="profile-cover cfix">\n        <div id="cover-preview-img" class="cover-img relative dirty-form-html no-image-yet">\n          {{<lib/_buttons/_default}}\n            {{$classes}}form-button-default{{/classes}}\n            {{$label}}Upload Image{{/label}}\n          {{/lib/_buttons/_default}}\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class="cover-image-column image-column right hide">\n    <div class="cover-image-cropper"></div>\n  </div>\n</div>\n\n<div id="profile-cover-uploading" class="hide fancy-uploader">\n  <div id="profile-cover-image-progress" class="upload-progressbar-wrap js-upload-form">\n    <div class="upload-progressbar uploader_uploading_bar"></div>\n  </div>\n</div>\n', o);
+        s.ri = function(t, i, e) {
+            return o.helpers && t.unshift(o.helpers), this.r(t, (s = r, n = i, Object.keys(n).reduce(function(t, i) {
+                return t[i] = n[i], t;
+            }, s)), e);
+            var s, n;
+        }, t.exports = s.render.bind(s), t.exports.template = s;
+    },
+    1890: function(t, i, e) {
+        var o = e(1891);
+        "string" == typeof o && (o = [ [ t.i, o, "" ] ]);
+        var r = {
+            hmr: !0,
+            transform: void 0,
+            insertInto: void 0
+        };
+        e(531)(o, r);
+        o.locals && (t.exports = o.locals);
+    },
+    1891: function(t, i, e) {
+        (t.exports = e(25)(!1)).push([ t.i, ".jcrop-holder{direction:ltr;text-align:left}.jcrop-vline,.jcrop-hline{background:#fff top left repeat;font-size:0;position:absolute}.jcrop-vline{height:100%;width:1px !important}.jcrop-hline{height:1px !important;width:100%}.jcrop-vline.right{right:0}.jcrop-hline.bottom{bottom:0}.jcrop-handle{background-color:#333;border:1px #eee solid;font-size:1px}.jcrop-tracker{height:100%;width:100%;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.jcrop-handle.ord-n{left:50%;margin-left:-4px;margin-top:-4px;top:0}.jcrop-handle.ord-s{bottom:0;left:50%;margin-bottom:-4px;margin-left:-4px}.jcrop-handle.ord-e{margin-right:-4px;margin-top:-4px;right:0;top:50%}.jcrop-handle.ord-w{left:0;margin-left:-4px;margin-top:-4px;top:50%}.jcrop-handle.ord-nw{left:0;margin-left:-4px;margin-top:-4px;top:0}.jcrop-handle.ord-ne{margin-right:-4px;margin-top:-4px;right:0;top:0}.jcrop-handle.ord-se{bottom:0;margin-bottom:-4px;margin-right:-4px;right:0}.jcrop-handle.ord-sw{bottom:0;left:0;margin-bottom:-4px;margin-left:-4px}.jcrop-dragbar.ord-n,.jcrop-dragbar.ord-s{height:7px;width:100%}.jcrop-dragbar.ord-e,.jcrop-dragbar.ord-w{height:100%;width:7px}.jcrop-dragbar.ord-n{margin-top:-4px}.jcrop-dragbar.ord-s{bottom:0;margin-bottom:-4px}.jcrop-dragbar.ord-e{margin-right:-4px;right:0}.jcrop-dragbar.ord-w{margin-left:-4px}.jcrop-light .jcrop-vline,.jcrop-light .jcrop-hline{background:#fff;filter:Alpha(opacity=70) !important;opacity:0.7 !important}.jcrop-light .jcrop-handle{background-color:#000;border-color:#fff;border-radius:3px}.jcrop-dark .jcrop-vline,.jcrop-dark .jcrop-hline{background:#000;filter:Alpha(opacity=70) !important;opacity:0.7 !important}.jcrop-dark .jcrop-handle{background-color:#fff;border-color:#000;border-radius:3px}.jcrop-holder img,img.jcrop-preview{max-width:none}.pcrop-buttons-wrap{margin-top:10px;margin-left:-10px}.pcrop-buttons-wrap a{margin-left:10px}\n", "" ]);
+    },
+    2066: function(t, i, e) {
+        "use strict";
+        e.r(i);
+        var o = e(840), r = {
+            onProgress: function() {
+                var t;
+                (t = this._view).onProgress.apply(t, arguments);
+            },
+            cropImage: function(t) {
+                var i = this.MAX_IMAGE_WIDTH || 520;
+                return t.oldWidth = t.width, t.oldHeight = t.height, t.width = Math.min(t.width, i), 
+                t.reductionRatio = t.width / t.oldWidth, t.height = t.height * t.reductionRatio, 
+                this._view.onRenderComplete(), this._view.crop(t);
+            },
+            hide: function() {
+                this._view.hide();
+            },
+            onError: function(t) {
+                this._view.onError(t);
+            },
+            onComplete: function(t) {
+                this._view.onComplete(t);
+            }
+        }, s = e(175), n = e(141), a = e.n(n), p = e(309), h = e.n(p), l = e(517), c = e(2), d = e(466), u = e(463), _ = e(1887), g = e.n(_), m = (e(1888), 
+        e(516)), f = e(1);
+        e(396), e(1889), e(1890);
+        function v() {
+            return (v = Object.assign || function(t) {
+                for (var i = 1; i < arguments.length; i++) {
+                    var e = arguments[i];
+                    for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+                }
+                return t;
+            }).apply(this, arguments);
+        }
+        a.a.widget("ui.previewCrop", Object.assign({}, {
+            options: {
+                center_select: !0,
+                mode: "data",
+                preview_ratio: 1,
+                img_data: null,
+                $preview_el: null,
+                $upload_el: null,
+                encoding: "base64",
+                min_size: [ 100, 100 ],
+                url: "/crop",
+                show_save: !0,
+                show_crop: !0,
+                show_recrop: !0,
+                show_cancel: !0,
+                max_height: 400,
+                max_width: 600,
+                shrink_box: !1
+            },
+            original_preview: null,
+            $save_btn: null,
+            $crop_btn: null,
+            $recrop_btn: null,
+            $cancel_btn: null,
+            $img_container: null,
+            $btns_container: null,
+            $preview_img_container: null,
+            $img: null,
+            $img_preview: null,
+            original_height: null,
+            original_width: null,
+            last_css: null,
+            data_source: "",
+            local_path: "",
+            name: "",
+            last_state: null,
+            _updated: null,
+            _coords: null,
+            coords: function() {
+                var t, i, e, o, r;
+                return !!this._coords && (r = this.options.min_size[1] / this.options.min_size[0], 
+                t = this._coords.x, i = this._coords.y, e = this._coords.x2 - this._coords.x, this._coords.y2 - this._coords.y, 
+                e = Math.round(e), o = Math.round(e * r), t = t + e > this.original_width ? this.original_width - e : t, 
+                i = i + o > this.original_height ? this.original_height - o : i, {
+                    x: t = Math.round(t),
+                    x2: t + e,
+                    y: i = Math.round(i),
+                    y2: i + o,
+                    w: e,
+                    h: o
+                });
+            },
+            updated: function() {
+                return this._updated;
+            },
+            cropReady: function() {
+                return !this._updated && (this.options.img_data.source || this.options.img_data.name);
+            },
+            source: function() {
+                return "data" === this.options.mode ? this.data_source : this.local_path + this.name;
+            },
+            uploadedFilename: function() {
+                return this.options.img_data.uploaded_filename;
+            },
+            filename: function() {
+                if ("link" !== this.options.mode) throw "No filenames are available if mode is not link";
+                return this.name;
+            },
+            destroy: function() {
+                this.element.html("");
+            },
+            crop: function() {
+                return this._crop();
+            },
+            recrop: function() {
+                return this._recrop();
+            },
+            cancel: function() {
+                return this._cancel();
+            },
+            pushState: function(t) {
+                this.last_state = {
+                    coords: this.coords(),
+                    img_data: v({}, this.options.img_data),
+                    data_source: this.data_source,
+                    local_path: this.local_path,
+                    name: this.name
+                }, this.options.img_data = t, this.element.html(""), this._init();
+            },
+            generateMarkup: function() {
+                var t = this._imgSource();
+                this.$img = a()('<img src="' + t + '"  class="pcrop-image" />'), this.$img_preview = a()('<img src="' + t + '" class="pcrop-preview-img" />'), 
+                this.$save_btn = a()('<a class="form-button form-button-default form-button-save pcrop-save-btn">Save</a>'), 
+                this.$crop_btn = a()('<a class="form-button form-button-default form-button-crop pcrop-crop-btn">Crop</a>'), 
+                this.$recrop_btn = a()('<a class="form-button form-button-default form-button-recrop pcrop-recrop-btn">Re-Crop</a>'), 
+                this.$cancel_btn = a()('<a class="form-button form-button-dark form-button-cancel pcrop-cancel-btn">Cancel</a>'), 
+                this.$img_container = a()('<div class="pcrop-image-wrap"></div>'), this.$btns_container = a()('<div class="pcrop-buttons-wrap cfix"></div>'), 
+                this.$preview_img_container = a()('<div class="pcrop-preview-wrap"></div>');
+            },
+            appendMarkup: function() {
+                var t = this, i = !1, e = this.options;
+                this.element.html(this.$img_container), a.a.each({
+                    show_recrop: "$recrop_btn",
+                    show_crop: "$crop_btn",
+                    show_save: "$save_btn",
+                    show_cancel: "$cancel_btn"
+                }, function(o, r) {
+                    !0 === e[o] && (t.$btns_container.append(t[r]), i = !0);
+                }), i && this.element.append(this.$btns_container), this.$img_container.append(this.$img), 
+                e.$preview_el.html(this.$preview_img_container), this.$preview_img_container.append(this.$img_preview);
+            },
+            bindButtons: function() {
+                this.$crop_btn.on("click", a.a.proxy(this._crop, this)), this.$recrop_btn.on("click", a.a.proxy(this._recrop, this)).hide(), 
+                this.$save_btn.on("click", a.a.proxy(this._save, this)), this.$cancel_btn.on("click", a.a.proxy(this._cancel, this));
+            },
+            jCrop: function() {
+                var t, i, e, o = this, r = this.options, s = 0, n = 0, p = r.min_size[0], h = r.min_size[1], l = r.img_data.width, c = r.img_data.height;
+                i = this.determineProportion(), l = r.img_data.width * i, c = r.img_data.height * i, 
+                e = r.shrink_box ? this.determineCropBoxProportion(l, c) : 1, p = p * i * e, h = h * i * e, 
+                this._coords = {}, this.last_css = {}, this.$preview_img_container.css({
+                    position: "relative",
+                    width: r.min_size[0] * r.preview_ratio + "px",
+                    height: r.min_size[1] * r.preview_ratio + "px",
+                    overflow: "hidden"
+                }), r.center_select ? (s = Math.round((c - h) / 2), n = Math.round((l - p) / 2)) : s = n = 0, 
+                this._coords = {
+                    x: n,
+                    x2: n + p,
+                    y: s,
+                    y2: s + h
+                }, t = {
+                    width: l,
+                    height: c,
+                    maxWidth: l
+                }, this.$img.css(t), this.$img_preview.css(v({}, t, {
+                    top: s + "px",
+                    left: n + "px"
+                })), this.$img.Jcrop({
+                    allowSelect: !1,
+                    minSize: [ Math.ceil(p), Math.ceil(h) ],
+                    setSelect: [ this._coords.x, this._coords.y, this._coords.x2, this._coords.y2 ],
+                    aspectRatio: p / h,
+                    bgOpacity: .4,
+                    onChange: function(t) {
+                        var e, s, n, p, h, d, u, _, g, m, f, v, b;
+                        t.x < 0 && (t.x2 -= t.x, t.x = 0), t.y < 0 && (t.y2 -= t.y, t.y = 0), p = t.x2 - t.x, 
+                        h = t.y2 - t.y, e = Math.min(p, l) / p, s = Math.min(h, c) / h, n = Math.min(e, s), 
+                        d = Math.round(p * n), u = Math.round(h * n), _ = r.preview_ratio * r.min_size[0], 
+                        g = r.preview_ratio * r.min_size[1], m = _ * l / d, f = g * c / u, v = _ * t.x / d, 
+                        b = g * t.y / u, o.last_css = {
+                            width: m + "px",
+                            height: f + "px",
+                            left: -v + "px",
+                            top: -b + "px",
+                            position: "absolute"
+                        }, o.$img_preview.css(o.last_css), t.w = p / i, t.h = h / i, t.x /= i, t.y /= i, 
+                        e = Math.min(t.w, r.img_data.width) / t.w, s = Math.min(t.h, r.img_data.height) / t.h, 
+                        n = Math.min(e, s), t.h *= n, t.w *= n, t.x2 = t.x + t.w, t.y2 = t.y + t.h, o._coords = t, 
+                        o._trigger("change", new a.a.Event(), {
+                            coords: t
+                        });
+                    }
+                });
+            },
+            determineProportion: function() {
+                var t, i, e = this.options, o = e.max_height, r = e.max_width;
+                return t = e.img_data.width / r, i = e.img_data.height / o, 1 / Math.max(t, i, 1);
+            },
+            determineCropBoxProportion: function(t, i) {
+                var e, o, r = this.options, s = r.min_size[1], n = r.min_size[0];
+                return e = t / n, o = i / s, Math.min(e, o, 1);
+            },
+            _setOption: function(t, i) {
+                var e = this._super(t, i);
+                return "max_width" !== t && "max_height" !== t || this.$img && this.$img.data("Jcrop") && (this.$img.data("Jcrop").destroy(), 
+                this.jCrop()), e;
+            },
+            _init: function() {
+                var t = this.options, i = t.img_data.width, e = t.img_data.height;
+                a.a.each([ "img_data", "$preview_el", "$upload_el", "url" ], function(i, e) {
+                    t[e] || a.a.error("Must pass in " + e);
+                }), this.generateMarkup(), this.original_preview = t.$preview_el.html(), this._updated = !1, 
+                t.img_data.height = parseFloat(t.img_data.height), t.img_data.width = parseFloat(t.img_data.width), 
+                this.original_height = t.img_data.height, this.original_width = t.img_data.width, 
+                this.appendMarkup(), this.bindButtons(), this.jCrop(), t.$upload_el.hide(), this._trigger("initialized", new a.a.Event(), {
+                    cw: i,
+                    ch: e
+                });
+            },
+            _imgSource: function() {
+                var t = this.options.img_data;
+                if ("data" === this.options.mode) return "data:" + t.mime + ";" + this.options.encoding + "," + t.source;
+                if ("link" === this.options.mode) return t.local_path + t.name;
+                throw new Error("Unknown mode: [" + this.options.mode + "]");
+            },
+            _crop: function() {
+                var t = this, i = this.options, e = this.coords();
+                function o(i) {
+                    l.default.show(t.$btns_container), t.$crop_btn.show(), t.$recrop_btn.hide(), t.$cancel_btn.show(), 
+                    i && i.messages ? Object(m.default)(t.element, i.messages) : Object(m.default)(t.element, [ {
+                        type: "error",
+                        message: "Image failed to crop. Please try again later."
+                    } ]), t._trigger("failure", new a.a.Event(), i);
+                }
+                if ("data" === i.mode ? e.source = this.options.img_data.source : e.file = this.options.img_data.name, 
+                e.h && e.w) return l.default.hide(this.$btns_container, "Cropping..."), Object(f.default)({
+                    url: this.options.url,
+                    type: "POST",
+                    data: e
+                }).then(function(e) {
+                    var r;
+                    e && e.valid ? ("data" === t.options.mode ? t.data_source = e.source : (t.local_path = e.local_path, 
+                    t.name = e.name), t._trigger("success", new a.a.Event(), e) && (i.$upload_el.show(), 
+                    t.$img_preview = a()("<img />"), r = "data" === i.mode ? "data:" + e.mime + ";" + i.encoding + "," + e.source : e.local_path + e.name, 
+                    t.$img_preview.css({
+                        width: i.min_size[0] * i.preview_ratio,
+                        height: i.min_size[1] * i.preview_ratio,
+                        top: "0px",
+                        left: "0px"
+                    }).addClass("pcrop-preview-img").attr("src", r), t.$preview_img_container.html(t.$img_preview), 
+                    t.$img_container.hide(), t.original_preview = i.$preview_el.html(), t._updated = !0, 
+                    t._trigger("valid", new a.a.Event(), e), l.default.show(t.$btns_container), t.$crop_btn.hide(), 
+                    t.$recrop_btn.show(), t.$cancel_btn.hide())) : o(e);
+                }, o), this.element;
+                this._trigger("badcoords", new a.a.Event());
+            },
+            _recrop: function() {
+                this.options.$upload_el.hide(), this.$img_preview = a()('<img src="' + this._imgSource() + '" class="pcrop-preview-img" />').css(this.last_css), 
+                this.$preview_img_container.html(this.$img_preview), this.$img_container.show(), 
+                this.$crop_btn.show(), this.$recrop_btn.hide(), this.$cancel_btn.show(), this._trigger("recrop");
+            },
+            _cancel: function() {
+                this.options.$upload_el.show(), this.$img_container.hide(), this.$crop_btn.hide(), 
+                this.$recrop_btn.hide(), this.$cancel_btn.hide(), this.options.$preview_el.html(this.original_preview), 
+                this.last_state ? (this.options.img_data = v({}, this.last_state.img_data), this.data_source = this.last_state.data_source, 
+                this.local_path = this.last_state.local_path, this.name = this.last_state.name, 
+                this.last_state = !1, this._coords = v({}, this.last_state.coords), this._updated = !0) : (this.options.img_data = {}, 
+                this.data_source = "", this.local_path = "", this.name = "", this._updated = !1, 
+                this._coords = null), this._trigger("cancel");
+            },
+            _save: function() {
+                this._coords.h && this._coords.w ? this._trigger("save") : this._trigger("badcoords");
+            }
+        }));
+        var b = e(903), w = e.n(b);
+        function $() {
+            return ($ = Object.assign || function(t) {
+                for (var i = 1; i < arguments.length; i++) {
+                    var e = arguments[i];
+                    for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+                }
+                return t;
+            }).apply(this, arguments);
+        }
+        var x = u.default.extend({
+            mustache: g.a,
+            templateData: function() {
+                return $({
+                    title: c.default.translate("profile_editor_replace_profile_picture", "Replace Profile Picture"),
+                    buttons: [ {
+                        label: c.default.translate("profile_editor_button_crop_save", "Crop & Save"),
+                        trailingIconAsset: w()(),
+                        classes: [ "form-submit", "rf-button--tertiary", "rf-button--icon-trailing" ]
+                    }, {
+                        label: c.default.translate("profile_editor_button_cancel", "Cancel"),
+                        classes: [ "rf-button--inline", "js-cancel" ]
+                    } ],
+                    hideClose: !0
+                }, this._super());
+            },
+            rendered: function() {
+                this._super(), this.$popup = this.$view.filter(".popup"), this.$submit = this.$view.find(".form-submit"), 
+                this.$cover = this.$view.find("#profile-cover-wrap"), this.$upload = this.$view.find("#profile-cover-uploading"), 
+                this.$progress = this.$upload.find(".upload-progressbar"), this.$preview = this.$cover.find(".cover-normal .cover-img"), 
+                this.$buttons = this.$view.find(".popup-buttons"), this.$upload_button = this.$preview.find(".form-button, .js-rf-button"), 
+                this.$popup.closest(".popup-inner").addClass("profile-dialog-popup"), this.$buttons.addClass("right-buttons").find(".form-submit").on("click", this.submit.bind(this)), 
+                this.$upload.find(".upload-progressbar").progressbar().find(".ui-progressbar-value").addClass("uploader_uploading_bg");
+            },
+            load: function(t) {
+                var i;
+                t.image && t.local_path && (i = a()("<img>", {
+                    src: t.local_path + t.image
+                }).css({
+                    width: s.default.IMAGE.WIDTH,
+                    height: s.default.IMAGE.HEIGHT
+                }), this.$preview.html(i).removeClass("no-image-yet"));
+            },
+            validateResponse: function(t) {
+                var i = c.default.translate("profile_editor_error_failed_upload", "File failed to upload. Please try again.");
+                return !!t.name || (a.a.isArray(t.messages) && 1 === t.messages.length ? i = t.messages.shift().message : t.error_msg && (i = t.error_msg), 
+                this.error(i), !1);
+            },
+            onError: function(t) {
+                this.$view && (l.default.show(this.$buttons), this.toggleProgress(!0), this.hide()), 
+                Object(d.default)({
+                    title: c.default.translate("profile_editor_simple_title_upload_error", "Upload Error"),
+                    classes: [ "image-upload-error-popup" ],
+                    html: t,
+                    buttons: [ {
+                        label: c.default.translate("profile_editor_button_okay", "Okay"),
+                        classes: [ "js-confirm" ]
+                    } ]
+                });
+            },
+            onProgress: function(t, i) {
+                var e = 100 * t / i;
+                this.$progress.progressbar("value", e);
+            },
+            onRenderComplete: function() {
+                this.$cover.removeClass("hide");
+            },
+            onComplete: function() {
+                this.$progress.progressbar("disable"), this.toggleProgress(!0);
+            },
+            preRender: function() {
+                this.$cover.addClass("hide"), this.$buttons.addClass("hide");
+            },
+            submit: function() {
+                this.toggleProgress(!1), l.default.hide(this.$buttons, c.default.translate("profile_editor_button_saving", "Saving..."));
+                var t = this.$cropper.previewCrop("coords");
+                t = this._getScaledCoords(t, this._model.get("imageData")), this.cropPromise.resolve(t);
+            },
+            _getScaledCoords: function(t, i) {
+                var e = Math.floor(t.w / i.reductionRatio), o = Math.floor(t.h / i.reductionRatio), r = Math.floor(t.x / i.reductionRatio), s = Math.floor(t.y / i.reductionRatio);
+                return {
+                    x: r,
+                    y: s,
+                    x2: r + e,
+                    y2: s + o
+                };
+            },
+            _isTooNarrow: function(t) {
+                return t < s.default.IMAGE.WIDTH;
+            },
+            _isTooShort: function(t) {
+                return t < s.default.IMAGE.HEIGHT;
+            },
+            _showPreviewCrop: function(t, i) {
+                this.$cropper.data("previewCrop") ? (t && this.$cropper.previewCrop("pushState", t), 
+                this.$cropper.previewCrop("recrop")) : this.$cropper.previewCrop({
+                    $preview_el: a()(""),
+                    $upload_el: a()(""),
+                    min_size: [ s.default.IMAGE.WIDTH, s.default.IMAGE.HEIGHT ],
+                    show_save: !1,
+                    show_cancel: !1,
+                    show_crop: !1,
+                    show_recrop: !1,
+                    max_width: 999999,
+                    max_height: i,
+                    img_data: t
+                });
+            },
+            hideButtons: function(t) {
+                t = t || c.default.translate("profile_editor_buttoN_sabing", "Saving..."), l.default.hide(this.$buttons, t);
+            },
+            toggleProgress: function(t) {
+                this.$upload.toggleClass("hide", t);
+            },
+            crop: function(t) {
+                var i, e = this.$cover.find(".cover-cropper .cover-img");
+                if (this.cropPromise = new h.a(), this._isTooNarrow(t.width) || this._isTooShort(t.height)) return this.cropPromise.reject(c.default.translate("profile_editor_error_resize", "Image cannot be resized properly. Try an image that is more like a square.")), 
+                this.cropPromise;
+                this._model.set("imageData", t), this.$cropper = this.$cover.find(".cover-image-column"), 
+                e.removeClass("no-image-yet"), this.$popup.addClass("crop-mode"), this.$buttons.removeClass("hide"), 
+                this.$cropper.removeClass("hide"), t && (i = a()(window).height() - (this.$view.outerHeight() - this.$cover.height()) - 20, 
+                this.$cropper.height(Math.min(t.height, i)).width(Math.min(t.width, Math.ceil(i / t.height * t.width))).css("max-height", i));
+                var o = this.$cover.children().toArray().map(function(t) {
+                    return a()(t).outerWidth(!0);
+                }).reduce(function(t, i) {
+                    return t + i;
+                }, 2);
+                return this.$cover.width(o), this._showPreviewCrop(t, i), this.position(), this.cropPromise;
+            }
+        });
+        i.default = o.default.extend({
+            init: function() {
+                this._super.apply(this, arguments), this.relay(this._view, "success hide");
+            },
+            render: function() {
+                this._super(), this._view.show(), this._view.position();
+            }
+        }, {
+            VIEW_CLASS: x
+        }).mixin(r);
+    },
+    466: function(t, i, e) {
+        t.exports = e(10)(94);
+    },
+    839: function(t, i, e) {
+        t.exports = e(10)(446);
+    },
+    840: function(t, i, e) {
+        t.exports = e(10)(258);
+    },
+    903: function(t, i, e) {
+        var o = e(149), r = {}, s = new o.Template({
+            code: function(t, i, e) {
+                var o = this;
+                return o.b(e = e || ""), o.b('<svg class="rf-icon rf-icon--triangle" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 125.8 291.6" style="enable-background:new 0 0 125.8 291.6;">'), 
+                o.b("\n" + e), o.b('  <polygon points="88.6,145.8 18.6,64.7 18.6,226.9 "/>'), o.b("\n" + e), 
+                o.b("</svg>"), o.b("\n"), o.fl();
+            },
+            partials: {},
+            subs: {}
+        }, '{{! NOTE: This triangle was tailor-made for buttons. Feel free to use it elsewhere, but please do not change any attributes in this file. }}\n<svg class="rf-icon rf-icon--triangle" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 125.8 291.6" style="enable-background:new 0 0 125.8 291.6;">\n  <polygon points="88.6,145.8 18.6,64.7 18.6,226.9 "/>\n</svg>\n', o);
+        s.ri = function(t, i, e) {
+            return o.helpers && t.unshift(o.helpers), this.r(t, (s = r, n = i, Object.keys(n).reduce(function(t, i) {
+                return t[i] = n[i], t;
+            }, s)), e);
+            var s, n;
+        }, t.exports = s.render.bind(s), t.exports.template = s;
+    }
+} ]);

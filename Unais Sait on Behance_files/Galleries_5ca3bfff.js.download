@@ -1,0 +1,860 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 2 ], {
+    150: function(e, t, o) {
+        "use strict";
+        var n = o(18), i = o(190), r = o(70), l = o(67), s = n.default.extend({
+            name: "Tooltip",
+            components: {
+                CloseIcon: l.a,
+                Fade: r.a
+            },
+            props: {
+                alignment: {
+                    type: String,
+                    default: "center",
+                    validator: function(e) {
+                        return [ "left", "center", "right" ].includes(e);
+                    }
+                },
+                position: {
+                    type: String,
+                    default: "top",
+                    validator: function(e) {
+                        return [ "top", "bottom", "center" ].includes(e);
+                    }
+                },
+                toggleMethod: {
+                    type: String,
+                    default: "hover",
+                    validator: function(e) {
+                        return [ "hover", "click", "none" ].includes(e);
+                    }
+                },
+                alignmentOffset: {
+                    type: Number,
+                    default: 0
+                },
+                horizontalPadding: {
+                    type: Number,
+                    default: 10
+                },
+                verticalPadding: {
+                    type: Number,
+                    default: 10
+                },
+                distance: {
+                    type: Number,
+                    default: 5
+                },
+                triangleDistance: {
+                    type: Number,
+                    default: 10
+                },
+                isOpen: {
+                    type: Boolean
+                },
+                isResponsive: {
+                    type: Boolean
+                },
+                hasTextTrigger: {
+                    type: Boolean
+                },
+                canTruncateTrigger: {
+                    type: Boolean
+                },
+                hasTriangle: {
+                    type: Boolean,
+                    default: !0
+                },
+                isCloseable: {
+                    type: Boolean,
+                    default: !1
+                },
+                isOpenable: {
+                    type: Boolean,
+                    default: !0
+                }
+            },
+            data: function() {
+                return {
+                    isCurrentlyOpen: this.isOpen,
+                    focusToggle: null
+                };
+            },
+            watch: {
+                isOpen: function(e) {
+                    this.isCurrentlyOpen = e;
+                }
+            },
+            computed: {
+                shouldAlign: function() {
+                    if ("center" !== this.alignment) return !0;
+                },
+                containerStyles: function() {
+                    var e = {
+                        paddingTop: this.verticalPadding + "px",
+                        paddingBottom: this.verticalPadding + "px",
+                        paddingRight: this.horizontalPadding + "px",
+                        paddingLeft: this.horizontalPadding + "px"
+                    };
+                    if ("center" === this.position) return e;
+                    var t = "top" === this.position ? "6px" : "0px";
+                    return e["top" === this.position ? "bottom" : "top"] = "calc(100% + " + this.distance + "px + " + t + ")", 
+                    this.shouldAlign && (e[this.alignment] = this.alignmentOffset + "px"), e;
+                },
+                triangleStyles: function() {
+                    var e = {};
+                    return this.shouldAlign && (e[this.alignment] = this.triangleDistance + "px"), e;
+                }
+            },
+            methods: {
+                ifToggleMethod: function(e, t) {
+                    e === this.toggleMethod && t();
+                },
+                toggleOpen: function() {
+                    this.isCurrentlyOpen ? this.close() : this.open();
+                },
+                open: function() {
+                    this.isOpenable && (this.isCurrentlyOpen = !0, this.$emit("didOpen"));
+                },
+                close: function() {
+                    this.isCurrentlyOpen = !1, this.$emit("didClose");
+                }
+            },
+            mounted: function() {
+                this.focusToggle = new i.a(this.$el);
+            },
+            destroyed: function() {
+                this.focusToggle && (this.focusToggle.destroy(), this.focusToggle = null);
+            }
+        }), a = o(210), u = o(8);
+        var p = Object(u.default)(s, function() {
+            var e, t, o, n = this, i = n.$createElement, r = n._self._c || i;
+            return r("div", {
+                ref: "root",
+                class: [ n.$style.wrapper, (e = {}, e[n.$style.responsive] = n.isResponsive, e), (t = {}, 
+                t[n.$style.textWrapper] = n.hasTextTrigger, t) ],
+                style: {
+                    cursor: n.isOpenable ? "pointer" : "auto"
+                },
+                on: {
+                    mouseenter: function(e) {
+                        return n.ifToggleMethod("hover", n.open);
+                    },
+                    mouseleave: function(e) {
+                        return n.ifToggleMethod("hover", n.close);
+                    }
+                }
+            }, [ r("span", {
+                ref: "trigger",
+                class: (o = {}, o[n.$style.trigger] = n.canTruncateTrigger, o),
+                on: {
+                    touchend: function(e) {
+                        return n.ifToggleMethod("hover", n.toggleOpen);
+                    },
+                    click: function(e) {
+                        return n.ifToggleMethod("click", n.toggleOpen);
+                    }
+                }
+            }, [ n._t("default") ], 2), r("Fade", [ r("div", {
+                directives: [ {
+                    name: "show",
+                    rawName: "v-show",
+                    value: n.isCurrentlyOpen,
+                    expression: "isCurrentlyOpen"
+                } ],
+                ref: "tooltip",
+                class: [ n.$style.container, n.$style["position-" + n.position], n.$style[n.alignment] ],
+                style: n.containerStyles,
+                on: {
+                    mouseleave: function(e) {
+                        return n.ifToggleMethod("click", n.close);
+                    }
+                }
+            }, [ n.hasTriangle ? r("div", {
+                ref: "triangle",
+                class: n.$style.triangleContainer,
+                style: n.triangleStyles
+            }, [ r("div", {
+                class: n.$style.triangle
+            }), r("div", {
+                class: n.$style.mask
+            }) ]) : n._e(), n._t("tooltipContent"), n.isCloseable ? r("span", {
+                ref: "closeButton",
+                class: n.$style.closeIconWrapper,
+                on: {
+                    touchend: function(e) {
+                        n.ifToggleMethod("hover", n.close), n.$emit("closeButtonClicked");
+                    },
+                    click: function(e) {
+                        n.ifToggleMethod("click", n.close), n.$emit("closeButtonClicked");
+                    }
+                }
+            }, [ r("CloseIcon", {
+                class: n.$style.closeIcon
+            }) ], 1) : n._e() ], 2) ]) ], 1);
+        }, [], !1, function(e) {
+            this.$style = a.default.locals || a.default;
+        }, null, null);
+        t.a = p.exports;
+    },
+    159: function(e, t, o) {
+        var n = o(211);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("05d1fbe8", n, !0, {});
+    },
+    160: function(e, t, o) {
+        "use strict";
+        o.d(t, "c", function() {
+            return i;
+        }), o.d(t, "b", function() {
+            return r;
+        }), o.d(t, "a", function() {
+            return l;
+        });
+        var n = o(0);
+        function i(e) {
+            var t = e ? e.split(".").pop() : null;
+            return !!t && "gif" === t.toLowerCase();
+        }
+        function r(e) {
+            var t = Object(n.__assign)({}, e);
+            return t.max_808 && (t[808] = t.max_808), Object.keys(t).filter(function(e) {
+                return !isNaN(Number(e)) && t[e].length > 1;
+            }).map(function(e) {
+                return t[e] + " " + e + "w";
+            }).join(", ");
+        }
+        function l(e, t) {
+            var o = Object.keys(e).filter(function(e) {
+                return -1 !== e.indexOf("max_") && -1 === e.indexOf("_still");
+            }), n = Object.keys(e).filter(function(e) {
+                return -1 !== e.indexOf("_still");
+            }), i = null;
+            return n.length && (i = n.map(function(o) {
+                var n = -1 !== o.indexOf("max_") ? o.replace("max_", "").replace("_still", "") : o.split("_")[0];
+                if (!(t && Number(n) > t)) return isNaN(Number(n)) ? void 0 : e[o] + " " + n + "w";
+            }).filter(function(e) {
+                return !!e;
+            }).join(", ")), {
+                srcset: o.map(function(o) {
+                    var n = o.replace("max_", "");
+                    if (!(t && Number(n) > t)) return e[o] + " " + n + "w";
+                }).filter(function(e) {
+                    return !!e;
+                }).join(", "),
+                gifStillSrcset: i
+            };
+        }
+    },
+    190: function(e, t, o) {
+        "use strict";
+        var n = function() {
+            function e(e) {
+                e && (this.el = e, this.innerFocusLocked = !0, this.disabledElements = [], this.el.classList.add("focus-toggle"), 
+                -1 === this.el.tabIndex && (this.el.tabIndex = 0), this.boundKeyUp = this.handleKeyUp.bind(this), 
+                this.boundFocusIn = this.handleFocusIn.bind(this), this.el.addEventListener("focusin", this.boundFocusIn), 
+                this.el.addEventListener("keyup", this.boundKeyUp));
+            }
+            return e.prototype.destroy = function() {
+                this.el.removeEventListener("focusin", this.boundFocusIn), this.el.removeEventListener("keyup", this.boundKeyUp), 
+                this.el.classList.remove("focus-toggle");
+            }, e.prototype.handleKeyUp = function(e) {
+                var t = this.getAllFocusableElementsInside();
+                0 !== t.length && (13 === e.keyCode && this.innerFocusLocked && (this.innerFocusLocked = !1, 
+                this._enableInteriorFocus(), t[0].focus()), 27 !== e.keyCode || this.innerFocusLocked || (this.innerFocusLocked = !0, 
+                this._disableInteriorFocus(), this.el.focus()));
+            }, e.prototype.getAllFocusableElementsInside = function() {
+                return this.el.querySelectorAll("[tabindex], a[href], input, select, button, textarea");
+            }, e.prototype._disableInteriorFocus = function() {
+                var e = this;
+                this.getAllFocusableElementsInside().forEach(function(t) {
+                    t.originalTabIndex = t.tabIndex, t.tabIndex = -1, e.disabledElements.push(t);
+                });
+            }, e.prototype._enableInteriorFocus = function() {
+                this.disabledElements.forEach(function(e) {
+                    e.tabIndex = e.originalTabIndex;
+                }), this.disabledElements = [];
+            }, e.prototype.handleFocusIn = function() {
+                if (this.innerFocusLocked && !this.disabledElements.length) return this._disableInteriorFocus();
+                this.innerFocusLocked || this._enableInteriorFocus();
+            }, e;
+        }();
+        t.a = n;
+    },
+    210: function(e, t, o) {
+        "use strict";
+        var n = o(159), i = o.n(n);
+        t.default = i.a;
+    },
+    211: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".Tooltip-wrapper-2py{align-self:flex-start;display:-webkit-inline-box;display:inline-flex;-webkit-box-pack:center;justify-content:center;margin-bottom:-6px;padding-bottom:6px;position:relative}@media (max-width:921px){.Tooltip-wrapper-2py:not(.Tooltip-responsive-1yQ) .Tooltip-container-2aL{display:none}}.Tooltip-textWrapper-2kf{display:block}.Tooltip-trigger-1PL{display:-webkit-box;display:flex;max-width:100%;overflow:hidden;white-space:nowrap}.Tooltip-container-2aL{background-color:#fff;border-radius:3px;box-shadow:0 2px 8px rgba(25,25,25,.3);color:#191919;display:-webkit-box;display:flex;-webkit-box-pack:center;justify-content:center;position:absolute;z-index:100}.Tooltip-container-2aL .Tooltip-triangleContainer-AaB{position:absolute}.Tooltip-container-2aL .Tooltip-mask-pQU{background:#fff;height:6px;left:-2px;position:relative;width:16px}.Tooltip-container-2aL.Tooltip-right-2ui{right:calc(100% + 7px)}.Tooltip-container-2aL.Tooltip-position-top-2Yf .Tooltip-triangleContainer-AaB{bottom:-6px}.Tooltip-container-2aL.Tooltip-position-top-2Yf .Tooltip-triangle-3EI{border:7px solid transparent;-webkit-filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));height:0;position:absolute;width:0;border-top-color:#fff}.Tooltip-container-2aL.Tooltip-position-top-2Yf .Tooltip-mask-pQU{top:-6px}.Tooltip-container-2aL.Tooltip-position-center-ThM{position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);margin-top:-3px}.Tooltip-container-2aL.Tooltip-position-center-ThM.Tooltip-right-2ui .Tooltip-triangleContainer-AaB{margin-top:-6px;right:0;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.Tooltip-container-2aL.Tooltip-position-center-ThM.Tooltip-right-2ui .Tooltip-triangle-3EI{border:7px solid transparent;-webkit-filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));height:0;position:absolute;width:0;border-top-color:#fff;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.Tooltip-container-2aL.Tooltip-position-center-ThM.Tooltip-right-2ui .Tooltip-mask-pQU{display:none}.Tooltip-container-2aL.Tooltip-position-bottom-1en .Tooltip-triangleContainer-AaB{top:-12px}.Tooltip-container-2aL.Tooltip-position-bottom-1en .Tooltip-triangle-3EI{border:7px solid transparent;-webkit-filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));filter:drop-shadow(0 1px 1px rgba(25,25,25,.3));height:0;position:absolute;width:0;border-bottom-color:#fff}.Tooltip-container-2aL.Tooltip-position-bottom-1en .Tooltip-mask-pQU{top:12px}.Tooltip-closeIconWrapper-3hc{position:absolute;right:8px;top:8px}.Tooltip-closeIcon-26g{fill:#a4a4a4;width:10px}.Tooltip-closeIcon-26g:hover{fill:#696969}", "" ]), 
+        t.locals = {
+            wrapper: "Tooltip-wrapper-2py",
+            responsive: "Tooltip-responsive-1yQ",
+            container: "Tooltip-container-2aL",
+            textWrapper: "Tooltip-textWrapper-2kf",
+            trigger: "Tooltip-trigger-1PL",
+            triangleContainer: "Tooltip-triangleContainer-AaB",
+            mask: "Tooltip-mask-pQU",
+            right: "Tooltip-right-2ui",
+            "position-top": "Tooltip-position-top-2Yf",
+            triangle: "Tooltip-triangle-3EI",
+            "position-center": "Tooltip-position-center-ThM",
+            "position-bottom": "Tooltip-position-bottom-1en",
+            closeIconWrapper: "Tooltip-closeIconWrapper-3hc",
+            closeIcon: "Tooltip-closeIcon-26g"
+        };
+    },
+    223: function(e, t, o) {
+        "use strict";
+        function n(e, t, o, n, i, r, l) {
+            try {
+                var s = e[r](l), a = s.value;
+            } catch (e) {
+                return void o(e);
+            }
+            s.done ? t(a) : Promise.resolve(a).then(n, i);
+        }
+        var i, r, l = {
+            props: {
+                wrapperClasses: {
+                    type: Array
+                },
+                isInFocus: {
+                    type: Boolean
+                },
+                isPlaceholder: {
+                    type: Boolean,
+                    default: !1
+                },
+                hasNoConstraints: {
+                    type: Boolean,
+                    default: !1
+                }
+            },
+            data: function() {
+                return {
+                    didTransitionEnd: !1
+                };
+            },
+            watch: {
+                isInFocus: function(e) {
+                    return e ? this.$el.focus() : this.$el.blur();
+                }
+            },
+            mounted: (i = regeneratorRuntime.mark(function e() {
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        this.$refs.overlay && (this.$refs.overlay.addEventListener("transitionend", this.toggleTransitionState), 
+                        this.$refs.overlay.addEventListener("transitionstart", this.toggleTransitionState));
+
+                      case 1:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            }), r = function() {
+                var e = this, t = arguments;
+                return new Promise(function(o, r) {
+                    var l = i.apply(e, t);
+                    function s(e) {
+                        n(l, o, r, s, a, "next", e);
+                    }
+                    function a(e) {
+                        n(l, o, r, s, a, "throw", e);
+                    }
+                    s(void 0);
+                });
+            }, function() {
+                return r.apply(this, arguments);
+            }),
+            beforeDestroy: function() {
+                this.$refs.overlay && (this.$refs.overlay.removeEventListener("transitionend", this.toggleTransitionState), 
+                this.$refs.overlay.removeEventListener("transitionstart", this.toggleTransitionState));
+            },
+            methods: {
+                toggleTransitionState: function(e) {
+                    this.didTransitionEnd = "transitionend" === e.type;
+                }
+            }
+        }, s = o(564), a = o(8);
+        var u = Object(a.default)(l, function() {
+            var e, t, o, n, i = this, r = i.$createElement, l = i._self._c || r;
+            return l("div", {
+                ref: "root",
+                class: [ i.$style.cover, (e = {}, e[i.$style.focused] = i.isInFocus, e) ]
+            }, [ l("div", {
+                class: [ i.$style.wrapper, i.wrapperClasses, (t = {}, t[i.$style.noConstraints] = i.hasNoConstraints, 
+                t) ]
+            }, [ l("div", {
+                ref: "content",
+                class: [ i.$style.content, (o = {}, o[i.$style.searchLoadingPlaceholder + " qa-cover-placeholder"] = i.isPlaceholder, 
+                o) ]
+            }, [ i._t("content", null, {
+                hoverClass: i.$style.showOnHover
+            }) ], 2), i.$slots.hoverOverlay || i.$scopedSlots.hoverOverlay ? l("div", {
+                ref: "overlay",
+                class: [ i.$style.overlay, i.$style.showOnHover, (n = {}, n[i.$style.transitionDone] = i.didTransitionEnd, 
+                n), "qa-cover-overlay" ]
+            }, [ i._t("hoverOverlay") ], 2) : i._e(), i.$slots.alwaysVisibleOverlay || i.$scopedSlots.alwaysVisibleOverlay ? l("div", {
+                class: i.$style.overlay
+            }, [ i._t("alwaysVisibleOverlay", null, {
+                hoverClass: i.$style.showOnHover
+            }) ], 2) : i._e() ]) ]);
+        }, [], !1, function(e) {
+            this.$style = s.default.locals || s.default;
+        }, null, null);
+        t.a = u.exports;
+    },
+    327: function(e, t, o) {
+        var n = o(565);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("7e377530", n, !0, {});
+    },
+    366: function(e, t, o) {
+        "use strict";
+        var n = o(388), i = o(392), r = {
+            components: {
+                OwnersNeue: n.a,
+                Title: i.a
+            },
+            props: {
+                url: String,
+                title: String,
+                owners: Array,
+                isSmall: Boolean,
+                isMedium: Boolean,
+                shouldOpenProjectPopupOnClick: Boolean,
+                isFeatured: Boolean,
+                limitHeight: Boolean,
+                theme: {
+                    type: String,
+                    default: "light",
+                    validator: function(e) {
+                        return [ "light", "dark" ].includes(e);
+                    }
+                },
+                hasShadowText: {
+                    type: Boolean,
+                    default: !0
+                },
+                shouldRemoveMultiOwnerTooltip: {
+                    type: Boolean,
+                    default: !1
+                }
+            }
+        }, l = o(678), s = o(8);
+        var a = Object(s.default)(r, function() {
+            var e, t, o, n, i, r = this, l = r.$createElement, s = r._self._c || l;
+            return s("span", {
+                ref: "root",
+                class: [ (e = {}, e[r.$style.limitHeight] = r.limitHeight, e) ]
+            }, [ s("Title", {
+                ref: "title",
+                class: r.$style.title,
+                attrs: {
+                    url: r.url,
+                    isSmall: r.isSmall,
+                    isMedium: r.isMedium,
+                    shouldOpenProjectPopupOnClick: r.shouldOpenProjectPopupOnClick,
+                    isFeatured: r.isFeatured,
+                    hasShadow: r.hasShadowText
+                },
+                on: {
+                    focus: function(e) {
+                        return r.$emit("elOnFocus");
+                    },
+                    blur: function(e) {
+                        return r.$emit("elOnBlur");
+                    }
+                }
+            }, [ r._v(r._s(r.title)) ]), s("OwnersNeue", {
+                ref: "owners",
+                class: [ r.$style.owner, (t = {}, t[r.$style.smallOwner] = r.isSmall, t), (o = {}, 
+                o[r.$style.mediumOwner] = r.isMedium, o) ],
+                attrs: {
+                    owners: r.owners,
+                    ownerTextClass: [ (n = {}, n[r.$style.shadowText] = r.hasShadowText, n), (i = {}, 
+                    i[r.$style.smallOwnerArrow] = r.isSmall, i) ],
+                    theme: r.theme,
+                    shouldRemoveMultiOwnerTooltip: r.shouldRemoveMultiOwnerTooltip
+                },
+                on: {
+                    ownerOnFocus: function(e) {
+                        return r.$emit("elOnFocus");
+                    },
+                    ownerOnBlur: function(e) {
+                        return r.$emit("elOnBlur");
+                    },
+                    tooltipOnFocus: function(e) {
+                        return r.$emit("elOnFocus");
+                    },
+                    tooltipOnBlur: function(e) {
+                        return r.$emit("elOnBlur");
+                    }
+                }
+            }) ], 1);
+        }, [], !1, function(e) {
+            this.$style = l.default.locals || l.default;
+        }, null, null);
+        t.a = a.exports;
+    },
+    367: function(e, t, o) {
+        "use strict";
+        var n = o(715), i = o(8);
+        var r = Object(i.default)({}, function() {
+            var e = this.$createElement;
+            return (this._self._c || e)("div", {
+                class: this.$style.stats
+            }, [ this._t("content") ], 2);
+        }, [], !1, function(e) {
+            this.$style = n.default.locals || n.default;
+        }, null, null);
+        t.a = r.exports;
+    },
+    388: function(e, t, o) {
+        "use strict";
+        var n = o(150), i = {
+            name: "OwnerRowNeue",
+            props: {
+                owner: {
+                    type: Object,
+                    required: !0
+                }
+            }
+        }, r = o(672), l = o(8);
+        var s = Object(l.default)(i, function() {
+            var e = this, t = e.$createElement, o = e._self._c || t;
+            return o("div", {
+                class: e.$style.row
+            }, [ o("a", {
+                ref: "link",
+                class: [ e.$style.link, "js-mini-profile" ],
+                attrs: {
+                    href: e.owner.url,
+                    "data-id": e.owner.id
+                },
+                on: {
+                    focus: function(t) {
+                        return e.$emit("rowOnFocus");
+                    },
+                    blur: function(t) {
+                        return e.$emit("rowOnBlur");
+                    }
+                }
+            }, [ o("span", {
+                class: e.$style.imageWrap
+            }, [ o("img", {
+                class: e.$style.image,
+                attrs: {
+                    src: e.owner.images[50]
+                }
+            }) ]), o("span", {
+                class: e.$style.name
+            }, [ e._v(e._s(e.owner.display_name)) ]) ]) ]);
+        }, [], !1, function(e) {
+            this.$style = r.default.locals || r.default;
+        }, null, null).exports, a = {
+            name: "OwnersNeue",
+            props: {
+                owners: {
+                    type: Array
+                },
+                ownerTextClass: {
+                    type: Array
+                },
+                theme: {
+                    type: String,
+                    validator: function(e) {
+                        return [ "light", "dark" ].includes(e);
+                    },
+                    default: "light"
+                },
+                showAvatar: {
+                    type: Boolean
+                },
+                shouldRemoveMultiOwnerTooltip: {
+                    type: Boolean,
+                    default: !1
+                }
+            },
+            data: function() {
+                return {
+                    isMultipleOwnerInFocus: !1,
+                    shouldTooltipOpen: !1
+                };
+            },
+            components: {
+                Tooltip: n.a,
+                OwnerRowNeue: s
+            }
+        }, u = o(674);
+        var p = Object(l.default)(a, function() {
+            var e, t = this, o = t.$createElement, n = t._self._c || o;
+            return t.owners.length ? n("div", {
+                class: [ t.$style.root, t.$style[t.theme], (e = {}, e[t.$style.overflowText] = 1 === t.owners.length, 
+                e) ]
+            }, [ t.owners.length > 1 && !t.shouldRemoveMultiOwnerTooltip ? n("div", {
+                class: t.$style.tooltipContainer
+            }, [ n("Tooltip", {
+                ref: "ownersList",
+                attrs: {
+                    hasTextTrigger: !0,
+                    position: "bottom",
+                    alignment: "right",
+                    alignmentOffset: -15,
+                    canTruncateTrigger: !0,
+                    isOpen: t.shouldTooltipOpen
+                },
+                nativeOn: {
+                    keyup: function(e) {
+                        if (!e.type.indexOf("key") && t._k(e.keyCode, "enter", 13, e.key, "Enter")) return null;
+                        t.shouldTooltipOpen = !t.shouldTooltipOpen;
+                    },
+                    focus: function(e) {
+                        return t.$emit("tooltipOnFocus");
+                    },
+                    blur: function(e) {
+                        return t.$emit("tooltipOnBlur");
+                    }
+                }
+            }, [ n("div", {
+                class: [ t.$style.arrow, t.$style.overflowText, t.$style.multipleOwnersText, t.ownerTextClass ]
+            }, [ t._v(" " + t._s(t.$translate("multiple_owners", "Multiple Owners")) + " ") ]), n("div", {
+                attrs: {
+                    slot: "tooltipContent"
+                },
+                slot: "tooltipContent"
+            }, [ n("div", {
+                class: t.$style.list
+            }, t._l(t.owners, function(e, o) {
+                return n("OwnerRowNeue", {
+                    key: "owner-" + o,
+                    ref: "ownerRow",
+                    refInFor: !0,
+                    attrs: {
+                        owner: e
+                    },
+                    on: {
+                        rowOnFocus: function(e) {
+                            return t.$emit("ownerOnFocus");
+                        },
+                        rowOnBlur: function(e) {
+                            return t.$emit("ownerOnBlur");
+                        }
+                    }
+                });
+            }), 1) ]) ]) ], 1) : t._e(), t.owners.length > 1 && t.shouldRemoveMultiOwnerTooltip ? n("div", {
+                class: t.$style.tooltipContainer
+            }, [ n("div", {
+                class: [ t.$style.overflowText, t.ownerTextClass ]
+            }, [ t._v(" " + t._s(t.$translate("multiple_owners", "Multiple Owners")) + " ") ]) ]) : t._e(), t.owners.length <= 1 ? n("span", {
+                class: [ "js-mini-profile", t.$style.ownerAndAvatar ],
+                attrs: {
+                    "data-id": t.owners[0].id
+                }
+            }, [ 1 === t.owners.length && t.showAvatar ? n("span", {
+                class: t.$style.ownerImage
+            }, [ n("img", {
+                ref: "avatar",
+                class: t.$style.ownerImageEl,
+                attrs: {
+                    src: t.owners[0].images[50]
+                }
+            }) ]) : t._e(), n("a", {
+                ref: "singleOwner",
+                class: [ t.$style.owner, t.ownerTextClass ],
+                attrs: {
+                    href: t.owners[0].url
+                },
+                on: {
+                    focus: function(e) {
+                        return t.$emit("ownerOnFocus");
+                    },
+                    blur: function(e) {
+                        return t.$emit("ownerOnBlur");
+                    }
+                }
+            }, [ t._v(t._s(t.owners[0].display_name)) ]) ]) : t._e() ]) : t._e();
+        }, [], !1, function(e) {
+            this.$style = u.default.locals || u.default;
+        }, null, null);
+        t.a = p.exports;
+    },
+    392: function(e, t, o) {
+        "use strict";
+        var n = {
+            props: {
+                url: {
+                    type: String
+                },
+                isSmall: {
+                    type: Boolean
+                },
+                isMedium: {
+                    type: Boolean
+                },
+                shouldOpenProjectPopupOnClick: {
+                    type: Boolean
+                },
+                isFeatured: {
+                    type: Boolean
+                },
+                hasShadow: {
+                    type: Boolean,
+                    default: !0
+                }
+            }
+        }, i = o(676), r = o(8);
+        var l = Object(r.default)(n, function() {
+            var e, t, o, n, i, r = this, l = r.$createElement;
+            return (r._self._c || l)("a", {
+                ref: "link",
+                class: [ r.$style.title, "qa-title-owner", (e = {}, e[r.$style.smallTitle] = r.isSmall, 
+                e), (t = {}, t[r.$style.mediumTitle] = r.isMedium, t), (o = {}, o[r.$style.featured] = r.isFeatured, 
+                o), (n = {}, n[r.$style.hasShadow] = r.hasShadow, n), (i = {}, i["js-project-cover-title-link"] = r.shouldOpenProjectPopupOnClick, 
+                i) ],
+                attrs: {
+                    href: r.url
+                },
+                on: {
+                    focus: function(e) {
+                        return r.$emit("focus");
+                    },
+                    blur: function(e) {
+                        return r.$emit("blur");
+                    }
+                }
+            }, [ r._t("default") ], 2);
+        }, [], !1, function(e) {
+            this.$style = i.default.locals || i.default;
+        }, null, null);
+        t.a = l.exports;
+    },
+    400: function(e, t, o) {
+        var n = o(673);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("0368b5fa", n, !0, {});
+    },
+    401: function(e, t, o) {
+        var n = o(675);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("58a130ac", n, !0, {});
+    },
+    402: function(e, t, o) {
+        var n = o(677);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("4384b397", n, !0, {});
+    },
+    403: function(e, t, o) {
+        var n = o(679);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("e1eaa75a", n, !0, {});
+    },
+    405: function(e, t, o) {
+        var n = o(716);
+        "string" == typeof n && (n = [ [ e.i, n, "" ] ]), n.locals && (e.exports = n.locals);
+        (0, o(26).default)("8e049cb6", n, !0, {});
+    },
+    564: function(e, t, o) {
+        "use strict";
+        var n = o(327), i = o.n(n);
+        t.default = i.a;
+    },
+    565: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, "@-webkit-keyframes Cover-fadeIn-3AZ{0%{opacity:0}to{opacity:1}}@keyframes Cover-fadeIn-3AZ{0%{opacity:0}to{opacity:1}}.Cover-searchLoadingPlaceholder-3yS{-webkit-animation:Cover-fadeIn-3AZ ease-in 1;animation:Cover-fadeIn-3AZ ease-in 1;-webkit-animation-duration:.2s;animation-duration:.2s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;background-color:#ccc;border-radius:3px;opacity:0;overflow:hidden;position:relative}.Cover-cover-2mr{position:relative}.Cover-content-2R2{border-radius:4px}.Cover-content-2R2,.Cover-overlay-28e{height:100%;left:0;position:absolute;top:0;width:100%}.Cover-overlay-28e{color:#fff;display:-webkit-box;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column}.Cover-showOnHover-Ks-{opacity:0;-webkit-transition:opacity .2s;transition:opacity .2s;will-change:opacity}.Cover-cover-2mr:hover .Cover-showOnHover-Ks-,.Cover-focused-1tt .Cover-showOnHover-Ks-{opacity:1}.Cover-showOnHover-Ks-.Cover-transitionDone-22y{will-change:auto}@media (hover:none){.Cover-showOnHover-Ks-{opacity:1}}.Cover-wrapper-300:not(.Cover-noConstraints-PzQ){height:0}.Cover-wrapper-300{border-radius:4px;display:block;padding-top:78.22%;position:relative;width:100%}.Cover-wrapper-300[tabindex]:before{bottom:-10px;left:-10px;right:-10px;top:-10px}", "" ]), 
+        t.locals = {
+            searchLoadingPlaceholder: "Cover-searchLoadingPlaceholder-3yS",
+            fadeIn: "Cover-fadeIn-3AZ",
+            cover: "Cover-cover-2mr",
+            content: "Cover-content-2R2",
+            overlay: "Cover-overlay-28e",
+            showOnHover: "Cover-showOnHover-Ks-",
+            focused: "Cover-focused-1tt",
+            transitionDone: "Cover-transitionDone-22y",
+            wrapper: "Cover-wrapper-300",
+            noConstraints: "Cover-noConstraints-PzQ"
+        };
+    },
+    672: function(e, t, o) {
+        "use strict";
+        var n = o(400), i = o.n(n);
+        t.default = i.a;
+    },
+    673: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".OwnerRowNeue-link-1lv{display:inline-block;max-width:200px;white-space:nowrap}.OwnerRowNeue-link-1lv:hover{text-decoration:none}.OwnerRowNeue-link-1lv:hover .OwnerRowNeue-name-2z2{text-decoration:underline}.OwnerRowNeue-row-2Kz:not(:last-child){margin-bottom:6px}.OwnerRowNeue-name-2z2{text-overflow:ellipsis;white-space:nowrap;color:#191919;max-width:calc(100% - 25px)}.OwnerRowNeue-imageWrap-3oR,.OwnerRowNeue-name-2z2{overflow:hidden;display:inline-block;vertical-align:middle}.OwnerRowNeue-imageWrap-3oR{border-radius:50%;height:18px;margin-right:7px;width:18px}.OwnerRowNeue-image-3xB{width:100%}", "" ]), 
+        t.locals = {
+            link: "OwnerRowNeue-link-1lv",
+            name: "OwnerRowNeue-name-2z2",
+            row: "OwnerRowNeue-row-2Kz",
+            imageWrap: "OwnerRowNeue-imageWrap-3oR",
+            image: "OwnerRowNeue-image-3xB"
+        };
+    },
+    674: function(e, t, o) {
+        "use strict";
+        var n = o(401), i = o.n(n);
+        t.default = i.a;
+    },
+    675: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, '.OwnersNeue-root-3-b{pointer-events:all}.OwnersNeue-root-3-b.OwnersNeue-light-z2U .OwnersNeue-owner-3CC{color:#fff}.OwnersNeue-root-3-b.OwnersNeue-light-z2U .OwnersNeue-arrow-3Ak:after{border-top-color:#fff}.OwnersNeue-root-3-b.OwnersNeue-dark-1da .OwnersNeue-owner-3CC{color:#191919}.OwnersNeue-root-3-b.OwnersNeue-dark-1da .OwnersNeue-arrow-3Ak:after{border-top-color:#191919}.OwnersNeue-ownerImage-2kF{cursor:pointer;display:inline-block;height:20px;margin-right:5px;-webkit-transition:-webkit-filter .1s linear;transition:-webkit-filter .1s linear;transition:filter .1s linear;transition:filter .1s linear,-webkit-filter .1s linear;vertical-align:top;width:20px}.OwnersNeue-ownerAndAvatar-1W8:hover .OwnersNeue-ownerImage-2kF{-webkit-filter:brightness(80%);filter:brightness(80%)}.OwnersNeue-multipleOwnersText-3gi:hover,.OwnersNeue-ownerAndAvatar-1W8:hover .OwnersNeue-owner-3CC{text-decoration:underline}.OwnersNeue-ownerImageEl-dtp{border-radius:50%;width:100%}.OwnersNeue-overflowText-M69{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.OwnersNeue-owner-3CC{color:inherit;display:inline-block;margin-top:1px}.OwnersNeue-tooltipContainer-3aD{display:inline-block;max-width:100%;vertical-align:bottom}.OwnersNeue-arrow-3Ak{padding-right:12px;position:relative}.OwnersNeue-arrow-3Ak:after{border:4px solid transparent;content:"";display:block;height:0;position:absolute;right:0;top:7px;width:0}.OwnersNeue-list-2Or{max-height:170px;overflow-x:hidden;overflow-y:auto}', "" ]), 
+        t.locals = {
+            root: "OwnersNeue-root-3-b",
+            light: "OwnersNeue-light-z2U",
+            owner: "OwnersNeue-owner-3CC",
+            arrow: "OwnersNeue-arrow-3Ak",
+            dark: "OwnersNeue-dark-1da",
+            ownerImage: "OwnersNeue-ownerImage-2kF",
+            ownerAndAvatar: "OwnersNeue-ownerAndAvatar-1W8",
+            multipleOwnersText: "OwnersNeue-multipleOwnersText-3gi",
+            ownerImageEl: "OwnersNeue-ownerImageEl-dtp",
+            overflowText: "OwnersNeue-overflowText-M69",
+            tooltipContainer: "OwnersNeue-tooltipContainer-3aD",
+            list: "OwnersNeue-list-2Or"
+        };
+    },
+    676: function(e, t, o) {
+        "use strict";
+        var n = o(402), i = o.n(n);
+        t.default = i.a;
+    },
+    677: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".Title-title-3nk{color:inherit;display:inline-block;font-size:16px;font-weight:700;margin-bottom:-2px;max-height:43px;overflow:hidden;padding-bottom:2px;pointer-events:all}.Title-title-3nk.Title-featured-24h{color:#0057ff}.Title-title-3nk.Title-hasShadow-14p{text-shadow:1px 1px 3px rgba(0,0,0,.5)}.Title-smallTitle-3gU{font-size:12px;max-height:33px}.Title-mediumTitle-J-V{font-size:15px;padding-bottom:0}", "" ]), 
+        t.locals = {
+            title: "Title-title-3nk",
+            featured: "Title-featured-24h",
+            hasShadow: "Title-hasShadow-14p",
+            smallTitle: "Title-smallTitle-3gU",
+            mediumTitle: "Title-mediumTitle-J-V"
+        };
+    },
+    678: function(e, t, o) {
+        "use strict";
+        var n = o(403), i = o.n(n);
+        t.default = i.a;
+    },
+    679: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".TitleOwner-limitHeight-2_Y .TitleOwner-title-3nP{max-height:39px;max-width:100%;overflow:hidden}.TitleOwner-owner-1aG{font-size:13px}.TitleOwner-smallOwner-3G9{font-size:11px}.TitleOwner-shadowText-3QJ{text-shadow:1px 1px 3px rgba(0,0,0,.5)}.TitleOwner-mediumOwner-NDt{font-size:12px}.TitleOwner-smallOwnerArrow-2ue:after{top:6px}", "" ]), 
+        t.locals = {
+            limitHeight: "TitleOwner-limitHeight-2_Y",
+            title: "TitleOwner-title-3nP",
+            owner: "TitleOwner-owner-1aG",
+            smallOwner: "TitleOwner-smallOwner-3G9",
+            shadowText: "TitleOwner-shadowText-3QJ",
+            mediumOwner: "TitleOwner-mediumOwner-NDt",
+            smallOwnerArrow: "TitleOwner-smallOwnerArrow-2ue"
+        };
+    },
+    715: function(e, t, o) {
+        "use strict";
+        var n = o(405), i = o.n(n);
+        t.default = i.a;
+    },
+    716: function(e, t, o) {
+        (t = e.exports = o(25)(!1)).push([ e.i, ".Stats-stats-1iI{-webkit-box-align:center;align-items:center;align-self:flex-end;display:-webkit-box;display:flex;font-weight:700;margin-left:auto;white-space:nowrap}", "" ]), 
+        t.locals = {
+            stats: "Stats-stats-1iI"
+        };
+    }
+} ]);

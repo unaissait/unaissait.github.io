@@ -1,0 +1,1954 @@
+(("undefined" != typeof global ? global : self).webpackJsonp = ("undefined" != typeof global ? global : self).webpackJsonp || []).push([ [ 6 ], {
+    373: function(e, t, r) {
+        "use strict";
+        r.d(t, "a", function() {
+            return B;
+        });
+        var n, a, i = r(72), o = r(787), s = r(788), c = r(789), u = r(832), E = r(833), _ = r(834), A = r(465), T = r(14), p = r(784);
+        function S(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function R() {
+            return (R = Object.assign || function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var r = arguments[t];
+                    for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (e[n] = r[n]);
+                }
+                return e;
+            }).apply(this, arguments);
+        }
+        function f(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        function O(e) {
+            return function() {
+                var t = this, r = arguments;
+                return new Promise(function(n, a) {
+                    var i = e.apply(t, r);
+                    function o(e) {
+                        f(i, n, a, o, s, "next", e);
+                    }
+                    function s(e) {
+                        f(i, n, a, o, s, "throw", e);
+                    }
+                    o(void 0);
+                });
+            };
+        }
+        var I, m, N, h, l, d, v, P, D, L, g, M, w, x, C, U, b, k, G, V, y, W, B = {
+            AVATAR_UPDATED: "AVATAR_UPDATED",
+            BANNER_UPDATED: "BANNER_UPDATED",
+            CLICK_FOLLOWPOPUP_TAB: "CLICK_FOLLOWPOPUP_TAB",
+            CLICK_ON_FOLLOWING_COUNT: "CLICK_ON_FOLLOWING_COUNT",
+            CLICK_ON_FOLLOWERS_COUNT: "CLICK_ON_FOLLOWERS_COUNT",
+            CHECKLIST_RENDERED: "CHECKLIST_RENDERED",
+            CHECKLIST_NOT_RENDERED: "CHECKLIST_NOT_RENDERED",
+            DELETE_BANNER: "DELETE_BANNER",
+            DISPLAY_BANNER_UPLOAD_ERROR: "DISPLAY_BANNER_UPLOAD_ERROR",
+            DRAFT_COUNT_CHANGED: "DRAFT_COUNT_CHANGED",
+            GO_TO_INSIGHTS_FROM_USER_INFO: "GO_TO_INSIGHTS_FROM_USER_INFO",
+            INIT_ADMIN_DATA: "INIT_ADMIN_DATA",
+            INIT_APPRECIATIONS: "INIT_APPRECIATIONS",
+            INIT_COLLECTIONS: "INIT_COLLECTIONS",
+            INIT_DRAFTS: "INIT_DRAFTS",
+            INIT_INSIGHTS: "INIT_INSIGHTS",
+            INIT_LIVESTREAM_REPLAYS: "INIT_LIVESTREAM_REPLAYS",
+            INIT_PROFILE: "INIT_PROFILE",
+            INIT_WORK: "INIT_WORK",
+            LOGIN_AS_USER: "LOGIN_AS_USER",
+            REPAINT_AVATAR: "REPAINT_AVATAR",
+            REPORT_PROFILE: "REPORT_PROFILE",
+            REFRESH_WORK_TAB: "REFRESH_WORK_TAB",
+            SEND_MESSAGE: "SEND_MESSAGE",
+            SLUG_UPDATED: "SLUG_UPDATED",
+            START_POLLING_LIVESTREAM: "START_POLLING_LIVESTREAM",
+            STOP_POLLING_LIVESTREAM: "STOP_POLLING_LIVESTREAM",
+            SWITCH_TAB: "SWITCH_TAB",
+            TOGGLE_REPORT_MODAL: "TOGGLE_REPORT_MODAL",
+            UPDATE_BANNER: "UPDATE_BANNER",
+            UPDATE_BLACKLIST: "UPDATE_BLACKLIST",
+            UPDATE_SPAM_BLACKLIST: "UPDATE_SPAM_BLACKLIST",
+            UPDATE_SUGGESTIONS: "UPDATE_SUGGESTIONS"
+        }, H = {
+            SET_ADMIN_DATA: "SET_ADMIN_DATA",
+            SET_AVATAR: "SET_AVATAR",
+            SET_DRAFT_COUNT: "SET_DRAFT_COUNT",
+            SET_BANNER_URL: "SET_BANNER_URL",
+            SET_OWNER: "SET_OWNER",
+            SET_OWNER_DATA: "SET_OWNER_DATA",
+            SET_OWNER_USERNAME: "SET_OWNER_USERNAME",
+            SET_POLLING: "SET_POLLING",
+            SET_REPORT_MODAL_VISIBILITY: "SET_REPORT_MODAL_VISIBILITY",
+            UNSET_BANNER: "UNSET_BANNER"
+        };
+        function F(e, t) {
+            e("checklist/" + A.b.SET_BANNER_IMAGE_UPLOADED, t.hasCoverImg), e("checklist/" + A.b.SET_AVATAR, t.hasProfilePhoto), 
+            e("checklist/" + A.b.SET_HASUSERNAME, t.hasUsername), e("checklist/" + A.b.SET_HASAPP, t.hasApp), 
+            e("checklist/" + A.b.SET_SHOULDHIDE, t.shouldHide), e("checklist/" + A.b.SET_USERNAME_VALIDATION_RULE, t.usernameValidationRule);
+        }
+        function K(e) {
+            return j.apply(this, arguments);
+        }
+        function j() {
+            return (j = O(regeneratorRuntime.mark(function e(t) {
+                var r, n, a, s, c, u, E;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.username, n = t.commit, a = t.dispatch, e.prev = 1, e.next = 4, i.a.getWorkPage(r);
+
+                      case 4:
+                        s = e.sent, c = s.owner, u = s.activeSection, E = s.checklist, n(H.SET_OWNER, c), 
+                        n("activeSection/work/" + o.b.SET_WORK, {
+                            work: u.work
+                        }), c.is_profile_owner && F(n, E), e.next = 17;
+                        break;
+
+                      case 13:
+                        return e.prev = 13, e.t0 = e.catch(1), e.next = 17, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 17:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 13 ] ]);
+            }))).apply(this, arguments);
+        }
+        t.b = {
+            api: i.a,
+            namespaced: !0,
+            state: function() {
+                return {
+                    admin: null,
+                    isReportModalVisible: !1,
+                    owner: null,
+                    timeoutId: void 0
+                };
+            },
+            modules: {
+                activeSection: {
+                    namespaced: !0
+                },
+                checklist: A.c,
+                wip: p.b
+            },
+            actions: (n = {}, S(n, B.INIT_ADMIN_DATA, (W = O(regeneratorRuntime.mark(function e(t) {
+                var r, n, a, o, s, c, u;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (r = t.state, n = t.commit, !r.adminPermissions.isCurationBlacklistAdmin) {
+                            e.next = 7;
+                            break;
+                        }
+                        return e.next = 4, i.a.getAdminBlacklist(r.owner.id);
+
+                      case 4:
+                        a = e.sent, o = a.blacklist.includes(r.owner.id), n(H.SET_ADMIN_DATA, {
+                            isBlacklisted: o
+                        });
+
+                      case 7:
+                        if (!r.adminPermissions.isSpamBlacklistAdmin) {
+                            e.next = 12;
+                            break;
+                        }
+                        return e.next = 10, i.a.getAdminFlaggedUser(r.owner.id);
+
+                      case 10:
+                        s = e.sent, n(H.SET_ADMIN_DATA, {
+                            hasFeaturedProjects: s.has_featured_projects,
+                            isFlagged: Boolean(r.owner.flagged)
+                        });
+
+                      case 12:
+                        if (!r.adminPermissions.isSuggestionAdmin) {
+                            e.next = 19;
+                            break;
+                        }
+                        return e.next = 15, i.a.getAdminSuggestions(r.owner.id);
+
+                      case 15:
+                        c = e.sent, u = [], Object.keys(c.all_field_groups).forEach(function(e) {
+                            u.push({
+                                id: e,
+                                title: c.all_field_groups[e],
+                                selected: c.user_field_groups.includes(Number(e))
+                            });
+                        }), n(H.SET_ADMIN_DATA, {
+                            fieldGroups: u
+                        });
+
+                      case 19:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return W.apply(this, arguments);
+            })), S(n, B.UPDATE_SPAM_BLACKLIST, (y = O(regeneratorRuntime.mark(function e(t) {
+                var r, n, a, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.state, n = t.commit, a = t.dispatch, o = {}, s = r.admin.isFlagged, 
+                        o[s ? "unflagged" : "flagged"] = r.owner.id, e.prev = 5, e.next = 8, i.a.updateAdminFlaggedUser(o);
+
+                      case 8:
+                        n(H.SET_ADMIN_DATA, {
+                            isFlagged: !s
+                        }), e.next = 15;
+                        break;
+
+                      case 11:
+                        return e.prev = 11, e.t0 = e.catch(5), e.next = 15, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 15:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 5, 11 ] ]);
+            })), function(e) {
+                return y.apply(this, arguments);
+            })), S(n, B.UPDATE_BLACKLIST, (V = O(regeneratorRuntime.mark(function e(t) {
+                var r, n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.state, n = t.dispatch, a = {
+                            add_users: "",
+                            remove_users: ""
+                        }, r.admin.isBlacklisted ? (a.remove_users = "", a.add_users = r.owner.id) : (a.add_users = "", 
+                        a.remove_users = r.owner.id), e.prev = 3, e.next = 6, i.a.updateAdminBlacklist(a);
+
+                      case 6:
+                        e.next = 12;
+                        break;
+
+                      case 8:
+                        return e.prev = 8, e.t0 = e.catch(3), e.next = 12, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 12:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 3, 8 ] ]);
+            })), function(e) {
+                return V.apply(this, arguments);
+            })), S(n, B.UPDATE_SUGGESTIONS, (G = O(regeneratorRuntime.mark(function e(t) {
+                var r, n, a, o;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.state, n = t.dispatch, a = r.admin.fieldGroups.filter(function(e) {
+                            return e.selected;
+                        }), o = {
+                            user_id: r.owner.id,
+                            field_group_ids: a.map(function(e) {
+                                return e.id;
+                            }).join("|")
+                        }, e.prev = 3, e.next = 6, i.a.updateAdminSuggestions(o);
+
+                      case 6:
+                        e.next = 12;
+                        break;
+
+                      case 8:
+                        return e.prev = 8, e.t0 = e.catch(3), e.next = 12, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 12:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 3, 8 ] ]);
+            })), function(e) {
+                return G.apply(this, arguments);
+            })), S(n, B.INIT_PROFILE, (k = O(regeneratorRuntime.mark(function e(t, r) {
+                var n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.dispatch, e.prev = 1, e.next = 4, i.a.recordView(r);
+
+                      case 4:
+                        e.next = 10;
+                        break;
+
+                      case 6:
+                        return e.prev = 6, e.t0 = e.catch(1), e.next = 10, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 10:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 6 ] ]);
+            })), function(e, t) {
+                return k.apply(this, arguments);
+            })), S(n, B.REFRESH_WORK_TAB, (b = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, e.next = 3, K({
+                            username: r,
+                            commit: n,
+                            dispatch: a
+                        });
+
+                      case 3:
+                        return e.abrupt("return", e.sent);
+
+                      case 4:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return b.apply(this, arguments);
+            })), S(n, B.INIT_WORK, (U = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, i;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, i = t.dispatch, n.activeSection.work.isInitialized) {
+                            e.next = 5;
+                            break;
+                        }
+                        return e.next = 4, K({
+                            username: r,
+                            commit: a,
+                            dispatch: i
+                        });
+
+                      case 4:
+                        return e.abrupt("return", e.sent);
+
+                      case 5:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return U.apply(this, arguments);
+            })), S(n, B.LOGIN_AS_USER, (C = O(regeneratorRuntime.mark(function e(t) {
+                var r, n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.state, n = t.dispatch, e.prev = 1, e.next = 4, i.a.loginAsUser(r.owner.id);
+
+                      case 4:
+                        e.next = 10;
+                        break;
+
+                      case 6:
+                        return e.prev = 6, e.t0 = e.catch(1), e.next = 10, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 10:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 6 ] ]);
+            })), function(e) {
+                return C.apply(this, arguments);
+            })), S(n, B.INIT_LIVESTREAM_REPLAYS, (x = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, u, E, _;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, n.activeSection.livestream && n.activeSection.livestream.isInitialized) {
+                            e.next = 18;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getLivestreamReplaysPage(r);
+
+                      case 5:
+                        s = e.sent, u = s.owner, E = s.activeSection, _ = s.checklist, a(H.SET_OWNER, u), 
+                        a("activeSection/livestream/" + c.b.ADD_LIVESTREAM_REPLAYS, {
+                            livestream: E.livestream
+                        }), u.is_profile_owner && F(a, _), e.next = 18;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(2), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 14 ] ]);
+            })), function(e, t) {
+                return x.apply(this, arguments);
+            })), S(n, B.INIT_COLLECTIONS, (w = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, c, u, E, _;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, n.activeSection.collections.isInitialized) {
+                            e.next = 18;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getCollectionsPage(r);
+
+                      case 5:
+                        c = e.sent, u = c.owner, E = c.activeSection, _ = c.checklist, a(H.SET_OWNER, u), 
+                        a("activeSection/collections/" + s.b.SET_COLLECTIONS, {
+                            collections: E.collections
+                        }), u.is_profile_owner && F(a, _), e.next = 18;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(2), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 14 ] ]);
+            })), function(e, t) {
+                return w.apply(this, arguments);
+            })), S(n, B.INIT_APPRECIATIONS, (M = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c, E, _;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, n.activeSection.appreciations.isInitialized) {
+                            e.next = 18;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getAppreciationsPage(r);
+
+                      case 5:
+                        s = e.sent, c = s.owner, E = s.activeSection, _ = s.checklist, a(H.SET_OWNER, c), 
+                        a("activeSection/appreciations/" + u.b.SET_APPRECIATIONS, {
+                            appreciations: E.appreciations
+                        }), c.is_profile_owner && F(a, _), e.next = 18;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(2), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 14 ] ]);
+            })), function(e, t) {
+                return M.apply(this, arguments);
+            })), S(n, B.INIT_DRAFTS, (g = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c, u, _;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, n.activeSection.drafts.isInitialized) {
+                            e.next = 18;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getDraftsPage(r);
+
+                      case 5:
+                        s = e.sent, c = s.owner, u = s.activeSection, _ = s.checklist, a(H.SET_OWNER, c), 
+                        a("activeSection/drafts/" + E.b.SET_DRAFTS, u.drafts), c.is_profile_owner && F(a, _), 
+                        e.next = 18;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(2), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 14 ] ]);
+            })), function(e, t) {
+                return g.apply(this, arguments);
+            })), S(n, B.INIT_INSIGHTS, (L = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c, u, E;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, n.activeSection.insights.isInitialized) {
+                            e.next = 18;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getInsightsPage(r);
+
+                      case 5:
+                        s = e.sent, c = s.owner, u = s.activeSection, E = s.checklist, a(H.SET_OWNER, c), 
+                        a("activeSection/insights/" + _.b.SET_INSIGHTS, {
+                            datasets: u.insights.projectsDatasets,
+                            page: u.insights.page,
+                            hasMore: u.insights.hasMore
+                        }), c.is_profile_owner && F(a, E), e.next = 18;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(2), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 14 ] ]);
+            })), function(e, t) {
+                return L.apply(this, arguments);
+            })), S(n, B.UPDATE_BANNER, (D = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c, u, E, _, A;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, o = r.sourceUrl, s = r.x, c = r.y, u = r.width, 
+                        E = r.height, e.prev = 2, e.next = 5, i.a.updateBanner({
+                            url: o,
+                            x: s,
+                            y: c,
+                            width: u,
+                            height: E
+                        });
+
+                      case 5:
+                        _ = e.sent, A = _.url, n(H.SET_BANNER_URL, A), e.next = 14;
+                        break;
+
+                      case 10:
+                        return e.prev = 10, e.t0 = e.catch(2), e.next = 14, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 10 ] ]);
+            })), function(e, t) {
+                return D.apply(this, arguments);
+            })), S(n, B.DELETE_BANNER, (P = O(regeneratorRuntime.mark(function e(t) {
+                var r, n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, n = t.dispatch, e.prev = 1, e.next = 4, i.a.deleteBanner();
+
+                      case 4:
+                        r(H.UNSET_BANNER), e.next = 11;
+                        break;
+
+                      case 7:
+                        return e.prev = 7, e.t0 = e.catch(1), e.next = 11, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 11:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 7 ] ]);
+            })), function(e) {
+                return P.apply(this, arguments);
+            })), S(n, B.SEND_MESSAGE, (v = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.state, a = t.dispatch, o = t.rootState, e.prev = 1, e.next = 4, i.a.sendMessage(n.owner.id, r, o.env.CFG_RECAPTCHA_API_KEY, o.gates);
+
+                      case 4:
+                        e.next = 11;
+                        break;
+
+                      case 6:
+                        return e.prev = 6, e.t0 = e.catch(1), e.next = 10, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 10:
+                        throw e.t0;
+
+                      case 11:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 6 ] ]);
+            })), function(e, t) {
+                return v.apply(this, arguments);
+            })), S(n, B.DISPLAY_BANNER_UPLOAD_ERROR, (d = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.dispatch, a = r.err, e.abrupt("return", n("error", a, {
+                            root: !0
+                        }));
+
+                      case 3:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return d.apply(this, arguments);
+            })), S(n, B.TOGGLE_REPORT_MODAL, (l = O(regeneratorRuntime.mark(function e(t, r) {
+                var n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, e.abrupt("return", n(H.SET_REPORT_MODAL_VISIBILITY, r));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return l.apply(this, arguments);
+            })), S(n, B.REPORT_PROFILE, (h = O(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.dispatch, a = t.state, o = t.commit, s = r.reason, c = r.message, e.prev = 2, 
+                        e.next = 5, i.a.reportProfile({
+                            userId: a.owner.id,
+                            reason: s,
+                            message: c
+                        });
+
+                      case 5:
+                        o(H.SET_REPORT_MODAL_VISIBILITY, !1), e.next = 14;
+                        break;
+
+                      case 8:
+                        if (e.prev = 8, e.t0 = e.catch(2), e.t0.status !== T.HTTP_CODE_FORBIDDEN_ERROR) {
+                            e.next = 12;
+                            break;
+                        }
+                        return e.abrupt("return");
+
+                      case 12:
+                        return e.next = 14, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 8 ] ]);
+            })), function(e, t) {
+                return h.apply(this, arguments);
+            })), S(n, B.REPAINT_AVATAR, (N = O(regeneratorRuntime.mark(function e(t, r) {
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return (0, t.commit)(H.SET_AVATAR, r), e.abrupt("return");
+
+                      case 3:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return N.apply(this, arguments);
+            })), S(n, B.SLUG_UPDATED, (m = O(regeneratorRuntime.mark(function e(t, r) {
+                var n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, e.abrupt("return", n(H.SET_OWNER_USERNAME, r));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return m.apply(this, arguments);
+            })), S(n, B.DRAFT_COUNT_CHANGED, (I = O(regeneratorRuntime.mark(function e(t, r) {
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        (0, t.commit)(H.SET_DRAFT_COUNT, r);
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return I.apply(this, arguments);
+            })), S(n, B.START_POLLING_LIVESTREAM, function(e, t) {
+                var r = e.commit, n = e.dispatch, a = e.state, o = setInterval(O(regeneratorRuntime.mark(function e() {
+                    var o, s;
+                    return regeneratorRuntime.wrap(function(e) {
+                        for (;;) switch (e.prev = e.next) {
+                          case 0:
+                            return e.prev = 0, e.next = 3, i.a.fetchOwnerLiveStream(t);
+
+                          case 3:
+                            (o = e.sent) && o.videos && o.videos.length > 0 ? (s = o.videos[0], r(H.SET_OWNER_DATA, {
+                                isLive: !0,
+                                liveStream: R({}, s)
+                            })) : a.owner.isLive && r(H.SET_OWNER_DATA, {
+                                isLive: !1,
+                                liveStream: null
+                            }), e.next = 11;
+                            break;
+
+                          case 7:
+                            return e.prev = 7, e.t0 = e.catch(0), e.next = 11, n("error", e.t0, {
+                                root: !0
+                            });
+
+                          case 11:
+                          case "end":
+                            return e.stop();
+                        }
+                    }, e, this, [ [ 0, 7 ] ]);
+                })), 12e4);
+                r(H.SET_POLLING, o);
+            }), S(n, B.STOP_POLLING_LIVESTREAM, function(e) {
+                (0, e.commit)(H.SET_POLLING);
+            }), S(n, B.CLICK_ON_FOLLOWING_COUNT, function() {}), S(n, B.CLICK_ON_FOLLOWERS_COUNT, function() {}), 
+            S(n, B.SWITCH_TAB, function() {}), S(n, B.CLICK_FOLLOWPOPUP_TAB, function() {}), 
+            S(n, B.GO_TO_INSIGHTS_FROM_USER_INFO, function() {}), S(n, B.AVATAR_UPDATED, function() {}), 
+            S(n, B.BANNER_UPDATED, function() {}), S(n, B.CHECKLIST_RENDERED, function() {}), 
+            S(n, B.CHECKLIST_NOT_RENDERED, function() {}), n),
+            mutations: (a = {}, S(a, H.SET_OWNER, function(e, t) {
+                e.owner = t;
+            }), S(a, H.SET_AVATAR, function(e, t) {
+                e.owner.images = t;
+            }), S(a, H.SET_OWNER_USERNAME, function(e, t) {
+                e.owner.username = t;
+            }), S(a, H.SET_BANNER_URL, function(e, t) {
+                e.owner.banner_image_url = t;
+            }), S(a, H.UNSET_BANNER, function(e) {
+                e.owner.banner_image_url = null;
+            }), S(a, H.SET_OWNER_DATA, function(e, t) {
+                e.owner = R({}, e.owner, t);
+            }), S(a, H.SET_REPORT_MODAL_VISIBILITY, function(e, t) {
+                e.isReportModalVisible = t;
+            }), S(a, H.SET_ADMIN_DATA, function(e, t) {
+                e.admin = R({}, e.admin, t);
+            }), S(a, H.SET_DRAFT_COUNT, function(e, t) {
+                e.owner.stats = R({}, e.owner.stats, {
+                    draftCount: t
+                });
+            }), S(a, H.SET_POLLING, function(e, t) {
+                !t && e.timeoutId && clearTimeout(e.timeoutId), e.timeoutId = t;
+            }), a)
+        };
+    },
+    465: function(e, t, r) {
+        "use strict";
+        r.d(t, "a", function() {
+            return f;
+        }), r.d(t, "b", function() {
+            return O;
+        });
+        var n, a, i = r(72);
+        function o(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function s(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        function c(e) {
+            return function() {
+                var t = this, r = arguments;
+                return new Promise(function(n, a) {
+                    var i = e.apply(t, r);
+                    function o(e) {
+                        s(i, n, a, o, c, "next", e);
+                    }
+                    function c(e) {
+                        s(i, n, a, o, c, "throw", e);
+                    }
+                    o(void 0);
+                });
+            };
+        }
+        var u, E, _, A, T, p, S, R, f = {
+            DONT_SHOW_AGAIN_CLICKED: "DONT_SHOW_AGAIN_CLICKED",
+            BANNER_IMAGE_UPLOADED: "BANNER_IMAGE_UPLOADED",
+            BANNER_IMAGE_DELETED: "BANNER_IMAGE_DELETED",
+            UPDATE_USERNAME: "UPDATE_USERNAME",
+            MARK_AS_DONE: "MARK_AS_DONE",
+            AVATAR_UPDATED: "AVATAR_UPDATED",
+            OPEN_DOWNLOAD_APP_MODAL: "OPEN_DOWNLOAD_APP_MODAL",
+            CLOSE_DOWNLOAD_APP_MODAL: "CLOSE_DOWNLOAD_APP_MODAL",
+            CHECK_AVAILABILITY: "CHECK_AVAILABILITY"
+        }, O = {
+            SET_DONT_SHOW_AGAIN: "SET_DONT_SHOW_AGAIN",
+            SET_BANNER_IMAGE_UPLOADED: "SET_BANNER_IMAGE_UPLOADED",
+            SET_USERNAME: "SET_USERNAME",
+            SET_USERNAME_SETTING_STATUS: "SET_USERNAME_SETTING_STATUS",
+            SET_AVATAR: "SET_AVATAR",
+            SET_DOWNLOAD_APP_MODAL_VISIBILITY: "SET_DOWNLOAD_APP_MODAL_VISIBILITY",
+            SET_USERNAME_IS_VALIDATED: "SET_USERNAME_IS_VALIDATED",
+            SET_USERNAME_ERROR_MESSAGE: "SET_USERNAME_ERROR_MESSAGE",
+            SET_SHOULDHIDE: "SET_SHOULDHIDE",
+            SET_HASUSERNAME: "SET_HASUSERNAME",
+            SET_HASAPP: "SET_HASAPP",
+            SET_USERNAME_VALIDATION_RULE: "SET_USERNAME_VALIDATION_RULE"
+        };
+        t.c = {
+            namespaced: !0,
+            api: i.a,
+            state: function() {
+                return {
+                    hasCoverImg: !1,
+                    hasProfilePhoto: !1,
+                    hasUsername: !1,
+                    hasApp: !1,
+                    shouldHide: !1,
+                    isSettingUsername: !1,
+                    username: "",
+                    isDownloadAppModalOpen: !1,
+                    isUsernameValidated: !1,
+                    usernameErrorMessage: "",
+                    usernameValidationRule: ""
+                };
+            },
+            actions: (n = {}, o(n, f.BANNER_IMAGE_UPLOADED, (R = c(regeneratorRuntime.mark(function e(t) {
+                var r;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, e.abrupt("return", r(O.SET_BANNER_IMAGE_UPLOADED, !0));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return R.apply(this, arguments);
+            })), o(n, f.BANNER_IMAGE_DELETED, (S = c(regeneratorRuntime.mark(function e(t) {
+                var r;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, e.abrupt("return", r(O.SET_BANNER_IMAGE_UPLOADED, !1));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return S.apply(this, arguments);
+            })), o(n, f.DONT_SHOW_AGAIN_CLICKED, (p = c(regeneratorRuntime.mark(function e(t) {
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return (0, t.commit)(O.SET_DONT_SHOW_AGAIN), e.next = 4, i.a.hideChecklist();
+
+                      case 4:
+                        return e.abrupt("return", e.sent);
+
+                      case 5:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return p.apply(this, arguments);
+            })), o(n, f.MARK_AS_DONE, c(regeneratorRuntime.mark(function e() {
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return e.next = 2, i.a.hideChecklist();
+
+                      case 2:
+                        return e.abrupt("return", e.sent);
+
+                      case 3:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            }))), o(n, f.AVATAR_UPDATED, (T = c(regeneratorRuntime.mark(function e(t) {
+                var r;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, e.abrupt("return", r(O.SET_AVATAR));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return T.apply(this, arguments);
+            })), o(n, f.OPEN_DOWNLOAD_APP_MODAL, (A = c(regeneratorRuntime.mark(function e(t) {
+                var r;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, e.abrupt("return", r(O.SET_DOWNLOAD_APP_MODAL_VISIBILITY, !0));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return A.apply(this, arguments);
+            })), o(n, f.CLOSE_DOWNLOAD_APP_MODAL, (_ = c(regeneratorRuntime.mark(function e(t) {
+                var r;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return r = t.commit, e.abrupt("return", r(O.SET_DOWNLOAD_APP_MODAL_VISIBILITY, !1));
+
+                      case 2:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return _.apply(this, arguments);
+            })), o(n, f.CHECK_AVAILABILITY, (E = c(regeneratorRuntime.mark(function e(t, r) {
+                var n;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return (n = t.commit)(O.SET_USERNAME_IS_VALIDATED, !1), e.prev = 2, e.next = 5, 
+                        i.a.checkAvailability(r);
+
+                      case 5:
+                        return n(O.SET_USERNAME_ERROR_MESSAGE, ""), n(O.SET_USERNAME_IS_VALIDATED, !0), 
+                        e.abrupt("return");
+
+                      case 10:
+                        return e.prev = 10, e.t0 = e.catch(2), n(O.SET_USERNAME_ERROR_MESSAGE, e.t0.responseJSON.errors.slug), 
+                        e.abrupt("return");
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 10 ] ]);
+            })), function(e, t) {
+                return E.apply(this, arguments);
+            })), o(n, f.UPDATE_USERNAME, (u = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, n(O.SET_USERNAME_SETTING_STATUS, !0), e.prev = 2, 
+                        e.next = 5, i.a.updateUsername(r);
+
+                      case 5:
+                        return n(O.SET_USERNAME, r), n(O.SET_USERNAME_SETTING_STATUS, !1), e.abrupt("return");
+
+                      case 10:
+                        return e.prev = 10, e.t0 = e.catch(2), o = {
+                            message: e.t0.responseJSON.errors.username
+                        }, n(O.SET_USERNAME_SETTING_STATUS, !1), e.next = 16, a("error", o, {
+                            root: !0
+                        });
+
+                      case 16:
+                        return e.abrupt("return");
+
+                      case 17:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 10 ] ]);
+            })), function(e, t) {
+                return u.apply(this, arguments);
+            })), n),
+            mutations: (a = {}, o(a, O.SET_USERNAME_SETTING_STATUS, function(e, t) {
+                e.isSettingUsername = t;
+            }), o(a, O.SET_HASUSERNAME, function(e, t) {
+                e.hasUsername = t;
+            }), o(a, O.SET_HASAPP, function(e, t) {
+                e.hasApp = t;
+            }), o(a, O.SET_SHOULDHIDE, function(e, t) {
+                e.shouldHide = t;
+            }), o(a, O.SET_USERNAME_VALIDATION_RULE, function(e, t) {
+                e.usernameValidationRule = t;
+            }), o(a, O.SET_USERNAME, function(e, t) {
+                e.hasUsername = !0, e.username = t;
+            }), o(a, O.SET_BANNER_IMAGE_UPLOADED, function(e, t) {
+                e.hasCoverImg = t;
+            }), o(a, O.SET_DONT_SHOW_AGAIN, function(e) {
+                e.shouldHide = !0;
+            }), o(a, O.SET_AVATAR, function(e) {
+                e.hasProfilePhoto = !0;
+            }), o(a, O.SET_DOWNLOAD_APP_MODAL_VISIBILITY, function(e, t) {
+                e.isDownloadAppModalOpen = t;
+            }), o(a, O.SET_USERNAME_IS_VALIDATED, function(e, t) {
+                e.isUsernameValidated = t;
+            }), o(a, O.SET_USERNAME_ERROR_MESSAGE, function(e, t) {
+                e.usernameErrorMessage = t;
+            }), a)
+        };
+    },
+    784: function(e, t, r) {
+        "use strict";
+        r.d(t, "a", function() {
+            return p;
+        });
+        var n, a, i = r(7), o = r(30), s = r(3), c = r(16);
+        function u(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function E(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        function _(e) {
+            return function() {
+                var t = this, r = arguments;
+                return new Promise(function(n, a) {
+                    var i = e.apply(t, r);
+                    function o(e) {
+                        E(i, n, a, o, s, "next", e);
+                    }
+                    function s(e) {
+                        E(i, n, a, o, s, "throw", e);
+                    }
+                    o(void 0);
+                });
+            };
+        }
+        var A, T, p = {
+            INIT: "INIT",
+            OPEN_SEGMENT_VIEWER: "OPEN_SEGMENT_VIEWER",
+            NAVIGATE_TO_SEGMENT: "NAVIGATE_TO_SEGMENT",
+            CLOSE_EXPIRED_SEGMENT_POPUP: "CLOSE_EXPIRED_SEGMENT_POPUP"
+        }, S = {
+            SET_USER_STORY: "SET_USER_STORY",
+            SET_EXPIRED_STATUS: "SET_EXPIRED_STATUS"
+        };
+        function R(e, t) {
+            var r = e.state, n = e.commit;
+            return i.a.getStoriesForUser({
+                userId: t
+            }).catch(function() {
+                return {
+                    story: null
+                };
+            }).then(function(e) {
+                var t = e.story;
+                return n(S.SET_USER_STORY, t), r.segmentViewer && n("segmentViewer/" + s.C, {
+                    stories: t ? [ t ] : [],
+                    listId: "you"
+                }), t;
+            });
+        }
+        t.b = {
+            namespaced: !0,
+            state: function() {
+                return {
+                    story: null,
+                    shouldShowExpiredModal: !1
+                };
+            },
+            actions: (n = {}, u(n, p.INIT, (T = _(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, i, o, c;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = r.userId, a = r.segmentId, i = t.state, o = t.commit, c = t.dispatch, !(i.story && i.segmentViewer && i.segmentViewer.isOpen)) {
+                            e.next = 5;
+                            break;
+                        }
+                        return o("segmentViewer/" + s.C, {
+                            stories: [ i.story ],
+                            listId: "you"
+                        }), e.abrupt("return", c("segmentViewer/" + s.K));
+
+                      case 5:
+                        if (!i.shouldShowExpiredModal) {
+                            e.next = 7;
+                            break;
+                        }
+                        return e.abrupt("return");
+
+                      case 7:
+                        return o("segmentViewer/" + s.G, !0), o("segmentViewer/" + s.B, !0), e.prev = 9, 
+                        e.next = 12, R(t, n);
+
+                      case 12:
+                        if (!!t.state.segmentViewer.segments.find(function(e) {
+                            return e.id === a;
+                        })) {
+                            e.next = 18;
+                            break;
+                        }
+                        return o(S.SET_EXPIRED_STATUS, !0), o("segmentViewer/" + s.G, !1), o("segmentViewer/" + s.B, !1), 
+                        e.abrupt("return");
+
+                      case 18:
+                        return o("segmentViewer/" + s.A, a), o("segmentViewer/" + s.B, !1), e.abrupt("return", c("segmentViewer/" + s.K));
+
+                      case 23:
+                        return e.prev = 23, e.t0 = e.catch(9), e.next = 27, c("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 27:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 9, 23 ] ]);
+            })), function(e, t) {
+                return T.apply(this, arguments);
+            })), u(n, p.OPEN_SEGMENT_VIEWER, function() {}), u(n, p.NAVIGATE_TO_SEGMENT, (A = _(regeneratorRuntime.mark(function e(t, r) {
+                var n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, n("segmentViewer/" + s.A, r), e.next = 4, a("segmentViewer/" + s.K);
+
+                      case 4:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e, t) {
+                return A.apply(this, arguments);
+            })), u(n, p.CLOSE_EXPIRED_SEGMENT_POPUP, function(e) {
+                (0, e.commit)(S.SET_EXPIRED_STATUS, !1);
+            }), u(n, "segmentViewer/" + s.i, function(e) {
+                return R(e, e.state.story.owner.id);
+            }), u(n, "segmentViewer/" + s.h, function(e, t) {
+                var r = e.commit, n = e.state, a = e.getters, i = t.direction, c = t.count, u = t.action;
+                try {
+                    Object(o.c)(i, c);
+                } catch (e) {
+                    return !0;
+                }
+                Object(o.b)(i, c, n.segmentViewer.segments, a["segmentViewer/activeSegmentIndex"]) || "wheel" !== u && "forwards" === i && r("segmentViewer/" + s.G, !1);
+            }), u(n, "segmentViewer/" + s.l, function(e) {
+                if (!e.state.segmentViewer || !e.state.segmentViewer.isOpen) return R(e, e.state.story.owner.id);
+            }), u(n, "uploader/" + c.d, function(e) {
+                return R(e, e.rootGetters["user/userId"]);
+            }), n),
+            mutations: (a = {}, u(a, S.SET_USER_STORY, function(e, t) {
+                e.story = t;
+            }), u(a, S.SET_EXPIRED_STATUS, function(e, t) {
+                e.shouldShowExpiredModal = t;
+            }), a)
+        };
+    },
+    787: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return R;
+        }), r.d(t, "a", function() {
+            return f;
+        });
+        var n, a, i = r(72);
+        function o(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function s(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        function c(e) {
+            return function() {
+                var t = this, r = arguments;
+                return new Promise(function(n, a) {
+                    var i = e.apply(t, r);
+                    function o(e) {
+                        s(i, n, a, o, c, "next", e);
+                    }
+                    function c(e) {
+                        s(i, n, a, o, c, "throw", e);
+                    }
+                    o(void 0);
+                });
+            };
+        }
+        var u, E, _, A, T, p, S, R = {
+            SET_WORK: "SET_WORK",
+            APPEND_PROJECTS: "APPEND_PROJECTS",
+            REMOVE_PROJECT: "REMOVE_PROJECT",
+            REPLACE_PROJECTS: "REPLACE_PROJECTS"
+        }, f = {
+            UPDATE_WORK_ORDER: "UPDATE_WORK_ORDER",
+            LOAD_MORE_WORK: "LOAD_MORE_WORK",
+            CLONE_PROJECT: "CLONE_PROJECT",
+            UNPUBLISH_PROJECT: "UNPUBLISH_PROJECT",
+            DELETE_PROJECT: "DELETE_PROJECT",
+            REMOVE_FROM_PROJECT: "REMOVE_FROM_PROJECT",
+            GET_ADMIN_FLAGS: "GET_ADMIN_FLAGS"
+        };
+        t.c = {
+            api: i.a,
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    projects: null,
+                    hasMore: !0
+                };
+            },
+            actions: (n = {}, o(n, f.UPDATE_WORK_ORDER, (S = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s, c, u;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.state, a = t.commit, o = t.dispatch, s = r.targetID, c = r.afterID, 
+                        u = r.newWorkOrder, e.prev = 2, e.next = 5, i.a.updateProjectOrder(s, c);
+
+                      case 5:
+                        a(R.SET_WORK, {
+                            work: {
+                                projects: u,
+                                hasMore: n.hasMore
+                            }
+                        }), e.next = 12;
+                        break;
+
+                      case 8:
+                        return e.prev = 8, e.t0 = e.catch(2), e.next = 12, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 12:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 8 ] ]);
+            })), function(e, t) {
+                return S.apply(this, arguments);
+            })), o(n, f.GET_ADMIN_FLAGS, (p = c(regeneratorRuntime.mark(function e(t) {
+                var n, a, i, o, s, c;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.rootGetters, a = t.commit, i = t.state, n["user/isFeatureQueueAdmin"]) {
+                            e.next = 3;
+                            break;
+                        }
+                        return e.abrupt("return");
+
+                      case 3:
+                        return e.next = 5, r.e(27).then(r.bind(null, 118));
+
+                      case 5:
+                        return o = e.sent, s = o.default, e.next = 9, s.insertMarks(i.projects);
+
+                      case 9:
+                        c = e.sent, a(R.REPLACE_PROJECTS, c);
+
+                      case 11:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this);
+            })), function(e) {
+                return p.apply(this, arguments);
+            })), o(n, f.LOAD_MORE_WORK, (T = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, a = t.commit, o = t.dispatch, !n.projects.length || !n.hasMore) {
+                            e.next = 16;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, i.a.getMoreWork(r, n.projects.length);
+
+                      case 5:
+                        return s = e.sent, a(R.APPEND_PROJECTS, {
+                            work: s
+                        }), e.next = 9, o(f.GET_ADMIN_FLAGS);
+
+                      case 9:
+                        e.next = 16;
+                        break;
+
+                      case 11:
+                        return e.prev = 11, e.t0 = e.catch(2), a(R.SET_WORK, {
+                            work: {
+                                projects: n.projects,
+                                hasMore: !1
+                            }
+                        }), e.next = 16, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 16:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 11 ] ]);
+            })), function(e, t) {
+                return T.apply(this, arguments);
+            })), o(n, f.CLONE_PROJECT, (A = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.dispatch, e.prev = 1, e.next = 4, i.a.cloneProject(r);
+
+                      case 4:
+                        return a = e.sent, o = a.project, e.abrupt("return", o);
+
+                      case 9:
+                        return e.prev = 9, e.t0 = e.catch(1), e.next = 13, n("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 13:
+                        return e.abrupt("return", null);
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 9 ] ]);
+            })), function(e, t) {
+                return A.apply(this, arguments);
+            })), o(n, f.UNPUBLISH_PROJECT, (_ = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, e.prev = 1, e.next = 4, i.a.unpublishProject(r);
+
+                      case 4:
+                        return o = e.sent, s = o.count, n(R.REMOVE_PROJECT, r), e.abrupt("return", s);
+
+                      case 10:
+                        return e.prev = 10, e.t0 = e.catch(1), e.next = 14, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                        return e.abrupt("return", null);
+
+                      case 15:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 10 ] ]);
+            })), function(e, t) {
+                return _.apply(this, arguments);
+            })), o(n, f.DELETE_PROJECT, (E = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, e.prev = 1, e.next = 4, i.a.deleteProject(r);
+
+                      case 4:
+                        n(R.REMOVE_PROJECT, r), e.next = 11;
+                        break;
+
+                      case 7:
+                        return e.prev = 7, e.t0 = e.catch(1), e.next = 11, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 11:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 7 ] ]);
+            })), function(e, t) {
+                return E.apply(this, arguments);
+            })), o(n, f.REMOVE_FROM_PROJECT, (u = c(regeneratorRuntime.mark(function e(t, r) {
+                var n, a;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, a = t.dispatch, e.prev = 1, e.next = 4, i.a.removeFromProject(r);
+
+                      case 4:
+                        n(R.REMOVE_PROJECT, r), e.next = 11;
+                        break;
+
+                      case 7:
+                        return e.prev = 7, e.t0 = e.catch(1), e.next = 11, a("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 11:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 7 ] ]);
+            })), function(e, t) {
+                return u.apply(this, arguments);
+            })), n),
+            mutations: (a = {}, o(a, R.SET_WORK, function(e, t) {
+                var r = t.work;
+                e.isInitialized = !0, e.projects = r.projects, e.hasMore = r.hasMore;
+            }), o(a, R.REPLACE_PROJECTS, function(e, t) {
+                e.projects = t;
+            }), o(a, R.APPEND_PROJECTS, function(e, t) {
+                var r = t.work, n = e.projects ? e.projects : [];
+                e.projects = n.concat(r.projects), e.hasMore = r.hasMore;
+            }), o(a, R.REMOVE_PROJECT, function(e, t) {
+                var r = e.projects.findIndex(function(e) {
+                    return e.id === t;
+                });
+                e.projects.splice(r, 1);
+            }), a)
+        };
+    },
+    788: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return u;
+        }), r.d(t, "a", function() {
+            return E;
+        });
+        var n, a = r(72);
+        function i(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function o(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        var s, c, u = {
+            SET_COLLECTIONS: "SET_COLLECTIONS",
+            APPEND_COLLECTIONS: "APPEND_COLLECTIONS"
+        }, E = {
+            LOAD_MORE_COLLECTIONS: "LOAD_MORE_COLLECTIONS"
+        };
+        t.c = {
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    collections: null,
+                    hasMore: !0
+                };
+            },
+            actions: i({}, E.LOAD_MORE_COLLECTIONS, (s = regeneratorRuntime.mark(function e(t, r) {
+                var n, i, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, i = t.commit, o = t.dispatch, !n.collections.length || !n.hasMore) {
+                            e.next = 14;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, a.a.getMoreCollections(r, n.collections.length);
+
+                      case 5:
+                        s = e.sent, i(u.APPEND_COLLECTIONS, {
+                            collections: s
+                        }), e.next = 14;
+                        break;
+
+                      case 9:
+                        return e.prev = 9, e.t0 = e.catch(2), i(u.SET_COLLECTIONS, {
+                            collections: {
+                                collections: n.collections,
+                                hasMore: !1
+                            }
+                        }), e.next = 14, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 9 ] ]);
+            }), c = function() {
+                var e = this, t = arguments;
+                return new Promise(function(r, n) {
+                    var a = s.apply(e, t);
+                    function i(e) {
+                        o(a, r, n, i, c, "next", e);
+                    }
+                    function c(e) {
+                        o(a, r, n, i, c, "throw", e);
+                    }
+                    i(void 0);
+                });
+            }, function(e, t) {
+                return c.apply(this, arguments);
+            })),
+            mutations: (n = {}, i(n, u.SET_COLLECTIONS, function(e, t) {
+                var r = t.collections;
+                e.isInitialized = !0, e.collections = r.collections, e.hasMore = r.hasMore;
+            }), i(n, u.APPEND_COLLECTIONS, function(e, t) {
+                var r = t.collections, n = e.collections ? e.collections : [];
+                e.collections = n.concat(r.collections), e.hasMore = r.hasMore;
+            }), n)
+        };
+    },
+    789: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return s;
+        }), r.d(t, "a", function() {
+            return c;
+        });
+        var n, a, i = r(0), o = r(72), s = {
+            ADD_LIVESTREAM_REPLAYS: "ADD_LIVESTREAM_REPLAYS",
+            REMOVE_LIVESTREAM: "REMOVE_LIVESTREAM"
+        }, c = {
+            LOAD_MORE_LIVESTREAM_REPLAYS: "LOAD_MORE_LIVESTREAM_REPLAYS",
+            DELETE_LIVESTREAM_REPLAY: "DELETE_LIVESTREAM_REPLAY"
+        }, u = {
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    videos: [],
+                    has_more: !0,
+                    next_id: null
+                };
+            },
+            actions: (n = {}, n[c.LOAD_MORE_LIVESTREAM_REPLAYS] = function(e, t) {
+                var r = e.state, n = e.commit, a = e.dispatch;
+                return Object(i.__awaiter)(this, void 0, void 0, function() {
+                    var e, c;
+                    return Object(i.__generator)(this, function(i) {
+                        switch (i.label) {
+                          case 0:
+                            if (!r.has_more || !r.next_id) return [ 3, 5 ];
+                            i.label = 1;
+
+                          case 1:
+                            return i.trys.push([ 1, 3, , 5 ]), [ 4, o.a.fetchUserLivestreamReplays(t, r.next_id) ];
+
+                          case 2:
+                            return e = i.sent(), n(s.ADD_LIVESTREAM_REPLAYS, {
+                                livestream: e
+                            }), [ 3, 5 ];
+
+                          case 3:
+                            return c = i.sent(), n("SET_HAS_MORE_MUTATION", !1), [ 4, a("error", c, {
+                                root: !0
+                            }) ];
+
+                          case 4:
+                            return i.sent(), [ 3, 5 ];
+
+                          case 5:
+                            return [ 2 ];
+                        }
+                    });
+                });
+            }, n[c.DELETE_LIVESTREAM_REPLAY] = function(e, t) {
+                var r = e.commit, n = e.dispatch;
+                return Object(i.__awaiter)(this, void 0, void 0, function() {
+                    var e;
+                    return Object(i.__generator)(this, function(a) {
+                        switch (a.label) {
+                          case 0:
+                            return a.trys.push([ 0, 2, , 4 ]), [ 4, o.a.deleteLivestreamReplay(t) ];
+
+                          case 1:
+                            return a.sent(), r(s.REMOVE_LIVESTREAM, t), [ 3, 4 ];
+
+                          case 2:
+                            return e = a.sent(), [ 4, n("error", e, {
+                                root: !0
+                            }) ];
+
+                          case 3:
+                            return a.sent(), [ 3, 4 ];
+
+                          case 4:
+                            return [ 2 ];
+                        }
+                    });
+                });
+            }, n),
+            mutations: (a = {}, a[s.ADD_LIVESTREAM_REPLAYS] = function(e, t) {
+                var r = t.livestream;
+                e.videos = e.videos.concat(r.videos), e.isInitialized = !0, e.has_more = r.has_more, 
+                e.next_id = r.next_id;
+            }, a[s.REMOVE_LIVESTREAM] = function(e, t) {
+                var r = e.videos.findIndex(function(e) {
+                    return e.stream_id === t;
+                });
+                e.videos.splice(r, 1);
+            }, a.SET_HAS_MORE_MUTATION = function(e, t) {
+                e.has_more = t;
+            }, a)
+        };
+        t.c = u;
+    },
+    832: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return u;
+        }), r.d(t, "a", function() {
+            return E;
+        });
+        var n, a = r(72);
+        function i(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function o(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        var s, c, u = {
+            SET_APPRECIATIONS: "SET_APPRECIATIONS",
+            APPEND_APPRECIATIONS: "APPEND_APPRECIATIONS"
+        }, E = {
+            LOAD_MORE_APPRECIATIONS: "LOAD_MORE_APPRECIATIONS"
+        };
+        t.c = {
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    appreciations: null,
+                    hasMore: !1,
+                    offset: 0
+                };
+            },
+            actions: i({}, E.LOAD_MORE_APPRECIATIONS, (s = regeneratorRuntime.mark(function e(t, r) {
+                var n, i, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, i = t.commit, o = t.dispatch, !n.appreciations.length || !n.hasMore) {
+                            e.next = 14;
+                            break;
+                        }
+                        return e.prev = 2, e.next = 5, a.a.getMoreAppreciations(r, n.offset);
+
+                      case 5:
+                        s = e.sent, i(u.APPEND_APPRECIATIONS, {
+                            appreciations: s
+                        }), e.next = 14;
+                        break;
+
+                      case 9:
+                        return e.prev = 9, e.t0 = e.catch(2), i(u.SET_APPRECIATIONS, {
+                            appreciations: {
+                                appreciations: n.appreciations,
+                                hasMore: !1,
+                                offset: n.offset
+                            }
+                        }), e.next = 14, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 2, 9 ] ]);
+            }), c = function() {
+                var e = this, t = arguments;
+                return new Promise(function(r, n) {
+                    var a = s.apply(e, t);
+                    function i(e) {
+                        o(a, r, n, i, c, "next", e);
+                    }
+                    function c(e) {
+                        o(a, r, n, i, c, "throw", e);
+                    }
+                    i(void 0);
+                });
+            }, function(e, t) {
+                return c.apply(this, arguments);
+            })),
+            mutations: (n = {}, i(n, u.SET_APPRECIATIONS, function(e, t) {
+                var r = t.appreciations;
+                e.isInitialized = !0, e.appreciations = r.appreciations, e.hasMore = r.hasMore, 
+                e.offset = r.offset;
+            }), i(n, u.APPEND_APPRECIATIONS, function(e, t) {
+                var r = t.appreciations, n = e.appreciations ? e.appreciations : [];
+                e.appreciations = n.concat(r.appreciations), e.hasMore = r.hasMore, e.offset = r.offset;
+            }), n)
+        };
+    },
+    833: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return u;
+        }), r.d(t, "a", function() {
+            return E;
+        });
+        var n, a = r(72);
+        function i(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function o(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        var s, c, u = {
+            SET_DRAFTS: "SET_DRAFTS",
+            REMOVE_DRAFT: "REMOVE_DRAFT"
+        }, E = {
+            DELETE_DRAFT: "DELETE_DRAFT"
+        };
+        t.c = {
+            api: a.a,
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    drafts: null,
+                    hasMore: !1
+                };
+            },
+            actions: i({}, E.DELETE_DRAFT, (s = regeneratorRuntime.mark(function e(t, r) {
+                var n, i, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        return n = t.commit, i = t.dispatch, e.prev = 1, e.next = 4, a.a.deleteProject(r);
+
+                      case 4:
+                        return o = e.sent, s = o.count, n(u.REMOVE_DRAFT, r), e.abrupt("return", s);
+
+                      case 10:
+                        return e.prev = 10, e.t0 = e.catch(1), e.next = 14, i("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 14:
+                        return e.abrupt("return", void 0);
+
+                      case 15:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 1, 10 ] ]);
+            }), c = function() {
+                var e = this, t = arguments;
+                return new Promise(function(r, n) {
+                    var a = s.apply(e, t);
+                    function i(e) {
+                        o(a, r, n, i, c, "next", e);
+                    }
+                    function c(e) {
+                        o(a, r, n, i, c, "throw", e);
+                    }
+                    i(void 0);
+                });
+            }, function(e, t) {
+                return c.apply(this, arguments);
+            })),
+            mutations: (n = {}, i(n, u.SET_DRAFTS, function(e, t) {
+                var r = t.drafts;
+                e.isInitialized = !0, e.drafts = r;
+            }), i(n, u.REMOVE_DRAFT, function(e, t) {
+                var r = e.drafts.findIndex(function(e) {
+                    return e.id === t;
+                });
+                e.drafts.splice(r, 1);
+            }), n)
+        };
+    },
+    834: function(e, t, r) {
+        "use strict";
+        r.d(t, "b", function() {
+            return E;
+        }), r.d(t, "a", function() {
+            return _;
+        });
+        var n, a = r(72);
+        function i(e, t, r, n, a, i, o) {
+            try {
+                var s = e[i](o), c = s.value;
+            } catch (e) {
+                return void r(e);
+            }
+            s.done ? t(c) : Promise.resolve(c).then(n, a);
+        }
+        function o(e, t, r) {
+            return t in e ? Object.defineProperty(e, t, {
+                value: r,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0
+            }) : e[t] = r, e;
+        }
+        function s() {
+            return (s = Object.assign || function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var r = arguments[t];
+                    for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (e[n] = r[n]);
+                }
+                return e;
+            }).apply(this, arguments);
+        }
+        var c, u, E = {
+            SET_INSIGHTS: "SET_INSIGHTS",
+            APPEND_DATASETS: "APPEND_DATASETS",
+            INCREMENT_PAGE: "INCREMENT_PAGE",
+            SET_HAS_MORE: "SET_HAS_MORE",
+            SET_WAITING: "SET_WAITING"
+        }, _ = {
+            LOAD_NEXT_PERFORMANCE_PAGE: "LOAD_NEXT_PERFORMANCE_PAGE"
+        };
+        t.c = {
+            api: a.a,
+            namespaced: !0,
+            state: function() {
+                return {
+                    isInitialized: !1,
+                    projectsDatasets: {},
+                    page: 1,
+                    hasMore: !0,
+                    isWaiting: !1
+                };
+            },
+            mutations: (n = {}, o(n, E.SET_INSIGHTS, function(e, t) {
+                var r = t.datasets, n = t.page, a = t.hasMore;
+                e.isInitialized = !0, e.projectsDatasets = r, e.page = n, e.hasMore = a, e.isWaiting = !1;
+            }), o(n, E.APPEND_DATASETS, function(e, t) {
+                e.projectsDatasets = s({}, e.projectsDatasets, t);
+            }), o(n, E.INCREMENT_PAGE, function(e) {
+                e.page++;
+            }), o(n, E.SET_HAS_MORE, function(e, t) {
+                e.hasMore = t;
+            }), o(n, E.SET_WAITING, function(e, t) {
+                e.isWaiting = t;
+            }), n),
+            actions: o({}, _.LOAD_NEXT_PERFORMANCE_PAGE, (c = regeneratorRuntime.mark(function e(t, r) {
+                var n, i, o, s;
+                return regeneratorRuntime.wrap(function(e) {
+                    for (;;) switch (e.prev = e.next) {
+                      case 0:
+                        if (n = t.state, i = t.commit, o = t.dispatch, n.hasMore && !n.isWaiting) {
+                            e.next = 3;
+                            break;
+                        }
+                        return e.abrupt("return");
+
+                      case 3:
+                        return e.prev = 3, i(E.INCREMENT_PAGE), i(E.SET_WAITING, !0), e.next = 8, a.a.getMoreDatasets(r, {
+                            page_number: n.page
+                        });
+
+                      case 8:
+                        s = e.sent, i(E.APPEND_DATASETS, s.projects_datasets), i(E.SET_HAS_MORE, 0 !== s.pagination.next), 
+                        i(E.SET_WAITING, !1), e.next = 20;
+                        break;
+
+                      case 14:
+                        return e.prev = 14, e.t0 = e.catch(3), e.next = 18, o("error", e.t0, {
+                            root: !0
+                        });
+
+                      case 18:
+                        i(E.SET_HAS_MORE, !1), i(E.SET_WAITING, !1);
+
+                      case 20:
+                      case "end":
+                        return e.stop();
+                    }
+                }, e, this, [ [ 3, 14 ] ]);
+            }), u = function() {
+                var e = this, t = arguments;
+                return new Promise(function(r, n) {
+                    var a = c.apply(e, t);
+                    function o(e) {
+                        i(a, r, n, o, s, "next", e);
+                    }
+                    function s(e) {
+                        i(a, r, n, o, s, "throw", e);
+                    }
+                    o(void 0);
+                });
+            }, function(e, t) {
+                return u.apply(this, arguments);
+            }))
+        };
+    }
+} ]);
