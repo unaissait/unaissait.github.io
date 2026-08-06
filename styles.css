@@ -93,7 +93,7 @@ button { font: inherit; }
   box-shadow: 0 0 0 .3rem rgba(52,211,153,.14);
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 6vw, 4.95rem); line-height: 1.02; margin: .7rem 0 1rem; letter-spacing: -.04em; max-width: 12ch;
+  font-size: clamp(2.6rem, 6vw, 4.95rem); line-height: 1.02; margin: .7rem 0 1rem; letter-spacing: -.04em; max-width: 13ch;
 }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero-lead { max-width: 66ch; color: var(--muted); font-size: 1.08rem; }
@@ -169,7 +169,7 @@ button { font: inherit; }
 .section-heading h2 {
   font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.08; margin: .5rem 0 .7rem; letter-spacing: -.03em;
 }
-.section-heading p:not(.eyebrow) { color: var(--muted); max-width: 70ch; }
+.section-heading p:not(.eyebrow) { color: var(--muted); max-width: 62ch; }
 .split-heading { display: grid; grid-template-columns: 1.2fr .9fr; gap: 2rem; align-items: end; }
 .lens-grid, .presence-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
