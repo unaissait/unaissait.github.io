@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Circuit Listener — a searchable library of physical-computing components by Unais Sait.">
+  <title>Circuit Listener — Unais Sait</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a href="../../">← Portfolio</a><span>Live prototype</span></header>
+  <main>
+    <p class="eyebrow">Physical computing experiment</p>
+    <h1>Circuit Listener</h1>
+    <p class="lead">Search—or speak—the name of an electronic component to explore a library of breadboard-ready SVG parts.</p>
+    <div class="search-row">
+      <input type="search" id="search-box" placeholder="Try “Arduino Uno”, “servo” or “resistor”" autocomplete="off">
+      <button id="mic-button" type="button">Speak</button>
+    </div>
+    <p id="status" role="status">Start typing to filter the component library.</p>
+    <div id="results" class="results"></div>
+  </main>
+  <script src="output.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
