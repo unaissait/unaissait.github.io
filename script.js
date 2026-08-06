@@ -170,3 +170,11 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+document.querySelectorAll('.jump-chip').forEach(button => button.addEventListener('click', () => {
+  const selected = button.dataset.filter;
+  document.getElementById('work')?.scrollIntoView({behavior:'smooth', block:'start'});
+  const matchingFilter = document.querySelector(`.filter[data-filter="${selected}"]`);
+  matchingFilter?.click();
+}));
